@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ticket Sales Tracker (Local Data)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body class="bg-slate-50 p-6">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="text-3xl font-bold mb-2">Event Sales Dashboard</h1>
+      <p class="text-slate-500 mb-8">
+        Reading data from
+        <code class="bg-slate-200 px-1 rounded">data.json</code>
+      </p>
+
+      <div
+        id="stats-grid"
+        class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8"
+      ></div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+        <canvas id="salesChart" height="300"></canvas>
+      </div>
+    </div>
+
+    <script>
+      async function loadLocalData() {
+        try {
+          // Fetching the local file
+          const response = await fetch('data.json');
+          const data = await response.json();
+          render(data.result);
+        } catch (err) {
+          console.error('Error reading JSON file:', err);
+          document.body.innerHTML = `<div class="p-10 text-red-600">Error: Run this via a local server (http://) to read data.json</div>`;
+        }
+      }
+
+      function render(results) {
+        const groups = {};
+        results.forEach((item) => {
+          const name = item.ticket_type_name;
+          if (!groups[name]) {
+            groups[name] = {
+              sold: 0,
+              total: 0,
+              color: item.color_code || '#6366f1',
+            };
+          }
+          groups[name].total++;
+          if (item.status === 3) groups[name].sold++;
+        });
+
+        const grid = document.getElementById('stats-grid');
+        const labels = [],
+          values = [],
+          colors = [];
+
+        Object.keys(groups).forEach((key) => {
+          const g = groups[key];
+          const pct = ((g.sold / g.total) * 100).toFixed(1);
+
+          labels.push(key);
+          values.push(pct);
+          colors.push(g.color);
+
+          grid.innerHTML += `
+                    <div class="bg-white p-6 rounded-xl border shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-xs font-bold uppercase text-slate-400">${key}</span>
+                            <span class="text-xs font-bold px-2 py-1 rounded" style="background: ${g.color}33; color: ${g.color}">${pct}% Sold</span>
+                        </div>
+                        <div class="text-2xl font-bold">${g.sold} <span class="text-slate-300">/ ${g.total}</span></div>
+                        <div class="w-full bg-slate-100 h-2 mt-3 rounded-full overflow-hidden">
+                            <div class="h-full transition-all duration-1000" style="width: ${pct}%; background: ${g.color}"></div>
+                        </div>
+                    </div>`;
+        });
+
+        new Chart(document.getElementById('salesChart'), {
+          type: 'bar',
+          data: {
+            labels,
+            datasets: [
+              {
+                label: 'Percentage Sold',
+                data: values,
+                backgroundColor: colors,
+                borderRadius: 5,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: { y: { beginAtZero: true, max: 100 } },
+          },
+        });
+      }
+
+      loadLocalData();
+    </script>
+  </body>
+</html>
