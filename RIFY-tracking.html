@@ -2,21 +2,59 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Ticket Sales Tracker (Local Data)</title>
+    <title>Event 51 - Sales Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
-  <body class="bg-slate-50 p-6">
-    <div class="max-w-5xl mx-auto">
-      <h1 class="text-3xl font-bold mb-2">Event Sales Dashboard</h1>
-      <p class="text-slate-500 mb-8">
-        Reading data from
-        <code class="bg-slate-200 px-1 rounded">data.json</code>
-      </p>
+  <body class="bg-slate-50 p-4 md:p-8">
+    <div class="max-w-6xl mx-auto">
+      <div
+        id="global-summary"
+        class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 mb-8 flex flex-col md:flex-row items-center justify-between gap-6"
+      >
+        <div class="text-center md:text-left">
+          <h1
+            class="text-slate-400 font-bold uppercase tracking-widest text-xs"
+          >
+            Total Event Progress
+          </h1>
+          <div
+            id="global-count"
+            class="text-4xl font-black text-slate-900 mt-1"
+          >
+            0 / 0
+          </div>
+          <p class="text-slate-500 font-medium mt-1">
+            Tickets Sold Across All Categories
+          </p>
+        </div>
+
+        <div class="relative flex items-center justify-center">
+          <div id="global-percent" class="text-6xl font-black text-blue-600">
+            0%
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/3">
+          <div
+            class="flex justify-between mb-2 text-sm font-bold text-slate-600"
+          >
+            <span>Overall Capacity</span>
+            <span id="progress-label">0%</span>
+          </div>
+          <div class="w-full bg-slate-100 h-4 rounded-full overflow-hidden">
+            <div
+              id="global-progress-bar"
+              class="bg-blue-600 h-full transition-all duration-1000"
+              style="width: 0%"
+            ></div>
+          </div>
+        </div>
+      </div>
 
       <div
         id="stats-grid"
-        class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8"
       ></div>
 
       <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
@@ -27,18 +65,21 @@
     <script>
       async function loadLocalData() {
         try {
-          // Fetching the local file
           const response = await fetch('data.json');
           const data = await response.json();
           render(data.result);
         } catch (err) {
-          console.error('Error reading JSON file:', err);
-          document.body.innerHTML = `<div class="p-10 text-red-600">Error: Run this via a local server (http://) to read data.json</div>`;
+          console.error('Error:', err);
+          document.getElementById('global-summary').innerHTML =
+            `<div class="text-red-500 p-4 font-bold">Error: Please run via a local server to read data.json</div>`;
         }
       }
 
       function render(results) {
         const groups = {};
+        let totalSold = 0;
+        let totalCapacity = 0;
+
         results.forEach((item) => {
           const name = item.ticket_type_name;
           if (!groups[name]) {
@@ -49,52 +90,74 @@
             };
           }
           groups[name].total++;
-          if (item.status === 3) groups[name].sold++;
+          totalCapacity++;
+
+          if (item.status === 3) {
+            groups[name].sold++;
+            totalSold++;
+          }
         });
 
+        // Update Global Stats
+        const overallPct = ((totalSold / totalCapacity) * 100).toFixed(1);
+        document.getElementById('global-count').innerText =
+          `${totalSold.toLocaleString()} / ${totalCapacity.toLocaleString()}`;
+        document.getElementById('global-percent').innerText = `${overallPct}%`;
+        document.getElementById('progress-label').innerText = `${overallPct}%`;
+        document.getElementById('global-progress-bar').style.width =
+          `${overallPct}%`;
+
+        // Update Cards
         const grid = document.getElementById('stats-grid');
         const labels = [],
           values = [],
           colors = [];
 
-        Object.keys(groups).forEach((key) => {
-          const g = groups[key];
-          const pct = ((g.sold / g.total) * 100).toFixed(1);
+        Object.keys(groups)
+          .sort()
+          .forEach((key) => {
+            const g = groups[key];
+            const pct = ((g.sold / g.total) * 100).toFixed(1);
+            labels.push(key);
+            values.push(pct);
+            colors.push(g.color);
 
-          labels.push(key);
-          values.push(pct);
-          colors.push(g.color);
-
-          grid.innerHTML += `
-                    <div class="bg-white p-6 rounded-xl border shadow-sm">
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="text-xs font-bold uppercase text-slate-400">${key}</span>
-                            <span class="text-xs font-bold px-2 py-1 rounded" style="background: ${g.color}33; color: ${g.color}">${pct}% Sold</span>
+            grid.innerHTML += `
+                    <div class="bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-3 h-3 rounded-full" style="background: ${g.color}"></div>
+                            <span class="text-[10px] font-black uppercase text-slate-400 truncate">${key}</span>
                         </div>
-                        <div class="text-2xl font-bold">${g.sold} <span class="text-slate-300">/ ${g.total}</span></div>
-                        <div class="w-full bg-slate-100 h-2 mt-3 rounded-full overflow-hidden">
-                            <div class="h-full transition-all duration-1000" style="width: ${pct}%; background: ${g.color}"></div>
-                        </div>
+                        <div class="text-xl font-bold text-slate-800">${g.sold} <span class="text-slate-300 font-normal">/ ${g.total}</span></div>
+                        <div class="text-xs font-bold mt-1" style="color: ${g.color}">${pct}% Sold</div>
                     </div>`;
-        });
+          });
 
+        // Update Chart
         new Chart(document.getElementById('salesChart'), {
           type: 'bar',
           data: {
             labels,
             datasets: [
               {
-                label: 'Percentage Sold',
+                label: 'Sales %',
                 data: values,
                 backgroundColor: colors,
-                borderRadius: 5,
+                borderRadius: 6,
               },
             ],
           },
           options: {
             responsive: true,
             maintainAspectRatio: false,
-            scales: { y: { beginAtZero: true, max: 100 } },
+            plugins: { legend: { display: false } },
+            scales: {
+              y: {
+                beginAtZero: true,
+                max: 100,
+                ticks: { callback: (v) => v + '%' },
+              },
+            },
           },
         });
       }
