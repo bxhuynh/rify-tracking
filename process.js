@@ -31,14 +31,12 @@ function processEntry() {
       }
       snapshot.byType[name].total++;
       snapshot.totalCapacity++;
-      if (item.status === 3) snapshot.byType[name].sold++;
+      if (item.status === 3) {
+        snapshot.byType[name].sold++;
+        snapshot.totalSold++;
+      }
     });
-    snapshot.totalSold = Object.values(snapshot.byType).reduce(
-      (a, b) => a + b.sold,
-      0,
-    );
 
-    // Load History
     let db = { history: [] };
     if (fs.existsSync(DB_FILE)) {
       try {
@@ -48,7 +46,6 @@ function processEntry() {
       }
     }
 
-    // Calculate Increase compared to the very last entry
     const lastEntry =
       db.history.length > 0 ? db.history[db.history.length - 1] : null;
     if (lastEntry) {
@@ -58,11 +55,16 @@ function processEntry() {
           : 0;
         snapshot.byType[name].increase = snapshot.byType[name].sold - prevSold;
       });
+      snapshot.totalIncrease = snapshot.totalSold - lastEntry.totalSold;
+    } else {
+      snapshot.totalIncrease = 0;
     }
 
     db.history.push(snapshot);
     fs.writeFileSync(DB_FILE, JSON.stringify(db, null, 4));
-    console.log(`✅ Snapshot saved. Total Sold: ${snapshot.totalSold}`);
+    console.log(
+      `✅ Snapshot saved. Total Sold: ${snapshot.totalSold} (+${snapshot.totalIncrease})`,
+    );
   } catch (err) {
     console.error('❌ Process Error:', err.message);
   }

@@ -33,7 +33,7 @@
             }
         },
         {
-            "timestamp": "2026-05-12T04:41:40.745Z",
+            "timestamp": "2026-05-12T04:45:49.781Z",
             "totalSold": 309,
             "totalCapacity": 722,
             "byType": {
@@ -67,7 +67,8 @@
                     "color": "#297884",
                     "increase": 2
                 }
-            }
+            },
+            "totalIncrease": 5
         }
     ]
 }
