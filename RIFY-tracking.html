@@ -2,167 +2,136 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Event 51 - Sales Dashboard</title>
+    <title>Ticket Sales & Trends</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
-  <body class="bg-slate-50 p-4 md:p-8">
+  <body class="bg-slate-900 text-slate-100 p-8">
     <div class="max-w-6xl mx-auto">
       <div
-        id="global-summary"
-        class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 mb-8 flex flex-col md:flex-row items-center justify-between gap-6"
+        class="flex justify-between items-end mb-8 border-b border-slate-800 pb-6"
       >
-        <div class="text-center md:text-left">
-          <h1
-            class="text-slate-400 font-bold uppercase tracking-widest text-xs"
-          >
-            Total Event Progress
-          </h1>
-          <div
-            id="global-count"
-            class="text-4xl font-black text-slate-900 mt-1"
-          >
-            0 / 0
-          </div>
-          <p class="text-slate-500 font-medium mt-1">
-            Tickets Sold Across All Categories
-          </p>
+        <div>
+          <h1 class="text-3xl font-bold">Event 51 Tracking</h1>
+          <p id="last-update" class="text-slate-500 text-sm italic mt-1"></p>
         </div>
-
-        <div class="relative flex items-center justify-center">
-          <div id="global-percent" class="text-6xl font-black text-blue-600">
-            0%
-          </div>
-        </div>
-
-        <div class="w-full md:w-1/3">
+        <div class="flex gap-4">
           <div
-            class="flex justify-between mb-2 text-sm font-bold text-slate-600"
+            class="bg-slate-800 p-4 rounded-xl border border-slate-700 text-center min-w-[120px]"
           >
-            <span>Overall Capacity</span>
-            <span id="progress-label">0%</span>
+            <span class="block text-slate-500 text-[10px] font-bold uppercase"
+              >Total Sold</span
+            >
+            <span id="header-total" class="text-2xl font-black text-white"
+              >0/0</span
+            >
           </div>
-          <div class="w-full bg-slate-100 h-4 rounded-full overflow-hidden">
-            <div
-              id="global-progress-bar"
-              class="bg-blue-600 h-full transition-all duration-1000"
-              style="width: 0%"
-            ></div>
+          <div
+            class="bg-slate-800 p-4 rounded-xl border border-slate-700 text-center min-w-[120px]"
+          >
+            <span class="block text-slate-500 text-[10px] font-bold uppercase"
+              >Sale %</span
+            >
+            <span id="header-percent" class="text-2xl font-black text-blue-400"
+              >0%</span
+            >
           </div>
         </div>
       </div>
 
       <div
-        id="stats-grid"
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8"
-      ></div>
-
-      <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-        <canvas id="salesChart" height="300"></canvas>
+        class="bg-slate-800 p-6 rounded-2xl border border-slate-700 mb-8 shadow-xl"
+      >
+        <h3
+          class="text-slate-400 font-bold text-xs uppercase mb-4 tracking-widest"
+        >
+          Sales Velocity (Trend)
+        </h3>
+        <div class="h-[300px]">
+          <canvas id="trendChart"></canvas>
+        </div>
       </div>
+
+      <div
+        id="type-grid"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
+      ></div>
     </div>
 
     <script>
-      async function loadLocalData() {
-        try {
-          const response = await fetch('data.json');
-          const data = await response.json();
-          render(data.result);
-        } catch (err) {
-          console.error('Error:', err);
-          document.getElementById('global-summary').innerHTML =
-            `<div class="text-red-500 p-4 font-bold">Error: Please run via a local server to read data.json</div>`;
-        }
-      }
+      async function init() {
+        const response = await fetch('data.json');
+        const db = await response.json();
+        const history = db.history;
+        const latest = history[history.length - 1];
 
-      function render(results) {
-        const groups = {};
-        let totalSold = 0;
-        let totalCapacity = 0;
+        // Update Header
+        document.getElementById('last-update').innerText =
+          `Last Snapshot: ${new Date(latest.timestamp).toLocaleString()}`;
+        document.getElementById('header-total').innerText =
+          `${latest.totalSold}/${latest.totalCapacity}`;
+        document.getElementById('header-percent').innerText =
+          `${((latest.totalSold / latest.totalCapacity) * 100).toFixed(1)}%`;
 
-        results.forEach((item) => {
-          const name = item.ticket_type_name;
-          if (!groups[name]) {
-            groups[name] = {
-              sold: 0,
-              total: 0,
-              color: item.color_code || '#6366f1',
-            };
-          }
-          groups[name].total++;
-          totalCapacity++;
-
-          if (item.status === 3) {
-            groups[name].sold++;
-            totalSold++;
-          }
-        });
-
-        // Update Global Stats
-        const overallPct = ((totalSold / totalCapacity) * 100).toFixed(1);
-        document.getElementById('global-count').innerText =
-          `${totalSold.toLocaleString()} / ${totalCapacity.toLocaleString()}`;
-        document.getElementById('global-percent').innerText = `${overallPct}%`;
-        document.getElementById('progress-label').innerText = `${overallPct}%`;
-        document.getElementById('global-progress-bar').style.width =
-          `${overallPct}%`;
-
-        // Update Cards
-        const grid = document.getElementById('stats-grid');
-        const labels = [],
-          values = [],
-          colors = [];
-
-        Object.keys(groups)
-          .sort()
-          .forEach((key) => {
-            const g = groups[key];
-            const pct = ((g.sold / g.total) * 100).toFixed(1);
-            labels.push(key);
-            values.push(pct);
-            colors.push(g.color);
-
-            grid.innerHTML += `
-                    <div class="bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
-                        <div class="flex items-center gap-2 mb-3">
-                            <div class="w-3 h-3 rounded-full" style="background: ${g.color}"></div>
-                            <span class="text-[10px] font-black uppercase text-slate-400 truncate">${key}</span>
-                        </div>
-                        <div class="text-xl font-bold text-slate-800">${g.sold} <span class="text-slate-300 font-normal">/ ${g.total}</span></div>
-                        <div class="text-xs font-bold mt-1" style="color: ${g.color}">${pct}% Sold</div>
-                    </div>`;
-          });
-
-        // Update Chart
-        new Chart(document.getElementById('salesChart'), {
-          type: 'bar',
+        // Setup Line Chart
+        const ctx = document.getElementById('trendChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'line',
           data: {
-            labels,
+            labels: history.map((h) =>
+              new Date(h.timestamp).toLocaleTimeString([], {
+                hour: '2-digit',
+                minute: '2-digit',
+              }),
+            ),
             datasets: [
               {
-                label: 'Sales %',
-                data: values,
-                backgroundColor: colors,
-                borderRadius: 6,
+                label: 'Total Sold',
+                data: history.map((h) => h.totalSold),
+                borderColor: '#3b82f6',
+                backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                fill: true,
+                tension: 0.3,
+                pointRadius: 4,
+                pointBackgroundColor: '#3b82f6',
               },
             ],
           },
           options: {
             responsive: true,
             maintainAspectRatio: false,
-            plugins: { legend: { display: false } },
             scales: {
-              y: {
-                beginAtZero: true,
-                max: 100,
-                ticks: { callback: (v) => v + '%' },
-              },
+              y: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' } },
+              x: { grid: { display: false }, ticks: { color: '#94a3b8' } },
             },
+            plugins: { legend: { display: false } },
           },
         });
-      }
 
-      loadLocalData();
+        // Setup Type Grid
+        const grid = document.getElementById('type-grid');
+        Object.keys(latest.byType).forEach((name) => {
+          const type = latest.byType[name];
+          const pct = ((type.sold / type.total) * 100).toFixed(1);
+          grid.innerHTML += `
+                    <div class="bg-slate-800 p-5 rounded-xl border border-slate-700 shadow-sm">
+                        <h4 class="text-slate-500 text-[10px] font-bold uppercase truncate mb-2">${name}</h4>
+                        <div class="flex justify-between items-end">
+                            <div>
+                                <div class="text-2xl font-bold">${type.sold}<span class="text-slate-600 text-sm font-normal">/${type.total}</span></div>
+                                <div class="text-xs font-bold mt-1" style="color: ${type.color}">${pct}%</div>
+                            </div>
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-slate-900 border border-slate-700" style="color: ${type.color}">
+                                🎫
+                            </div>
+                        </div>
+                        <div class="w-full bg-slate-900 h-1 mt-4 rounded-full overflow-hidden">
+                            <div class="h-full" style="width: ${pct}%; background: ${type.color}"></div>
+                        </div>
+                    </div>`;
+        });
+      }
+      init();
     </script>
   </body>
 </html>
