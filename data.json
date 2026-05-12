@@ -1,74 +1,100 @@
 {
-    "history": [
-        {
-            "timestamp": "2026-05-11T16:04:40.889Z",
-            "totalSold": 304,
-            "totalCapacity": 722,
-            "byType": {
-                "CHILL (Gift)": {
-                    "sold": 62,
-                    "total": 62,
-                    "color": "#face43"
-                },
-                "RIVER (Standard)": {
-                    "sold": 50,
-                    "total": 93,
-                    "color": " #113a23"
-                },
-                "FLOW (Pre)": {
-                    "sold": 66,
-                    "total": 172,
-                    "color": "#8baf54"
-                },
-                "IN (VIP)": {
-                    "sold": 29,
-                    "total": 189,
-                    "color": "#d7a691"
-                },
-                "YOU (SVIP)": {
-                    "sold": 97,
-                    "total": 206,
-                    "color": "#297884"
-                }
-            }
+  "history": [
+    {
+      "timestamp": "2026-05-11T13:00:40.889Z",
+      "totalSold": 0,
+      "totalCapacity": 722,
+      "byType": {
+        "CHILL (Gift)": {
+          "sold": 0,
+          "total": 62,
+          "color": "#face43"
         },
-        {
-            "timestamp": "2026-05-12T04:45:49.781Z",
-            "totalSold": 309,
-            "totalCapacity": 722,
-            "byType": {
-                "CHILL (Gift)": {
-                    "sold": 62,
-                    "total": 62,
-                    "color": "#face43",
-                    "increase": 0
-                },
-                "RIVER (Standard)": {
-                    "sold": 52,
-                    "total": 93,
-                    "color": " #113a23",
-                    "increase": 2
-                },
-                "FLOW (Pre)": {
-                    "sold": 67,
-                    "total": 172,
-                    "color": "#8baf54",
-                    "increase": 1
-                },
-                "IN (VIP)": {
-                    "sold": 29,
-                    "total": 189,
-                    "color": "#d7a691",
-                    "increase": 0
-                },
-                "YOU (SVIP)": {
-                    "sold": 99,
-                    "total": 206,
-                    "color": "#297884",
-                    "increase": 2
-                }
-            },
-            "totalIncrease": 5
+        "RIVER (Standard)": {
+          "sold": 0,
+          "total": 93,
+          "color": " #113a23"
+        },
+        "FLOW (Pre)": {
+          "sold": 0,
+          "total": 172,
+          "color": "#8baf54"
+        },
+        "IN (VIP)": {
+          "sold": 0,
+          "total": 189,
+          "color": "#d7a691"
+        },
+        "YOU (SVIP)": {
+          "sold": 0,
+          "total": 206,
+          "color": "#297884"
         }
-    ]
+      }
+    },
+    {
+      "timestamp": "2026-05-11T16:04:40.889Z",
+      "totalSold": 304,
+      "totalCapacity": 722,
+      "byType": {
+        "CHILL (Gift)": {
+          "sold": 62,
+          "total": 62,
+          "color": "#face43"
+        },
+        "RIVER (Standard)": {
+          "sold": 50,
+          "total": 93,
+          "color": " #113a23"
+        },
+        "FLOW (Pre)": {
+          "sold": 66,
+          "total": 172,
+          "color": "#8baf54"
+        },
+        "IN (VIP)": {
+          "sold": 29,
+          "total": 189,
+          "color": "#d7a691"
+        },
+        "YOU (SVIP)": {
+          "sold": 97,
+          "total": 206,
+          "color": "#297884"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-12T16:31:45.676Z",
+      "totalSold": 319,
+      "totalCapacity": 722,
+      "byType": {
+        "CHILL (Gift)": {
+          "sold": 62,
+          "total": 62,
+          "color": "#face43"
+        },
+        "RIVER (Standard)": {
+          "sold": 56,
+          "total": 93,
+          "color": " #113a23"
+        },
+        "FLOW (Pre)": {
+          "sold": 69,
+          "total": 172,
+          "color": "#8baf54"
+        },
+        "IN (VIP)": {
+          "sold": 29,
+          "total": 189,
+          "color": "#d7a691"
+        },
+        "YOU (SVIP)": {
+          "sold": 103,
+          "total": 206,
+          "color": "#297884"
+        }
+      }
+    }
+  ]
 }

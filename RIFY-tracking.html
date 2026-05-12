@@ -2,103 +2,202 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Sales Tracker Pro</title>
+    <title>Sales Intelligence Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      .matrix-container::-webkit-scrollbar {
+        height: 8px;
+      }
+      .matrix-container::-webkit-scrollbar-track {
+        background: #0f172a;
+      }
+      .matrix-container::-webkit-scrollbar-thumb {
+        background: #334155;
+        border-radius: 10px;
+      }
+    </style>
   </head>
-  <body class="bg-gray-950 text-white p-6 font-sans">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+  <body class="bg-slate-950 text-white p-6 font-sans">
+    <div class="max-w-[1600px] mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
         <div
-          class="bg-gray-900 p-6 rounded-2xl border border-gray-800 shadow-xl"
+          class="bg-slate-900 p-6 rounded-3xl border border-slate-800 shadow-xl"
         >
           <p
-            class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1"
+            class="text-slate-500 text-[10px] font-black uppercase tracking-widest mb-1"
           >
-            Total Sales Percentage
+            Total Progress
           </p>
-          <div class="flex items-end gap-3">
-            <span id="global-pct" class="text-5xl font-black text-blue-500"
-              >0%</span
-            >
-            <span
-              id="global-inc"
-              class="text-green-400 text-sm font-bold mb-2"
-            ></span>
+          <div id="stat-pct" class="text-5xl font-black text-blue-500 italic">
+            0%
           </div>
         </div>
         <div
-          class="bg-gray-900 p-6 rounded-2xl border border-gray-800 shadow-xl md:col-span-2 flex items-center justify-between"
+          class="bg-slate-900 p-6 rounded-3xl border border-slate-800 shadow-xl"
         >
-          <div>
-            <p
-              class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1"
-            >
-              Overall Capacity
-            </p>
-            <span id="global-count" class="text-3xl font-bold text-white"
-              >0 / 0</span
-            >
+          <p
+            class="text-slate-500 text-[10px] font-black uppercase tracking-widest mb-1"
+          >
+            Sold / Capacity
+          </p>
+          <div
+            id="stat-total"
+            class="text-3xl font-bold text-white mt-2 font-mono"
+          >
+            0 / 0
           </div>
-          <div class="text-right">
-            <p
-              class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1"
+        </div>
+        <div
+          class="bg-slate-900 p-6 rounded-3xl border border-slate-800 shadow-xl"
+        >
+          <p
+            class="text-slate-500 text-[10px] font-black uppercase tracking-widest mb-1"
+          >
+            Latest Increase
+          </p>
+          <div id="stat-delta" class="text-3xl font-bold text-green-400 mt-2">
+            +0
+          </div>
+        </div>
+        <div
+          class="bg-slate-900 p-6 rounded-3xl border border-slate-800 shadow-xl flex flex-col justify-center"
+        >
+          <p
+            class="text-slate-500 text-[10px] font-black uppercase tracking-widest mb-1"
+          >
+            Last Updated
+          </p>
+          <p id="stat-time" class="text-slate-300 text-sm font-mono italic">
+            --:--:--
+          </p>
+        </div>
+      </div>
+
+      <div class="mb-8">
+        <div
+          class="bg-slate-900 p-8 rounded-[2.5rem] border border-slate-800 shadow-2xl h-[480px]"
+        >
+          <div class="flex justify-between items-center mb-6">
+            <h3
+              class="text-slate-400 text-[10px] font-black uppercase tracking-[0.2em]"
             >
-              Last Updated
-            </p>
-            <span id="last-run" class="text-sm font-mono text-gray-400 italic"
-              >--:--</span
-            >
+              Sales Velocity Trend
+            </h3>
+          </div>
+          <div class="h-[360px]">
+            <canvas id="mainChart"></canvas>
           </div>
         </div>
       </div>
 
-      <div
-        class="bg-gray-900 border border-gray-800 p-6 rounded-3xl mb-8 shadow-2xl"
-      >
+      <div class="mb-10">
         <h3
-          class="text-gray-400 text-xs font-bold uppercase mb-6 tracking-widest"
+          class="text-slate-500 text-[10px] font-black uppercase tracking-[0.2em] mb-6 pl-1"
         >
-          Sales Trend Over Time (Date & Time)
+          Inventory Breakdown
         </h3>
-        <div class="h-[350px]">
-          <canvas id="mainChart"></canvas>
-        </div>
+        <div
+          id="seat-grid"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+        ></div>
       </div>
 
       <div
-        id="seat-grid"
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5"
-      ></div>
+        class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl"
+      >
+        <div
+          class="px-6 py-4 border-b border-slate-800 flex justify-between items-center bg-slate-900/50"
+        >
+          <h3
+            class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400"
+          >
+            Increase Matrix (Time-Series)
+          </h3>
+        </div>
+        <div class="overflow-x-auto matrix-container">
+          <table class="w-full text-left text-[11px] border-collapse">
+            <thead>
+              <tr
+                id="matrix-head"
+                class="bg-slate-950/50 text-slate-500 uppercase tracking-tighter border-b border-slate-800"
+              >
+                <th
+                  class="p-5 sticky left-0 bg-slate-950 z-20 border-r border-slate-800"
+                >
+                  Recording Time
+                </th>
+                <th
+                  class="p-5 font-black text-white bg-slate-800/80 sticky right-0 z-20 border-l border-slate-700"
+                >
+                  DELTA
+                </th>
+              </tr>
+            </thead>
+            <tbody id="matrix-body"></tbody>
+          </table>
+        </div>
+      </div>
     </div>
 
     <script>
-      async function loadDashboard() {
+      async function loadData() {
         const res = await fetch('data.json');
         const db = await res.json();
         const history = db.history;
         const latest = history[history.length - 1];
+        const previous = history[history.length - 2];
 
-        // 1. Global Summaries
-        const totalPct = (
-          (latest.totalSold / latest.totalCapacity) *
-          100
-        ).toFixed(1);
-        document.getElementById('global-pct').innerText = totalPct + '%';
-        document.getElementById('global-count').innerText =
-          `${latest.totalSold.toLocaleString()} / ${latest.totalCapacity.toLocaleString()}`;
-        document.getElementById('last-run').innerText = new Date(
-          latest.timestamp,
-        ).toLocaleString();
+        const typeNames = [
+          ...new Set(history.flatMap((h) => Object.keys(h.byType))),
+        ].sort();
 
-        if (latest.totalIncrease > 0) {
-          document.getElementById('global-inc').innerText =
-            `▲ +${latest.totalIncrease} since last`;
+        const head = document.getElementById('matrix-head');
+        const totalHeader = head.lastElementChild;
+        typeNames.forEach((name) => {
+          const th = document.createElement('th');
+          th.className =
+            'p-5 font-bold border-r border-slate-800/30 min-w-[120px]';
+          th.innerText = name.replace('(Gift)', '').trim();
+          head.insertBefore(th, totalHeader);
+        });
+
+        const body = document.getElementById('matrix-body');
+        for (let i = history.length - 1; i >= 0; i--) {
+          const cur = history[i];
+          const prev = history[i - 1];
+          const tr = document.createElement('tr');
+          tr.className =
+            'border-b border-slate-800/50 hover:bg-slate-800/40 transition group';
+          const date = new Date(cur.timestamp);
+          const timeStr =
+            date.toLocaleDateString([], { month: 'short', day: 'numeric' }) +
+            ' ' +
+            date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+          let html = `<td class="p-5 font-mono text-slate-400 sticky left-0 bg-slate-950 border-r border-slate-800 z-10 group-hover:text-white transition">${timeStr}</td>`;
+          typeNames.forEach((name) => {
+            const diff = prev
+              ? (cur.byType[name]?.sold || 0) - (prev.byType[name]?.sold || 0)
+              : 0;
+            html += `<td class="p-5 font-bold ${diff > 0 ? 'text-green-400 bg-green-400/5' : 'text-slate-700'}">${diff > 0 ? '+' + diff : '•'}</td>`;
+          });
+          const totalDiff = prev ? cur.totalSold - prev.totalSold : 0;
+          html += `<td class="p-5 font-black bg-slate-900/80 sticky right-0 z-10 border-l border-slate-700 ${totalDiff > 0 ? 'text-blue-400' : 'text-slate-600'}">${totalDiff > 0 ? '+' + totalDiff : '0'}</td>`;
+          tr.innerHTML = html;
+          body.appendChild(tr);
         }
 
-        // 2. Charting (Date + Time Labels)
-        const ctx = document.getElementById('mainChart').getContext('2d');
-        new Chart(ctx, {
+        document.getElementById('stat-pct').innerText =
+          ((latest.totalSold / latest.totalCapacity) * 100).toFixed(1) + '%';
+        document.getElementById('stat-total').innerText =
+          `${latest.totalSold.toLocaleString()} / ${latest.totalCapacity.toLocaleString()}`;
+        document.getElementById('stat-delta').innerText =
+          `+${previous ? latest.totalSold - previous.totalSold : 0}`;
+        document.getElementById('stat-time').innerText = new Date(
+          latest.timestamp,
+        ).toLocaleTimeString();
+
+        new Chart(document.getElementById('mainChart'), {
           type: 'line',
           data: {
             labels: history.map((h) => {
@@ -111,16 +210,16 @@
             }),
             datasets: [
               {
-                label: 'Sold',
                 data: history.map((h) => h.totalSold),
                 borderColor: '#3b82f6',
                 backgroundColor: 'rgba(59, 130, 246, 0.1)',
                 fill: true,
-                tension: 0.4,
-                pointRadius: 6,
-                pointHoverRadius: 8,
+                tension: 0,
+                borderWidth: 4,
+                pointRadius: 5,
                 pointBackgroundColor: '#3b82f6',
-                borderWidth: 3,
+                pointBorderColor: '#0f172a',
+                pointBorderWidth: 2,
               },
             ],
           },
@@ -130,41 +229,44 @@
             plugins: { legend: { display: false } },
             scales: {
               x: {
-                ticks: { color: '#4b5563', font: { size: 10 } },
-                grid: { display: false },
+                grid: { color: 'rgba(255,255,255,0.05)' },
+                ticks: { color: '#64748b', font: { size: 10 } },
               },
-              y: { ticks: { color: '#4b5563' }, grid: { color: '#1f2937' } },
+              y: {
+                grid: { color: 'rgba(255,255,255,0.05)' },
+                ticks: { color: '#64748b' },
+              },
             },
           },
         });
 
-        // 3. Grid Rendering
+        // Seat Cards Injection
         const grid = document.getElementById('seat-grid');
-        Object.keys(latest.byType).forEach((name) => {
-          const type = latest.byType[name];
-          const pct = ((type.sold / type.total) * 100).toFixed(1);
-          const inc = type.increase || 0;
+        typeNames.forEach((name) => {
+          const t = latest.byType[name];
+          const inc = previous
+            ? t.sold - (previous.byType[name]?.sold || 0)
+            : 0;
+          const pct = ((t.sold / t.total) * 100).toFixed(1);
 
           grid.innerHTML += `
-                    <div class="bg-gray-900 border border-gray-800 p-6 rounded-2xl relative overflow-hidden transition hover:border-gray-700">
-                        ${inc > 0 ? `<div class="absolute top-4 right-4 bg-green-500 text-black text-[9px] font-black px-2 py-0.5 rounded uppercase tracking-tighter">+${inc} NEW</div>` : ''}
+                    <div class="bg-slate-900 p-8 rounded-[2rem] border border-slate-800 relative transition hover:scale-[1.01] hover:border-slate-600 shadow-xl">
+                        ${inc > 0 ? `<div class="absolute top-6 right-6 bg-green-500 text-black text-[10px] font-black px-2 py-1 rounded-lg shadow-2xl animate-pulse">+${inc} NEW</div>` : ''}
                         
-                        <h3 class="text-gray-500 text-[10px] font-black uppercase tracking-widest mb-3">${name}</h3>
-                        <div class="flex items-baseline gap-2 mb-4">
-                            <span class="text-3xl font-bold">${type.sold}</span>
-                            <span class="text-gray-600 text-sm">/ ${type.total}</span>
-                        </div>
+                        <div class="text-[11px] text-slate-500 uppercase font-black tracking-widest mb-4 truncate">${name}</div>
                         
-                        <div class="flex justify-between items-center text-[10px] font-bold mb-1">
-                            <span style="color: ${type.color}">${pct}% SOLD</span>
+                        <div class="flex justify-between items-end mb-2">
+                            <div class="text-4xl font-black">${t.sold}<span class="text-slate-600 text-lg font-normal ml-1">/${t.total}</span></div>
+                            <div class="text-xl font-black italic" style="color: ${t.color}">${pct}%</div>
                         </div>
-                        <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
-                            <div class="h-full rounded-full transition-all duration-1000" style="width: ${pct}%; background: ${type.color}"></div>
+
+                        <div class="w-full bg-slate-950 h-3 mt-4 rounded-full overflow-hidden p-[2px]">
+                            <div class="h-full rounded-full transition-all duration-1000" style="width:${pct}%; background:${t.color}"></div>
                         </div>
                     </div>`;
         });
       }
-      loadDashboard();
+      loadData();
     </script>
   </body>
 </html>
