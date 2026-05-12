@@ -2,98 +2,61 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Ticket Sales & Trends</title>
+    <title>Sales Trend & Delta Tracker</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
-  <body class="bg-slate-900 text-slate-100 p-8">
+  <body class="bg-gray-950 text-white p-6">
     <div class="max-w-6xl mx-auto">
-      <div
-        class="flex justify-between items-end mb-8 border-b border-slate-800 pb-6"
-      >
-        <div>
-          <h1 class="text-3xl font-bold">Event 51 Tracking</h1>
-          <p id="last-update" class="text-slate-500 text-sm italic mt-1"></p>
-        </div>
-        <div class="flex gap-4">
-          <div
-            class="bg-slate-800 p-4 rounded-xl border border-slate-700 text-center min-w-[120px]"
-          >
-            <span class="block text-slate-500 text-[10px] font-bold uppercase"
-              >Total Sold</span
-            >
-            <span id="header-total" class="text-2xl font-black text-white"
-              >0/0</span
-            >
-          </div>
-          <div
-            class="bg-slate-800 p-4 rounded-xl border border-slate-700 text-center min-w-[120px]"
-          >
-            <span class="block text-slate-500 text-[10px] font-bold uppercase"
-              >Sale %</span
-            >
-            <span id="header-percent" class="text-2xl font-black text-blue-400"
-              >0%</span
-            >
-          </div>
-        </div>
+      <header class="flex justify-between items-center mb-8">
+        <h1 class="text-2xl font-bold tracking-tight">
+          Sales Analytics <span class="text-blue-500">Live</span>
+        </h1>
+        <div id="last-run" class="text-xs text-gray-500 font-mono"></div>
+      </header>
+
+      <div class="bg-gray-900 border border-gray-800 p-6 rounded-2xl mb-8">
+        <canvas id="mainChart" height="300"></canvas>
       </div>
 
       <div
-        class="bg-slate-800 p-6 rounded-2xl border border-slate-700 mb-8 shadow-xl"
-      >
-        <h3
-          class="text-slate-400 font-bold text-xs uppercase mb-4 tracking-widest"
-        >
-          Sales Velocity (Trend)
-        </h3>
-        <div class="h-[300px]">
-          <canvas id="trendChart"></canvas>
-        </div>
-      </div>
-
-      <div
-        id="type-grid"
+        id="seat-grid"
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
       ></div>
     </div>
 
     <script>
-      async function init() {
-        const response = await fetch('data.json');
-        const db = await response.json();
+      async function loadDashboard() {
+        const res = await fetch('data.json');
+        const db = await res.json();
         const history = db.history;
         const latest = history[history.length - 1];
 
-        // Update Header
-        document.getElementById('last-update').innerText =
-          `Last Snapshot: ${new Date(latest.timestamp).toLocaleString()}`;
-        document.getElementById('header-total').innerText =
-          `${latest.totalSold}/${latest.totalCapacity}`;
-        document.getElementById('header-percent').innerText =
-          `${((latest.totalSold / latest.totalCapacity) * 100).toFixed(1)}%`;
+        document.getElementById('last-run').innerText =
+          `UPDATED: ${new Date(latest.timestamp).toLocaleString()}`;
 
-        // Setup Line Chart
-        const ctx = document.getElementById('trendChart').getContext('2d');
+        // 1. Chart Logic (Date + Time)
+        const ctx = document.getElementById('mainChart').getContext('2d');
         new Chart(ctx, {
           type: 'line',
           data: {
-            labels: history.map((h) =>
-              new Date(h.timestamp).toLocaleTimeString([], {
-                hour: '2-digit',
-                minute: '2-digit',
-              }),
-            ),
+            labels: history.map((h) => {
+              const d = new Date(h.timestamp);
+              // Returns "May 12, 11:30"
+              return (
+                d.toLocaleDateString([], { month: 'short', day: 'numeric' }) +
+                ' ' +
+                d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+              );
+            }),
             datasets: [
               {
-                label: 'Total Sold',
+                label: 'Sold Tickets',
                 data: history.map((h) => h.totalSold),
                 borderColor: '#3b82f6',
                 backgroundColor: 'rgba(59, 130, 246, 0.1)',
                 fill: true,
                 tension: 0.3,
-                pointRadius: 4,
-                pointBackgroundColor: '#3b82f6',
               },
             ],
           },
@@ -101,37 +64,42 @@
             responsive: true,
             maintainAspectRatio: false,
             scales: {
-              y: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' } },
-              x: { grid: { display: false }, ticks: { color: '#94a3b8' } },
+              x: {
+                ticks: { color: '#666', font: { size: 10 } },
+                grid: { display: false },
+              },
+              y: { ticks: { color: '#666' }, grid: { color: '#1f2937' } },
             },
-            plugins: { legend: { display: false } },
           },
         });
 
-        // Setup Type Grid
-        const grid = document.getElementById('type-grid');
+        // 2. Grid Logic (Increase Badge)
+        const grid = document.getElementById('seat-grid');
         Object.keys(latest.byType).forEach((name) => {
           const type = latest.byType[name];
           const pct = ((type.sold / type.total) * 100).toFixed(1);
+          const inc = type.increase || 0;
+
           grid.innerHTML += `
-                    <div class="bg-slate-800 p-5 rounded-xl border border-slate-700 shadow-sm">
-                        <h4 class="text-slate-500 text-[10px] font-bold uppercase truncate mb-2">${name}</h4>
-                        <div class="flex justify-between items-end">
-                            <div>
-                                <div class="text-2xl font-bold">${type.sold}<span class="text-slate-600 text-sm font-normal">/${type.total}</span></div>
-                                <div class="text-xs font-bold mt-1" style="color: ${type.color}">${pct}%</div>
-                            </div>
-                            <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-slate-900 border border-slate-700" style="color: ${type.color}">
-                                🎫
-                            </div>
+                    <div class="bg-gray-900 border border-gray-800 p-5 rounded-2xl relative overflow-hidden">
+                        ${inc > 0 ? `<div class="absolute top-3 right-3 bg-green-500/20 text-green-400 text-[10px] font-bold px-2 py-0.5 rounded-full animate-pulse">+${inc} NEW</div>` : ''}
+                        
+                        <h3 class="text-gray-500 text-[10px] font-black uppercase tracking-wider mb-2">${name}</h3>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-2xl font-bold">${type.sold}</span>
+                            <span class="text-gray-600 text-xs">/ ${type.total}</span>
                         </div>
-                        <div class="w-full bg-slate-900 h-1 mt-4 rounded-full overflow-hidden">
-                            <div class="h-full" style="width: ${pct}%; background: ${type.color}"></div>
+                        
+                        <div class="mt-4 flex justify-between items-center">
+                            <div class="w-full bg-gray-800 h-1.5 rounded-full mr-3">
+                                <div class="h-full rounded-full" style="width: ${pct}%; background: ${type.color}"></div>
+                            </div>
+                            <span class="text-[10px] font-bold" style="color: ${type.color}">${pct}%</span>
                         </div>
                     </div>`;
         });
       }
-      init();
+      loadDashboard();
     </script>
   </body>
 </html>
