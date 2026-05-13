@@ -34,7 +34,7 @@
     },
     {
       "timestamp": "2026-05-11T16:04:40.889Z",
-      "totalSold": 304,
+      "totalSold": 343,
       "totalCapacity": 722,
       "byType": {
         "CHILL (Gift)": {
@@ -48,17 +48,17 @@
           "color": " #113a23"
         },
         "FLOW (Pre)": {
-          "sold": 66,
+          "sold": 74,
           "total": 172,
           "color": "#8baf54"
         },
         "IN (VIP)": {
-          "sold": 29,
+          "sold": 43,
           "total": 189,
           "color": "#d7a691"
         },
         "YOU (SVIP)": {
-          "sold": 97,
+          "sold": 114,
           "total": 206,
           "color": "#297884"
         }
@@ -66,7 +66,7 @@
     },
     {
       "timestamp": "2026-05-12T16:31:45.676Z",
-      "totalSold": 319,
+      "totalSold": 358,
       "totalCapacity": 722,
       "byType": {
         "CHILL (Gift)": {
@@ -80,17 +80,49 @@
           "color": " #113a23"
         },
         "FLOW (Pre)": {
-          "sold": 69,
+          "sold": 77,
           "total": 172,
           "color": "#8baf54"
         },
         "IN (VIP)": {
-          "sold": 29,
+          "sold": 43,
           "total": 189,
           "color": "#d7a691"
         },
         "YOU (SVIP)": {
-          "sold": 103,
+          "sold": 120,
+          "total": 206,
+          "color": "#297884"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-13T14:44:38.341Z",
+      "totalSold": 362,
+      "totalCapacity": 722,
+      "byType": {
+        "CHILL (Gift)": {
+          "sold": 62,
+          "total": 62,
+          "color": "#face43"
+        },
+        "RIVER (Standard)": {
+          "sold": 57,
+          "total": 93,
+          "color": " #113a23"
+        },
+        "FLOW (Pre)": {
+          "sold": 77,
+          "total": 172,
+          "color": "#8baf54"
+        },
+        "IN (VIP)": {
+          "sold": 44,
+          "total": 189,
+          "color": "#d7a691"
+        },
+        "YOU (SVIP)": {
+          "sold": 122,
           "total": 206,
           "color": "#297884"
         }
