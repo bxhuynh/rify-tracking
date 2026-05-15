@@ -5,9 +5,7 @@ const DB_FILE = 'data.json';
 
 function processEntry() {
   if (!fs.existsSync(INPUT_FILE)) {
-    console.error(
-      `❌ Error: ${INPUT_FILE} not found. Save your API response there first.`,
-    );
+    console.error(`❌ Error: ${INPUT_FILE} not found.`);
     return;
   }
 
@@ -22,7 +20,7 @@ function processEntry() {
       byType: {},
     };
 
-    // Parse raw data into structural snapshot
+    // Parse through ticket array
     rawData.result.forEach((item) => {
       const name = item.ticket_type_name;
       if (!snapshot.byType[name]) {
@@ -30,13 +28,12 @@ function processEntry() {
       }
       snapshot.byType[name].total++;
       snapshot.totalCapacity++;
-      if (item.status === 3 || item.status === 4) {
+      if (item.status === 3) {
         snapshot.byType[name].sold++;
         snapshot.totalSold++;
       }
     });
 
-    // Load or initialize historical database
     let db = { history: [] };
     if (fs.existsSync(DB_FILE)) {
       try {
@@ -47,14 +44,9 @@ function processEntry() {
       }
     }
 
-    // Push new snapshot
     db.history.push(snapshot);
     fs.writeFileSync(DB_FILE, JSON.stringify(db, null, 4));
-
-    console.log(`✅ Recorded snapshot at ${new Date().toLocaleTimeString()}`);
-    console.log(
-      `📈 Total Sold: ${snapshot.totalSold} (${((snapshot.totalSold / snapshot.totalCapacity) * 100).toFixed(1)}%)`,
-    );
+    console.log(`✅ Snapshot successfully pushed to history.`);
   } catch (err) {
     console.error('❌ Processing failed:', err.message);
   }
