@@ -1,228 +1,196 @@
 {
-    "history": [
-        {
-            "timestamp": "2026-05-11T13:00:40.889Z",
-            "totalSold": 0,
-            "totalCapacity": 722,
-            "byType": {
-                "CHILL (Gift)": {
-                    "sold": 0,
-                    "total": 62,
-                    "color": "#face43"
-                },
-                "RIVER (Standard)": {
-                    "sold": 0,
-                    "total": 93,
-                    "color": " #113a23"
-                },
-                "FLOW (Pre)": {
-                    "sold": 0,
-                    "total": 172,
-                    "color": "#8baf54"
-                },
-                "IN (VIP)": {
-                    "sold": 0,
-                    "total": 189,
-                    "color": "#d7a691"
-                },
-                "YOU (SVIP)": {
-                    "sold": 0,
-                    "total": 206,
-                    "color": "#297884"
-                }
-            }
+  "history": [
+    {
+      "timestamp": "2026-05-11T13:00:40.889Z",
+      "totalSold": 0,
+      "totalCapacity": 722,
+      "byType": {
+        "CHILL (Gift)": {
+          "sold": 0,
+          "total": 62,
+          "color": "#face43"
         },
-        {
-            "timestamp": "2026-05-11T16:04:40.889Z",
-            "totalSold": 343,
-            "totalCapacity": 722,
-            "byType": {
-                "CHILL (Gift)": {
-                    "sold": 62,
-                    "total": 62,
-                    "color": "#face43"
-                },
-                "RIVER (Standard)": {
-                    "sold": 50,
-                    "total": 93,
-                    "color": " #113a23"
-                },
-                "FLOW (Pre)": {
-                    "sold": 74,
-                    "total": 172,
-                    "color": "#8baf54"
-                },
-                "IN (VIP)": {
-                    "sold": 43,
-                    "total": 189,
-                    "color": "#d7a691"
-                },
-                "YOU (SVIP)": {
-                    "sold": 114,
-                    "total": 206,
-                    "color": "#297884"
-                }
-            }
+        "RIVER (Standard)": {
+          "sold": 0,
+          "total": 93,
+          "color": " #113a23"
         },
-        {
-            "timestamp": "2026-05-12T16:31:45.676Z",
-            "totalSold": 358,
-            "totalCapacity": 722,
-            "byType": {
-                "CHILL (Gift)": {
-                    "sold": 62,
-                    "total": 62,
-                    "color": "#face43"
-                },
-                "RIVER (Standard)": {
-                    "sold": 56,
-                    "total": 93,
-                    "color": " #113a23"
-                },
-                "FLOW (Pre)": {
-                    "sold": 77,
-                    "total": 172,
-                    "color": "#8baf54"
-                },
-                "IN (VIP)": {
-                    "sold": 43,
-                    "total": 189,
-                    "color": "#d7a691"
-                },
-                "YOU (SVIP)": {
-                    "sold": 120,
-                    "total": 206,
-                    "color": "#297884"
-                }
-            }
+        "FLOW (Pre)": {
+          "sold": 0,
+          "total": 172,
+          "color": "#8baf54"
         },
-        {
-            "timestamp": "2026-05-13T14:44:38.341Z",
-            "totalSold": 362,
-            "totalCapacity": 722,
-            "byType": {
-                "CHILL (Gift)": {
-                    "sold": 62,
-                    "total": 62,
-                    "color": "#face43"
-                },
-                "RIVER (Standard)": {
-                    "sold": 57,
-                    "total": 93,
-                    "color": " #113a23"
-                },
-                "FLOW (Pre)": {
-                    "sold": 77,
-                    "total": 172,
-                    "color": "#8baf54"
-                },
-                "IN (VIP)": {
-                    "sold": 44,
-                    "total": 189,
-                    "color": "#d7a691"
-                },
-                "YOU (SVIP)": {
-                    "sold": 122,
-                    "total": 206,
-                    "color": "#297884"
-                }
-            }
+        "IN (VIP)": {
+          "sold": 0,
+          "total": 189,
+          "color": "#d7a691"
         },
-        {
-            "timestamp": "2026-05-14T16:56:34.884Z",
-            "totalSold": 365,
-            "totalCapacity": 722,
-            "byType": {
-                "CHILL (Gift)": {
-                    "sold": 62,
-                    "total": 62,
-                    "color": "#face43"
-                },
-                "RIVER (Standard)": {
-                    "sold": 59,
-                    "total": 93,
-                    "color": " #113a23"
-                },
-                "FLOW (Pre)": {
-                    "sold": 77,
-                    "total": 172,
-                    "color": "#8baf54"
-                },
-                "IN (VIP)": {
-                    "sold": 44,
-                    "total": 189,
-                    "color": "#d7a691"
-                },
-                "YOU (SVIP)": {
-                    "sold": 123,
-                    "total": 206,
-                    "color": "#297884"
-                }
-            }
-        },
-        {
-            "timestamp": "2026-05-15T17:44:47.577Z",
-            "totalSold": 374,
-            "totalCapacity": 722,
-            "byType": {
-                "CHILL (Gift)": {
-                    "sold": 62,
-                    "total": 62,
-                    "color": "#face43"
-                },
-                "RIVER (Standard)": {
-                    "sold": 63,
-                    "total": 93,
-                    "color": " #113a23"
-                },
-                "FLOW (Pre)": {
-                    "sold": 82,
-                    "total": 172,
-                    "color": "#8baf54"
-                },
-                "IN (VIP)": {
-                    "sold": 44,
-                    "total": 189,
-                    "color": "#d7a691"
-                },
-                "YOU (SVIP)": {
-                    "sold": 123,
-                    "total": 206,
-                    "color": "#297884"
-                }
-            }
-        },
-        {
-            "timestamp": "2026-05-15T17:57:01.228Z",
-            "totalSold": 335,
-            "totalCapacity": 722,
-            "byType": {
-                "CHILL (Gift)": {
-                    "sold": 62,
-                    "total": 62,
-                    "color": "#face43"
-                },
-                "RIVER (Standard)": {
-                    "sold": 63,
-                    "total": 93,
-                    "color": " #113a23"
-                },
-                "FLOW (Pre)": {
-                    "sold": 74,
-                    "total": 172,
-                    "color": "#8baf54"
-                },
-                "IN (VIP)": {
-                    "sold": 30,
-                    "total": 189,
-                    "color": "#d7a691"
-                },
-                "YOU (SVIP)": {
-                    "sold": 106,
-                    "total": 206,
-                    "color": "#297884"
-                }
-            }
+        "YOU (SVIP)": {
+          "sold": 0,
+          "total": 206,
+          "color": "#297884"
         }
-    ]
+      }
+    },
+    {
+      "timestamp": "2026-05-11T16:04:40.889Z",
+      "totalSold": 343,
+      "totalCapacity": 722,
+      "byType": {
+        "CHILL (Gift)": {
+          "sold": 62,
+          "total": 62,
+          "color": "#face43"
+        },
+        "RIVER (Standard)": {
+          "sold": 50,
+          "total": 93,
+          "color": " #113a23"
+        },
+        "FLOW (Pre)": {
+          "sold": 74,
+          "total": 172,
+          "color": "#8baf54"
+        },
+        "IN (VIP)": {
+          "sold": 43,
+          "total": 189,
+          "color": "#d7a691"
+        },
+        "YOU (SVIP)": {
+          "sold": 114,
+          "total": 206,
+          "color": "#297884"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-12T16:31:45.676Z",
+      "totalSold": 358,
+      "totalCapacity": 722,
+      "byType": {
+        "CHILL (Gift)": {
+          "sold": 62,
+          "total": 62,
+          "color": "#face43"
+        },
+        "RIVER (Standard)": {
+          "sold": 56,
+          "total": 93,
+          "color": " #113a23"
+        },
+        "FLOW (Pre)": {
+          "sold": 77,
+          "total": 172,
+          "color": "#8baf54"
+        },
+        "IN (VIP)": {
+          "sold": 43,
+          "total": 189,
+          "color": "#d7a691"
+        },
+        "YOU (SVIP)": {
+          "sold": 120,
+          "total": 206,
+          "color": "#297884"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-13T14:44:38.341Z",
+      "totalSold": 362,
+      "totalCapacity": 722,
+      "byType": {
+        "CHILL (Gift)": {
+          "sold": 62,
+          "total": 62,
+          "color": "#face43"
+        },
+        "RIVER (Standard)": {
+          "sold": 57,
+          "total": 93,
+          "color": " #113a23"
+        },
+        "FLOW (Pre)": {
+          "sold": 77,
+          "total": 172,
+          "color": "#8baf54"
+        },
+        "IN (VIP)": {
+          "sold": 44,
+          "total": 189,
+          "color": "#d7a691"
+        },
+        "YOU (SVIP)": {
+          "sold": 122,
+          "total": 206,
+          "color": "#297884"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-14T16:56:34.884Z",
+      "totalSold": 365,
+      "totalCapacity": 722,
+      "byType": {
+        "CHILL (Gift)": {
+          "sold": 62,
+          "total": 62,
+          "color": "#face43"
+        },
+        "RIVER (Standard)": {
+          "sold": 59,
+          "total": 93,
+          "color": " #113a23"
+        },
+        "FLOW (Pre)": {
+          "sold": 77,
+          "total": 172,
+          "color": "#8baf54"
+        },
+        "IN (VIP)": {
+          "sold": 44,
+          "total": 189,
+          "color": "#d7a691"
+        },
+        "YOU (SVIP)": {
+          "sold": 123,
+          "total": 206,
+          "color": "#297884"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-15T16:44:47.577Z",
+      "totalSold": 374,
+      "totalCapacity": 722,
+      "byType": {
+        "CHILL (Gift)": {
+          "sold": 62,
+          "total": 62,
+          "color": "#face43"
+        },
+        "RIVER (Standard)": {
+          "sold": 63,
+          "total": 93,
+          "color": " #113a23"
+        },
+        "FLOW (Pre)": {
+          "sold": 82,
+          "total": 172,
+          "color": "#8baf54"
+        },
+        "IN (VIP)": {
+          "sold": 44,
+          "total": 189,
+          "color": "#d7a691"
+        },
+        "YOU (SVIP)": {
+          "sold": 123,
+          "total": 206,
+          "color": "#297884"
+        }
+      }
+    }
+  ]
 }

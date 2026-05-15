@@ -28,7 +28,7 @@ function processEntry() {
       }
       snapshot.byType[name].total++;
       snapshot.totalCapacity++;
-      if (item.status === 3) {
+      if (item.status === 3 || item.status === 4) {
         snapshot.byType[name].sold++;
         snapshot.totalSold++;
       }

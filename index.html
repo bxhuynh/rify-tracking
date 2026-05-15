@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>RIFY Sales Intelligence Dashboard</title>
+    <title>RIFY Tracking</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -66,7 +66,7 @@
           <p
             class="text-slate-500 text-[10px] font-black uppercase tracking-widest mb-1"
           >
-            Last Updated
+            Last Hourly Check (ICT)
           </p>
           <p id="stat-time" class="text-slate-300 text-sm font-mono italic">
             --:--:--
@@ -78,11 +78,17 @@
         <div
           class="bg-slate-900 p-8 rounded-[2.5rem] border border-slate-800 shadow-2xl h-[480px]"
         >
-          <h3
-            class="text-slate-400 text-[10px] font-black uppercase tracking-[0.2em] mb-6"
-          >
-            Sales Velocity Trend
-          </h3>
+          <div class="flex justify-between items-center mb-6">
+            <h3
+              class="text-slate-400 text-[10px] font-black uppercase tracking-[0.2em]"
+            >
+              Daily Sales Velocity Trend (Vietnam Time)
+            </h3>
+            <span
+              class="text-[10px] text-slate-600 bg-slate-950 px-3 py-1 rounded-full font-mono"
+              >Filtered: 1 Point / Day</span
+            >
+          </div>
           <div class="h-[360px]">
             <canvas id="mainChart"></canvas>
           </div>
@@ -93,7 +99,7 @@
         <h3
           class="text-slate-500 text-[10px] font-black uppercase tracking-[0.2em] mb-6 pl-1"
         >
-          Inventory Breakdown
+          Live Inventory Breakdown
         </h3>
         <div
           id="seat-grid"
@@ -104,11 +110,13 @@
       <div
         class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl"
       >
-        <div class="px-6 py-4 border-b border-slate-800 bg-slate-900/50">
+        <div
+          class="px-6 py-4 border-b border-slate-800 bg-slate-900/50 flex justify-between items-center"
+        >
           <h3
             class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400"
           >
-            Increase Matrix (Time-Series)
+            Increase Matrix (Daily Progression - ICT)
           </h3>
         </div>
         <div class="overflow-x-auto matrix-container">
@@ -121,12 +129,12 @@
                 <th
                   class="p-5 sticky left-0 bg-slate-950 z-20 border-r border-slate-800"
                 >
-                  Recording Time
+                  Date
                 </th>
                 <th
                   class="p-5 font-black text-white bg-slate-800/80 sticky right-0 z-20 border-l border-slate-700"
                 >
-                  DELTA
+                  DAILY DELTA
                 </th>
               </tr>
             </thead>
@@ -138,18 +146,31 @@
 
     <script>
       async function initDashboard() {
-        // Fetch configuration using relative path for GitHub Pages safety
         const res = await fetch('./data.json');
         const db = await res.json();
-        const history = db.history;
-        const latest = history[history.length - 1];
-        const previous = history[history.length - 2];
+        const rawHistory = db.history;
+
+        if (!rawHistory || rawHistory.length === 0) return;
+
+        const latestHourly = rawHistory[rawHistory.length - 1];
+        const previousHourly = rawHistory[rawHistory.length - 2];
+
+        // --- FILTER LOGIC: Group entries by Vietnam Calendar Date (UTC+7) ---
+        const dailyMap = new Map();
+        rawHistory.forEach((entry) => {
+          const dateObj = new Date(entry.timestamp);
+          const vnDateKey = dateObj.toLocaleDateString('fr-CA', {
+            timeZone: 'Asia/Ho_Chi_Minh',
+          });
+          dailyMap.set(vnDateKey, entry);
+        });
+        const dailyHistory = Array.from(dailyMap.values());
 
         const typeNames = [
-          ...new Set(history.flatMap((h) => Object.keys(h.byType))),
+          ...new Set(rawHistory.flatMap((h) => Object.keys(h.byType))),
         ].sort();
 
-        // 1. Build Matrix Columns
+        // 1. Build Matrix Table Dynamic Headers
         const head = document.getElementById('matrix-head');
         const totalHeader = head.lastElementChild;
         typeNames.forEach((name) => {
@@ -160,68 +181,103 @@
           head.insertBefore(th, totalHeader);
         });
 
-        // 2. Build Matrix Rows (Newest First)
+        // 2. Build Daily Matrix Table Rows (Newest Day First)
         const body = document.getElementById('matrix-body');
-        for (let i = history.length - 1; i >= 0; i--) {
-          const cur = history[i];
-          const prev = history[i - 1];
+        for (let i = dailyHistory.length - 1; i >= 0; i--) {
+          const cur = dailyHistory[i];
+          const prev = dailyHistory[i - 1];
           const tr = document.createElement('tr');
           tr.className =
             'border-b border-slate-800/50 hover:bg-slate-800/40 transition group';
 
-          const date = new Date(cur.timestamp);
-          const timeStr =
-            date.toLocaleDateString([], { month: 'short', day: 'numeric' }) +
-            ' ' +
-            date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+          const dateObj = new Date(cur.timestamp);
+          const dateStr = dateObj.toLocaleDateString('en-US', {
+            timeZone: 'Asia/Ho_Chi_Minh',
+            weekday: 'short',
+            month: 'short',
+            day: 'numeric',
+          });
+          const timeStr = dateObj.toLocaleTimeString('en-US', {
+            timeZone: 'Asia/Ho_Chi_Minh',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false,
+          });
 
-          let rowHtml = `<td class="p-5 font-mono text-slate-400 sticky left-0 bg-slate-950 border-r border-slate-800 z-10 group-hover:text-white transition">${timeStr}</td>`;
+          let rowHtml = `<td class="p-5 font-mono text-slate-400 sticky left-0 bg-slate-950 border-r border-slate-800 z-10 group-hover:text-white transition">
+                                <span class="text-white font-medium">${dateStr}</span> 
+                                <span class="text-slate-600 text-[10px] ml-1">(${timeStr})</span>
+                               </td>`;
 
           typeNames.forEach((name) => {
-            const diff = prev
-              ? (cur.byType[name]?.sold || 0) - (prev.byType[name]?.sold || 0)
-              : 0;
+            const currentSold = cur.byType[name]?.sold || 0;
+            // FIXED: If prev day doesn't exist, compare against 0 instead of showing empty marker
+            const previousSold = prev ? prev.byType[name]?.sold || 0 : 0;
+            const diff = currentSold - previousSold;
+
             rowHtml += `<td class="p-5 font-bold ${diff > 0 ? 'text-green-400 bg-green-400/5' : 'text-slate-700'}">${diff > 0 ? '+' + diff : '•'}</td>`;
           });
 
-          const totalDiff = prev ? cur.totalSold - prev.totalSold : 0;
+          // FIXED: Handle total delta for day 1 comparing against 0
+          const prevTotalSold = prev ? prev.totalSold : 0;
+          const totalDiff = cur.totalSold - prevTotalSold;
+
           rowHtml += `<td class="p-5 font-black bg-slate-900/80 sticky right-0 z-10 border-l border-slate-700 ${totalDiff > 0 ? 'text-blue-400' : 'text-slate-600'}">${totalDiff > 0 ? '+' + totalDiff : '0'}</td>`;
           tr.innerHTML = rowHtml;
           body.appendChild(tr);
         }
 
-        // 3. Render Metric Cards
+        // 3. Render Top Metrics (Using actual live hour data)
         document.getElementById('stat-pct').innerText =
-          ((latest.totalSold / latest.totalCapacity) * 100).toFixed(1) + '%';
+          ((latestHourly.totalSold / latestHourly.totalCapacity) * 100).toFixed(
+            1,
+          ) + '%';
         document.getElementById('stat-total').innerText =
-          `${latest.totalSold.toLocaleString()} / ${latest.totalCapacity.toLocaleString()}`;
-        document.getElementById('stat-delta').innerText =
-          `+${previous ? latest.totalSold - previous.totalSold : 0}`;
-        document.getElementById('stat-time').innerText = new Date(
-          latest.timestamp,
-        ).toLocaleTimeString();
+          `${latestHourly.totalSold.toLocaleString()} / ${latestHourly.totalCapacity.toLocaleString()}`;
 
-        // 4. Chart Implementation (Tension 0 for complete precision)
+        // FIXED: If there is no previous hourly snapshot yet, show current total as increase
+        const hourlyDelta = previousHourly
+          ? latestHourly.totalSold - previousHourly.totalSold
+          : latestHourly.totalSold;
+        document.getElementById('stat-delta').innerText = `+${hourlyDelta}`;
+
+        document.getElementById('stat-time').innerText = new Date(
+          latestHourly.timestamp,
+        ).toLocaleTimeString('en-US', {
+          timeZone: 'Asia/Ho_Chi_Minh',
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: false,
+        });
+
+        // 4. Daily Line Chart Implementation
         new Chart(document.getElementById('mainChart'), {
           type: 'line',
           data: {
-            labels: history.map((h) => {
+            labels: dailyHistory.map((h) => {
               const d = new Date(h.timestamp);
-              return (
-                d.toLocaleDateString([], { month: 'short', day: 'numeric' }) +
-                ' ' +
-                d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-              );
+              const dStr = d.toLocaleDateString('en-US', {
+                timeZone: 'Asia/Ho_Chi_Minh',
+                month: 'short',
+                day: 'numeric',
+              });
+              const tStr = d.toLocaleTimeString('en-US', {
+                timeZone: 'Asia/Ho_Chi_Minh',
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: false,
+              });
+              return `${dStr} (${tStr})`;
             }),
             datasets: [
               {
-                data: history.map((h) => h.totalSold),
+                data: dailyHistory.map((h) => h.totalSold),
                 borderColor: '#3b82f6',
                 backgroundColor: 'rgba(59, 130, 246, 0.05)',
                 fill: true,
                 tension: 0,
                 borderWidth: 4,
-                pointRadius: 5,
+                pointRadius: 6,
                 pointBackgroundColor: '#3b82f6',
                 pointBorderColor: '#0f172a',
                 pointBorderWidth: 2,
@@ -245,18 +301,18 @@
           },
         });
 
-        // 5. Generate Inventory Cards
+        // 5. Live Card Grids (Hourly context status)
         const grid = document.getElementById('seat-grid');
         typeNames.forEach((name) => {
-          const t = latest.byType[name];
-          const inc = previous
-            ? t.sold - (previous.byType[name]?.sold || 0)
-            : 0;
+          const t = latestHourly.byType[name];
+          const inc = previousHourly
+            ? t.sold - (previousHourly.byType[name]?.sold || 0)
+            : t.sold;
           const pct = ((t.sold / t.total) * 100).toFixed(1);
 
           grid.innerHTML += `
                     <div class="bg-slate-900 p-8 rounded-[2.5rem] border border-slate-800 relative shadow-xl">
-                        ${inc > 0 ? `<div class="absolute top-6 right-6 bg-green-500 text-black text-[10px] font-black px-2 py-1 rounded-lg animate-pulse">+${inc} NEW</div>` : ''}
+                        ${inc > 0 ? `<div class="absolute top-6 right-6 bg-green-500 text-black text-[10px] font-black px-2 py-1 rounded-lg animate-pulse">+${inc} LIVE</div>` : ''}
                         <div class="text-[11px] text-slate-500 uppercase font-black mb-4 truncate">${name}</div>
                         <div class="flex justify-between items-end mb-2">
                             <div class="text-4xl font-black">${t.sold}<span class="text-slate-600 text-lg font-normal ml-1">/${t.total}</span></div>

@@ -1,10 +1,10 @@
-name: Automated Sales Fetcher
+name: 30-Min Sales Fetcher
 
 on:
   schedule:
-    # Triggers at 05:00 UTC (12:00 PM Local) and 11:00 UTC (6:00 PM Local)
-    - cron: '0 5,11 * * *'
-  workflow_dispatch: # Allows you to manually click "Run workflow" in GitHub anytime
+    # Triggers exactly at minute 0 and minute 30 of every hour
+    - cron: '*/30 * * * *'
+  workflow_dispatch: # Allows manual trigger via the GitHub Actions tab
 
 jobs:
   fetch_and_process:
@@ -16,11 +16,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Fetch Live Seat Data (No Auth Required)
+      - name: Fetch Live Seat Data
         run: |
           curl -X GET "${{ secrets.TICKET_API_URL }}" \
                -H "Accept: application/json, text/plain, */*" \
-               -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
+               -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36" \
                -o input.json
 
       - name: Setup Node.js
@@ -36,5 +36,5 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add data.json
-          git commit -m "Auto-sync snapshot [scheduled]" || echo "No new sales detected"
+          git commit -m "30-min sync snapshot" || echo "No new sales detected"
           git push
