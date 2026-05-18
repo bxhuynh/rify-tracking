@@ -153,7 +153,6 @@
         if (!rawHistory || rawHistory.length === 0) return;
 
         const latestHourly = rawHistory[rawHistory.length - 1];
-        const previousHourly = rawHistory[rawHistory.length - 2];
 
         // --- FILTER LOGIC: Group entries by Vietnam Calendar Date (UTC+7) ---
         const dailyMap = new Map();
@@ -165,6 +164,8 @@
           dailyMap.set(vnDateKey, entry);
         });
         const dailyHistory = Array.from(dailyMap.values());
+
+        const prevDateHistory = dailyHistory[dailyHistory.length - 2];
 
         const typeNames = [
           ...new Set(rawHistory.flatMap((h) => Object.keys(h.byType))),
@@ -236,8 +237,8 @@
           `${latestHourly.totalSold.toLocaleString()} / ${latestHourly.totalCapacity.toLocaleString()}`;
 
         // FIXED: If there is no previous hourly snapshot yet, show current total as increase
-        const hourlyDelta = previousHourly
-          ? latestHourly.totalSold - previousHourly.totalSold
+        const hourlyDelta = prevDateHistory
+          ? latestHourly.totalSold - prevDateHistory.totalSold
           : latestHourly.totalSold;
         document.getElementById('stat-delta').innerText = `+${hourlyDelta}`;
 
@@ -305,8 +306,8 @@
         const grid = document.getElementById('seat-grid');
         typeNames.forEach((name) => {
           const t = latestHourly.byType[name];
-          const inc = previousHourly
-            ? t.sold - (previousHourly.byType[name]?.sold || 0)
+          const inc = prevDateHistory
+            ? t.sold - (prevDateHistory.byType[name]?.sold || 0)
             : t.sold;
           const pct = ((t.sold / t.total) * 100).toFixed(1);
 
