@@ -64,7 +64,6 @@
           color 0.3s;
       }
 
-      /* Kỹ thuật chặn Flash trắng trang: áp dụng class theme từ sớm */
       body.light-theme {
         background-color: #f4f2eb;
         color: #1c2d27;
@@ -108,10 +107,27 @@
     </script>
 
     <div class="max-w-[1600px] mx-auto">
-      <div class="flex justify-end mb-4">
+      <div
+        class="flex flex-col sm:flex-row justify-between items-center gap-4 mb-6"
+      >
+        <div
+          id="countdown-container"
+          class="theme-card border px-5 py-2.5 rounded-2xl flex items-center gap-3 shadow-md text-xs font-medium w-full sm:w-auto justify-center sm:justify-start"
+        >
+          <span class="text-base animate-pulse">⏳</span>
+          <span class="text-emerald-600 font-bold uppercase tracking-wider"
+            >Đếm ngược Minishow:</span
+          >
+          <span
+            id="countdown-timer"
+            class="font-mono text-amber-500 font-black text-sm tracking-wide"
+            >00 ngày 00:00:00</span
+          >
+        </div>
+
         <button
           id="theme-toggle"
-          class="flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold border transition duration-200 shadow-sm theme-card hover:opacity-80"
+          class="flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold border transition duration-200 shadow-sm theme-card hover:opacity-80 w-full sm:w-auto justify-center"
         >
           <span id="theme-icon">☀️</span>
           <span id="theme-text">Giao diện Sáng</span>
@@ -281,6 +297,42 @@
     <script>
       let salesChart = null;
       let dailyHistoryGlobal = [];
+
+      // Logic Đếm Ngược Thời Gian Thực (19:30 20/06/2026)
+      function initCountdown() {
+        // Tạo mốc thời gian diễn ra sự kiện (Tháng trong JS chạy từ 0-11 nên Tháng 6 là số 5)
+        const targetDate = new Date(2026, 5, 20, 19, 30, 0).getTime();
+        const timerElement = document.getElementById('countdown-timer');
+
+        function updateTimer() {
+          const now = new Date().getTime();
+          const distance = targetDate - now;
+
+          if (distance < 0) {
+            clearInterval(countdownInterval);
+            timerElement.innerText = '✨ ĐÊM NHẠC ĐANG DIỄN RA ✨';
+            timerElement.classList.remove('text-amber-500');
+            timerElement.classList.add('text-emerald-500', 'animate-pulse');
+            return;
+          }
+
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+          );
+          const minutes = Math.floor(
+            (distance % (1000 * 60 * 60)) / (1000 * 60),
+          );
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          // Định dạng hiển thị chuỗi đếm ngược kèm số 0 ở trước nếu số < 10
+          const pad = (num) => String(num).padStart(2, '0');
+          timerElement.innerText = `${days} ngày ${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+        }
+
+        updateTimer(); // Chạy ngay lập tức lần đầu
+        const countdownInterval = setInterval(updateTimer, 1000);
+      }
 
       function renderChart(dailyHistory) {
         const isLight = document.body.classList.contains('light-theme');
@@ -505,7 +557,6 @@
         const body = document.body;
         body.classList.toggle('light-theme');
 
-        // Lưu trạng thái mới vào localStorage
         if (body.classList.contains('light-theme')) {
           localStorage.setItem('rify-theme', 'light');
         } else {
@@ -519,8 +570,9 @@
         }
       });
 
-      // Chạy khởi tạo giao diện nút và dữ liệu
+      // Kích hoạt tất cả các hàm
       updateButtonUI();
+      initCountdown();
       initDashboard();
     </script>
   </body>
