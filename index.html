@@ -1,93 +1,213 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <title>RIFY Tracking</title>
+    <title>RIFY MINISHOW “TÔI KHÔNG CÒN VIẾT TÌNH CA”</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦝</text></svg>"
+    />
+    <meta
+      name="description"
+      content="Số liệu theo dõi tốc độ bán vé theo thời gian thực và lịch sử tiến trình cho RIFY."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://bxhuynh.github.io/rify-tracking/"
+    />
+    <meta property="og:title" content="RIFY - Phân Tích & Theo Dõi Bán Vé" />
+    <meta
+      property="og:description"
+      content="Cập nhật thời gian thực tình hình bán vé, xu hướng tốc độ hàng ngày và báo cáo chi tiết."
+    />
+    <meta
+      property="og:image"
+      content="https://bxhuynh.github.io/rify-tracking/og-image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
     <style>
+      :root {
+        --bg-body: #050f0c;
+        --bg-card: #0d221c;
+        --bg-inner: #050f0c;
+        --text-main: #e7e5e4;
+        --text-muted: #059669;
+        --border-color: rgba(16, 185, 129, 0.2);
+        --matrix-hover: rgba(13, 34, 28, 0.6);
+      }
+
+      .light-theme {
+        --bg-body: #f4f2eb;
+        --bg-card: #e5e1d3;
+        --bg-inner: #f4f2eb;
+        --text-main: #1c2d27;
+        --text-muted: #2d5a4c;
+        --border-color: rgba(45, 90, 76, 0.2);
+        --matrix-hover: rgba(229, 225, 211, 0.6);
+      }
+
+      body {
+        background-color: var(--bg-body);
+        color: var(--text-main);
+        transition:
+          background-color 0.3s,
+          color 0.3s;
+      }
+
+      /* Kỹ thuật chặn Flash trắng trang: áp dụng class theme từ sớm */
+      body.light-theme {
+        background-color: #f4f2eb;
+        color: #1c2d27;
+      }
+
+      .theme-card {
+        background-color: var(--bg-card);
+        border-color: var(--border-color);
+      }
+
+      .theme-inner {
+        background-color: var(--bg-inner);
+      }
+
       .matrix-container::-webkit-scrollbar {
         height: 8px;
       }
       .matrix-container::-webkit-scrollbar-track {
-        background: #0f172a;
+        background: var(--bg-inner);
       }
       .matrix-container::-webkit-scrollbar-thumb {
-        background: #334155;
+        background: var(--text-muted);
         border-radius: 10px;
       }
     </style>
+
+    <script>
+      (function () {
+        const savedTheme = localStorage.getItem('rify-theme');
+        if (savedTheme === 'light') {
+          document.documentElement.classList.add('light-theme');
+        }
+      })();
+    </script>
   </head>
-  <body class="bg-slate-950 text-white p-6 font-sans">
+  <body class="p-6 font-sans selection:bg-amber-500/30">
+    <script>
+      if (document.documentElement.classList.contains('light-theme')) {
+        document.body.classList.add('light-theme');
+      }
+    </script>
+
     <div class="max-w-[1600px] mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-        <div
-          class="bg-slate-900 p-6 rounded-3xl border border-slate-800 shadow-xl"
+      <div class="flex justify-end mb-4">
+        <button
+          id="theme-toggle"
+          class="flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold border transition duration-200 shadow-sm theme-card hover:opacity-80"
         >
+          <span id="theme-icon">☀️</span>
+          <span id="theme-text">Giao diện Sáng</span>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        <div class="theme-card p-6 rounded-3xl border shadow-xl">
           <p
-            class="text-slate-500 text-[10px] font-black uppercase tracking-widest mb-1"
+            class="text-amber-600 text-[10px] font-black uppercase tracking-widest mb-1"
           >
-            Total Progress
+            Tổng Tiến Độ
           </p>
-          <div id="stat-pct" class="text-5xl font-black text-blue-500 italic">
+          <div id="stat-pct" class="text-5xl font-black text-amber-500 italic">
             0%
           </div>
         </div>
-        <div
-          class="bg-slate-900 p-6 rounded-3xl border border-slate-800 shadow-xl"
-        >
+        <div class="theme-card p-6 rounded-3xl border shadow-xl">
           <p
-            class="text-slate-500 text-[10px] font-black uppercase tracking-widest mb-1"
+            id="label-sold"
+            class="text-emerald-600 text-[10px] font-black uppercase tracking-widest mb-1"
           >
-            Sold / Capacity
+            🎫 Đã bán / Tổng chỗ
           </p>
-          <div
-            id="stat-total"
-            class="text-3xl font-bold text-white mt-2 font-mono"
-          >
+          <div id="stat-total" class="text-3xl font-bold mt-2 font-mono">
             0 / 0
           </div>
         </div>
-        <div
-          class="bg-slate-900 p-6 rounded-3xl border border-slate-800 shadow-xl"
-        >
+        <div class="theme-card p-6 rounded-3xl border shadow-xl">
           <p
-            class="text-slate-500 text-[10px] font-black uppercase tracking-widest mb-1"
+            id="label-inc"
+            class="text-emerald-600 text-[10px] font-black uppercase tracking-widest mb-1"
           >
-            Latest Increase
+            📈 Tăng Mới Nhất
           </p>
-          <div id="stat-delta" class="text-3xl font-bold text-green-400 mt-2">
+          <div id="stat-delta" class="text-3xl font-bold text-emerald-500 mt-2">
             +0
           </div>
         </div>
         <div
-          class="bg-slate-900 p-6 rounded-3xl border border-slate-800 shadow-xl flex flex-col justify-center"
+          class="theme-card p-6 rounded-3xl border shadow-xl flex flex-col justify-center"
         >
           <p
-            class="text-slate-500 text-[10px] font-black uppercase tracking-widest mb-1"
+            id="label-check"
+            class="text-emerald-600 text-[10px] font-black uppercase tracking-widest mb-1"
           >
-            Last Hourly Check (ICT)
+            🕒 Lần Kiểm Tra Cuối (ICT)
           </p>
-          <p id="stat-time" class="text-slate-300 text-sm font-mono italic">
+          <p id="stat-time" class="text-amber-500 font-mono italic text-sm">
             --:--:--
           </p>
         </div>
       </div>
 
+      <div
+        class="mb-8 px-6 py-4 text-center md:text-left flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl border border-dashed border-amber-600/40 style-invitation"
+        style="background-color: var(--bg-card)"
+      >
+        <div class="flex items-center gap-3">
+          <span class="text-xl animate-bounce">🌼</span>
+          <p class="text-sm font-medium">
+            Đi xem minishow "Tôi Không Còn Viết Tình Ca" | Bùi Lan Hương - Ái
+            Phương đi 👉👈
+          </p>
+        </div>
+        <a
+          href="https://ticket.riverflowsinyou.vn/51"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-xs font-bold text-amber-600 hover:text-amber-500 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/40 px-4 py-2 rounded-xl transition duration-200 flex items-center gap-1.5 whitespace-nowrap group"
+        >
+          🎻 Mua Vé Ở Đây Nè
+          <span
+            class="inline-block transition-transform group-hover:translate-x-1"
+            >→</span
+          >
+        </a>
+      </div>
+
       <div class="mb-8">
         <div
-          class="bg-slate-900 p-8 rounded-[2.5rem] border border-slate-800 shadow-2xl h-[480px]"
+          class="theme-card p-8 rounded-[2.5rem] border shadow-2xl h-[480px]"
         >
           <div class="flex justify-between items-center mb-6">
             <h3
-              class="text-slate-400 text-[10px] font-black uppercase tracking-[0.2em]"
+              id="label-chart"
+              class="text-emerald-600 text-[10px] font-black uppercase tracking-[0.2em]"
             >
-              Daily Sales Velocity Trend (Vietnam Time)
+              🎵 Xu Hướng Tốc Độ Bán Vé Hàng Ngày (Giờ Việt Nam)
             </h3>
             <span
-              class="text-[10px] text-slate-600 bg-slate-950 px-3 py-1 rounded-full font-mono"
-              >Filtered: 1 Point / Day</span
+              class="text-[10px] px-3 py-1 rounded-full font-mono border theme-inner"
+              style="
+                color: var(--text-muted);
+                border-color: var(--border-color);
+              "
             >
+              Bộ lọc: 1 Điểm / Ngày
+            </span>
           </div>
           <div class="h-[360px]">
             <canvas id="mainChart"></canvas>
@@ -97,9 +217,10 @@
 
       <div class="mb-10">
         <h3
-          class="text-slate-500 text-[10px] font-black uppercase tracking-[0.2em] mb-6 pl-1"
+          id="label-grid"
+          class="text-emerald-600 text-[10px] font-black uppercase tracking-[0.2em] mb-6 pl-1"
         >
-          Live Inventory Breakdown
+          ✨ Tình Trạng Vé Theo Từng Hạng ghế
         </h3>
         <div
           id="seat-grid"
@@ -107,16 +228,16 @@
         ></div>
       </div>
 
-      <div
-        class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl"
-      >
+      <div class="theme-card border rounded-3xl overflow-hidden shadow-2xl">
         <div
-          class="px-6 py-4 border-b border-slate-800 bg-slate-900/50 flex justify-between items-center"
+          class="px-6 py-4 border-b flex justify-between items-center theme-inner"
+          style="border-color: var(--border-color)"
         >
           <h3
-            class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400"
+            id="label-matrix"
+            class="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-600"
           >
-            Increase Matrix (Daily Progression - ICT)
+            📋 Ma Trận Tăng Trưởng (Tiến Trình Hàng Ngày - ICT)
           </h3>
         </div>
         <div class="overflow-x-auto matrix-container">
@@ -124,17 +245,27 @@
             <thead>
               <tr
                 id="matrix-head"
-                class="bg-slate-950/50 text-slate-500 uppercase tracking-tighter border-b border-slate-800"
+                class="text-emerald-600 uppercase tracking-tighter border-b theme-inner"
+                style="border-color: var(--border-color)"
               >
                 <th
-                  class="p-5 sticky left-0 bg-slate-950 z-20 border-r border-slate-800"
+                  id="th-date"
+                  class="p-5 sticky left-0 z-20 border-r theme-inner"
+                  style="
+                    border-color: var(--border-color);
+                    background-color: var(--bg-inner);
+                  "
                 >
-                  Date
+                  Ngày
                 </th>
                 <th
-                  class="p-5 font-black text-white bg-slate-800/80 sticky right-0 z-20 border-l border-slate-700"
+                  class="p-5 font-black text-amber-500 sticky right-0 z-20 border-l theme-inner"
+                  style="
+                    border-color: var(--border-color);
+                    background-color: var(--bg-card);
+                  "
                 >
-                  DAILY DELTA
+                  TỔNG TĂNG TRONG NGÀY
                 </th>
               </tr>
             </thead>
@@ -145,6 +276,73 @@
     </div>
 
     <script>
+      let salesChart = null;
+      let dailyHistoryGlobal = [];
+
+      function renderChart(dailyHistory) {
+        const isLight = document.body.classList.contains('light-theme');
+        const gridColor = isLight
+          ? 'rgba(45, 90, 76, 0.08)'
+          : 'rgba(16, 185, 129, 0.03)';
+        const tickColor = isLight ? '#2d5a4c' : '#34d399';
+
+        if (salesChart) {
+          salesChart.destroy();
+        }
+
+        salesChart = new Chart(document.getElementById('mainChart'), {
+          type: 'line',
+          data: {
+            labels: dailyHistory.map((h) => {
+              const d = new Date(h.timestamp);
+              const dStr = d.toLocaleDateString('vi-VN', {
+                timeZone: 'Asia/Ho_Chi_Minh',
+                month: 'numeric',
+                day: 'numeric',
+              });
+              const tStr = d.toLocaleTimeString('en-US', {
+                timeZone: 'Asia/Ho_Chi_Minh',
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: false,
+              });
+              return `${dStr} (${tStr})`;
+            }),
+            datasets: [
+              {
+                data: dailyHistory.map((h) => h.totalSold),
+                borderColor: '#f59e0b',
+                backgroundColor: isLight
+                  ? 'rgba(245, 158, 11, 0.08)'
+                  : 'rgba(245, 158, 11, 0.03)',
+                fill: true,
+                tension: 0.1,
+                borderWidth: 3,
+                pointRadius: 5,
+                pointBackgroundColor: '#f59e0b',
+                pointBorderColor: isLight ? '#f4f2eb' : '#050f0c',
+                pointBorderWidth: 2,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+              x: {
+                grid: { color: gridColor },
+                ticks: { color: tickColor, font: { size: 10 } },
+              },
+              y: {
+                grid: { color: gridColor },
+                ticks: { color: tickColor },
+              },
+            },
+          },
+        });
+      }
+
       async function initDashboard() {
         const res = await fetch('./data.json');
         const db = await res.json();
@@ -154,7 +352,6 @@
 
         const latestHourly = rawHistory[rawHistory.length - 1];
 
-        // --- FILTER LOGIC: Group entries by Vietnam Calendar Date (UTC+7) ---
         const dailyMap = new Map();
         rawHistory.forEach((entry) => {
           const dateObj = new Date(entry.timestamp);
@@ -163,39 +360,48 @@
           });
           dailyMap.set(vnDateKey, entry);
         });
-        const dailyHistory = Array.from(dailyMap.values());
+        dailyHistoryGlobal = Array.from(dailyMap.values());
 
-        const prevDateHistory = dailyHistory[dailyHistory.length - 2];
-
+        const prevDateHistory =
+          dailyHistoryGlobal[dailyHistoryGlobal.length - 2];
         const typeNames = [
           ...new Set(rawHistory.flatMap((h) => Object.keys(h.byType))),
         ].sort();
 
-        // 1. Build Matrix Table Dynamic Headers
+        // 1. Ma trận tiêu đề bảng
         const head = document.getElementById('matrix-head');
         const totalHeader = head.lastElementChild;
         typeNames.forEach((name) => {
           const th = document.createElement('th');
-          th.className =
-            'p-5 font-bold border-r border-slate-800/30 min-w-[130px]';
+          th.className = 'p-5 font-bold border-r min-w-[130px]';
+          th.style.borderColor = 'var(--border-color)';
           th.innerText = name.replace('(Gift)', '').trim();
           head.insertBefore(th, totalHeader);
         });
 
-        // 2. Build Daily Matrix Table Rows (Newest Day First)
+        // 2. Các hàng trong bảng
         const body = document.getElementById('matrix-body');
-        for (let i = dailyHistory.length - 1; i >= 0; i--) {
-          const cur = dailyHistory[i];
-          const prev = dailyHistory[i - 1];
+        for (let i = dailyHistoryGlobal.length - 1; i >= 0; i--) {
+          const cur = dailyHistoryGlobal[i];
+          const prev = dailyHistoryGlobal[i - 1];
           const tr = document.createElement('tr');
-          tr.className =
-            'border-b border-slate-800/50 hover:bg-slate-800/40 transition group';
+          tr.className = 'border-b transition group';
+          tr.style.borderColor = 'var(--border-color)';
+
+          tr.addEventListener(
+            'mouseenter',
+            () => (tr.style.backgroundColor = 'var(--matrix-hover)'),
+          );
+          tr.addEventListener(
+            'mouseleave',
+            () => (tr.style.backgroundColor = 'transparent'),
+          );
 
           const dateObj = new Date(cur.timestamp);
-          const dateStr = dateObj.toLocaleDateString('en-US', {
+          const dateStr = dateObj.toLocaleDateString('vi-VN', {
             timeZone: 'Asia/Ho_Chi_Minh',
             weekday: 'short',
-            month: 'short',
+            month: 'numeric',
             day: 'numeric',
           });
           const timeStr = dateObj.toLocaleTimeString('en-US', {
@@ -205,30 +411,28 @@
             hour12: false,
           });
 
-          let rowHtml = `<td class="p-5 font-mono text-slate-400 sticky left-0 bg-slate-950 border-r border-slate-800 z-10 group-hover:text-white transition">
-                                <span class="text-white font-medium">${dateStr}</span> 
-                                <span class="text-slate-600 text-[10px] ml-1">(${timeStr})</span>
+          let rowHtml = `<td class="p-5 font-mono text-stone-400 sticky left-0 z-10 border-r transition class-date-cell" style="border-color: var(--border-color); background-color: var(--bg-inner);">
+                                <span class="font-medium text-current-main">${dateStr}</span> 
+                                <span class="text-emerald-700 text-[10px] ml-1">(${timeStr})</span>
                                </td>`;
 
           typeNames.forEach((name) => {
             const currentSold = cur.byType[name]?.sold || 0;
-            // FIXED: If prev day doesn't exist, compare against 0 instead of showing empty marker
             const previousSold = prev ? prev.byType[name]?.sold || 0 : 0;
             const diff = currentSold - previousSold;
 
-            rowHtml += `<td class="p-5 font-bold ${diff > 0 ? 'text-green-400 bg-green-400/5' : 'text-slate-700'}">${diff > 0 ? '+' + diff : '•'}</td>`;
+            rowHtml += `<td class="p-5 font-bold ${diff > 0 ? 'text-amber-500 bg-amber-500/5' : 'text-emerald-900/40'}">${diff > 0 ? '+' + diff : '•'}</td>`;
           });
 
-          // FIXED: Handle total delta for day 1 comparing against 0
           const prevTotalSold = prev ? prev.totalSold : 0;
           const totalDiff = cur.totalSold - prevTotalSold;
 
-          rowHtml += `<td class="p-5 font-black bg-slate-900/80 sticky right-0 z-10 border-l border-slate-700 ${totalDiff > 0 ? 'text-blue-400' : 'text-slate-600'}">${totalDiff > 0 ? '+' + totalDiff : '0'}</td>`;
+          rowHtml += `<td class="p-5 font-black sticky right-0 z-10 border-l ${totalDiff > 0 ? 'text-amber-500' : 'text-emerald-800/60'}" style="border-color: var(--border-color); background-color: var(--bg-card);">${totalDiff > 0 ? '+' + totalDiff : '0'}</td>`;
           tr.innerHTML = rowHtml;
           body.appendChild(tr);
         }
 
-        // 3. Render Top Metrics (Using actual live hour data)
+        // 3. Render Top Metrics
         document.getElementById('stat-pct').innerText =
           ((latestHourly.totalSold / latestHourly.totalCapacity) * 100).toFixed(
             1,
@@ -236,7 +440,6 @@
         document.getElementById('stat-total').innerText =
           `${latestHourly.totalSold.toLocaleString()} / ${latestHourly.totalCapacity.toLocaleString()}`;
 
-        // FIXED: If there is no previous hourly snapshot yet, show current total as increase
         const hourlyDelta = prevDateHistory
           ? latestHourly.totalSold - prevDateHistory.totalSold
           : latestHourly.totalSold;
@@ -251,60 +454,12 @@
           hour12: false,
         });
 
-        // 4. Daily Line Chart Implementation
-        new Chart(document.getElementById('mainChart'), {
-          type: 'line',
-          data: {
-            labels: dailyHistory.map((h) => {
-              const d = new Date(h.timestamp);
-              const dStr = d.toLocaleDateString('en-US', {
-                timeZone: 'Asia/Ho_Chi_Minh',
-                month: 'short',
-                day: 'numeric',
-              });
-              const tStr = d.toLocaleTimeString('en-US', {
-                timeZone: 'Asia/Ho_Chi_Minh',
-                hour: '2-digit',
-                minute: '2-digit',
-                hour12: false,
-              });
-              return `${dStr} (${tStr})`;
-            }),
-            datasets: [
-              {
-                data: dailyHistory.map((h) => h.totalSold),
-                borderColor: '#3b82f6',
-                backgroundColor: 'rgba(59, 130, 246, 0.05)',
-                fill: true,
-                tension: 0,
-                borderWidth: 4,
-                pointRadius: 6,
-                pointBackgroundColor: '#3b82f6',
-                pointBorderColor: '#0f172a',
-                pointBorderWidth: 2,
-              },
-            ],
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: { legend: { display: false } },
-            scales: {
-              x: {
-                grid: { color: 'rgba(255,255,255,0.03)' },
-                ticks: { color: '#64748b', font: { size: 10 } },
-              },
-              y: {
-                grid: { color: 'rgba(255,255,255,0.03)' },
-                ticks: { color: '#64748b' },
-              },
-            },
-          },
-        });
+        // 4. Khởi tạo biểu đồ
+        renderChart(dailyHistoryGlobal);
 
-        // 5. Live Card Grids (Hourly context status)
+        // 5. Live Card Grids
         const grid = document.getElementById('seat-grid');
-        typeNames.forEach((name) => {
+        typeNames.forEach((name, index) => {
           const t = latestHourly.byType[name];
           const inc = prevDateHistory
             ? t.sold - (prevDateHistory.byType[name]?.sold || 0)
@@ -312,19 +467,57 @@
           const pct = ((t.sold / t.total) * 100).toFixed(1);
 
           grid.innerHTML += `
-                    <div class="bg-slate-900 p-8 rounded-[2.5rem] border border-slate-800 relative shadow-xl">
-                        ${inc > 0 ? `<div class="absolute top-6 right-6 bg-green-500 text-black text-[10px] font-black px-2 py-1 rounded-lg animate-pulse">+${inc} LIVE</div>` : ''}
-                        <div class="text-[11px] text-slate-500 uppercase font-black mb-4 truncate">${name}</div>
+                    <div class="theme-card p-8 rounded-[2.5rem] border relative shadow-xl">
+                        ${inc > 0 ? `<div class="absolute top-6 right-6 bg-amber-500 text-black text-[10px] font-black px-2 py-1 rounded-lg animate-pulse">+${inc} MỚI</div>` : ''}
+                        <div class="text-[11px] text-emerald-600 uppercase font-black mb-4 truncate">${index % 2 ? '🐻' : '🐈‍⬛'} ${name}</div>
                         <div class="flex justify-between items-end mb-2">
-                            <div class="text-4xl font-black">${t.sold}<span class="text-slate-600 text-lg font-normal ml-1">/${t.total}</span></div>
+                            <div class="text-4xl font-black">${t.sold}<span class="text-emerald-800 text-lg font-normal ml-1">/${t.total}</span></div>
                             <div class="text-xl font-black italic" style="color: ${t.color}">${pct}%</div>
                         </div>
-                        <div class="w-full bg-slate-950 h-3 mt-4 rounded-full overflow-hidden p-[2px]">
+                        <div class="w-full theme-inner h-3 mt-4 rounded-full overflow-hidden p-[2px] border" style="border-color: var(--border-color);">
                             <div class="h-full rounded-full" style="width:${pct}%; background:${t.color}"></div>
                         </div>
                     </div>`;
         });
       }
+
+      // Logic cập nhật giao diện dựa trên nút bấm + Lưu vào localStorage
+      const themeToggleBtn = document.getElementById('theme-toggle');
+      const themeIcon = document.getElementById('theme-icon');
+      const themeText = document.getElementById('theme-text');
+
+      // Đồng bộ trạng thái text/icon của nút dựa trên trạng thái theme hiện có lúc bắt đầu tải xong DOM
+      function updateButtonUI() {
+        const isLight = document.body.classList.contains('light-theme');
+        if (isLight) {
+          themeIcon.innerText = '🌙';
+          themeText.innerText = 'Giao diện Tối';
+        } else {
+          themeIcon.innerText = '☀️';
+          themeText.innerText = 'Giao diện Sáng';
+        }
+      }
+
+      themeToggleBtn.addEventListener('click', () => {
+        const body = document.body;
+        body.classList.toggle('light-theme');
+
+        // Lưu trạng thái mới vào localStorage
+        if (body.classList.contains('light-theme')) {
+          localStorage.setItem('rify-theme', 'light');
+        } else {
+          localStorage.setItem('rify-theme', 'dark');
+        }
+
+        updateButtonUI();
+
+        if (dailyHistoryGlobal.length > 0) {
+          renderChart(dailyHistoryGlobal);
+        }
+      });
+
+      // Chạy khởi tạo giao diện nút và dữ liệu
+      updateButtonUI();
       initDashboard();
     </script>
   </body>
