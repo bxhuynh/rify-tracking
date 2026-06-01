@@ -46,7 +46,9 @@
         --matrix-hover: rgba(13, 34, 28, 0.6);
       }
 
-      .light-theme {
+      .light-theme,
+      html.light-theme,
+      body.light-theme {
         --bg-body: #f4f2eb;
         --bg-card: #e5e1d3;
         --bg-inner: #f4f2eb;
@@ -62,11 +64,6 @@
         transition:
           background-color 0.3s,
           color 0.3s;
-      }
-
-      body.light-theme {
-        background-color: #f4f2eb;
-        color: #1c2d27;
       }
 
       .theme-card {
@@ -90,6 +87,7 @@
       }
     </style>
 
+    <!-- Inline Script tối ưu chặn Flash trắng trang chuẩn xác -->
     <script>
       (function () {
         const savedTheme = localStorage.getItem('rify-theme');
@@ -100,12 +98,6 @@
     </script>
   </head>
   <body class="p-6 font-sans selection:bg-amber-500/30">
-    <script>
-      if (document.documentElement.classList.contains('light-theme')) {
-        document.body.classList.add('light-theme');
-      }
-    </script>
-
     <div class="max-w-[1600px] mx-auto">
       <div
         class="flex flex-col sm:flex-row justify-between items-center gap-4 mb-6"
@@ -300,7 +292,6 @@
 
       // Logic Đếm Ngược Thời Gian Thực (19:30 20/06/2026)
       function initCountdown() {
-        // Tạo mốc thời gian diễn ra sự kiện (Tháng trong JS chạy từ 0-11 nên Tháng 6 là số 5)
         const targetDate = new Date(2026, 5, 20, 19, 30, 0).getTime();
         const timerElement = document.getElementById('countdown-timer');
 
@@ -325,17 +316,17 @@
           );
           const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-          // Định dạng hiển thị chuỗi đếm ngược kèm số 0 ở trước nếu số < 10
           const pad = (num) => String(num).padStart(2, '0');
           timerElement.innerText = `${days} ngày ${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
         }
 
-        updateTimer(); // Chạy ngay lập tức lần đầu
+        updateTimer();
         const countdownInterval = setInterval(updateTimer, 1000);
       }
 
       function renderChart(dailyHistory) {
-        const isLight = document.body.classList.contains('light-theme');
+        const isLight =
+          document.documentElement.classList.contains('light-theme');
         const gridColor = isLight
           ? 'rgba(45, 90, 76, 0.08)'
           : 'rgba(16, 185, 129, 0.03)';
@@ -423,7 +414,6 @@
           ...new Set(rawHistory.flatMap((h) => Object.keys(h.byType))),
         ].sort();
 
-        // 1. Ma trận tiêu đề bảng
         const head = document.getElementById('matrix-head');
         const totalHeader = head.lastElementChild;
         typeNames.forEach((name) => {
@@ -434,7 +424,6 @@
           head.insertBefore(th, totalHeader);
         });
 
-        // 2. Các hàng trong bảng
         const body = document.getElementById('matrix-body');
         for (let i = dailyHistoryGlobal.length - 1; i >= 0; i--) {
           const cur = dailyHistoryGlobal[i];
@@ -487,7 +476,6 @@
           body.appendChild(tr);
         }
 
-        // 3. Render Top Metrics
         document.getElementById('stat-pct').innerText =
           ((latestHourly.totalSold / latestHourly.totalCapacity) * 100).toFixed(
             1,
@@ -509,10 +497,8 @@
           hour12: false,
         });
 
-        // 4. Khởi tạo biểu đồ
         renderChart(dailyHistoryGlobal);
 
-        // 5. Live Card Grids
         const grid = document.getElementById('seat-grid');
         typeNames.forEach((name, index) => {
           const t = latestHourly.byType[name];
@@ -536,14 +522,13 @@
         });
       }
 
-      // Logic cập nhật giao diện dựa trên nút bấm + Lưu vào localStorage
       const themeToggleBtn = document.getElementById('theme-toggle');
       const themeIcon = document.getElementById('theme-icon');
       const themeText = document.getElementById('theme-text');
 
-      // Đồng bộ trạng thái text/icon của nút dựa trên trạng thái theme hiện có lúc bắt đầu tải xong DOM
       function updateButtonUI() {
-        const isLight = document.body.classList.contains('light-theme');
+        const isLight =
+          document.documentElement.classList.contains('light-theme');
         if (isLight) {
           themeIcon.innerText = '🌙';
           themeText.innerText = 'Giao diện Tối';
@@ -554,10 +539,10 @@
       }
 
       themeToggleBtn.addEventListener('click', () => {
-        const body = document.body;
-        body.classList.toggle('light-theme');
+        const rootHtml = document.documentElement;
+        rootHtml.classList.toggle('light-theme');
 
-        if (body.classList.contains('light-theme')) {
+        if (rootHtml.classList.contains('light-theme')) {
           localStorage.setItem('rify-theme', 'light');
         } else {
           localStorage.setItem('rify-theme', 'dark');
