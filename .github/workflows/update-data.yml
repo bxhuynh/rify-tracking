@@ -1,10 +1,9 @@
 name: 30-Min Sales Fetcher
 
 on:
-  schedule:
-    # Triggers exactly at minute 0 and minute 30 of every hour
-    - cron: '*/30 * * * *'
-  workflow_dispatch: # Allows manual trigger via the GitHub Actions tab
+  repository_dispatch:
+    types: [trigger-crawl]
+  workflow_dispatch:
 
 jobs:
   fetch_and_process:
