@@ -5951,6 +5951,38 @@
                     "color": "#297884"
                 }
             }
+        },
+        {
+            "timestamp": "2026-06-01T17:00:54.640Z",
+            "totalSold": 399,
+            "totalCapacity": 722,
+            "byType": {
+                "CHILL (Gift)": {
+                    "sold": 62,
+                    "total": 62,
+                    "color": "#face43"
+                },
+                "RIVER (Standard)": {
+                    "sold": 75,
+                    "total": 93,
+                    "color": " #113a23"
+                },
+                "FLOW (Pre)": {
+                    "sold": 91,
+                    "total": 172,
+                    "color": "#8baf54"
+                },
+                "IN (VIP)": {
+                    "sold": 48,
+                    "total": 189,
+                    "color": "#d7a691"
+                },
+                "YOU (SVIP)": {
+                    "sold": 123,
+                    "total": 206,
+                    "color": "#297884"
+                }
+            }
         }
     ]
 }
