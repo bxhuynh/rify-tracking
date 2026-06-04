@@ -6017,8 +6017,8 @@
             }
         },
         {
-            "timestamp": "2026-06-04T13:25:33.249Z",
-            "totalSold": 421,
+            "timestamp": "2026-06-04T13:30:57.390Z",
+            "totalSold": 423,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -6027,7 +6027,7 @@
                     "color": "#face43"
                 },
                 "RIVER (Standard)": {
-                    "sold": 81,
+                    "sold": 82,
                     "total": 93,
                     "color": " #113a23"
                 },
@@ -6042,7 +6042,7 @@
                     "color": "#d7a691"
                 },
                 "YOU (SVIP)": {
-                    "sold": 125,
+                    "sold": 126,
                     "total": 206,
                     "color": "#297884"
                 }
