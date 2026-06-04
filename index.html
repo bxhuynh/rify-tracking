@@ -5,6 +5,8 @@
     <title>RIFY MINISHOW “TÔI KHÔNG CÒN VIẾT TÌNH CA”</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦝</text></svg>"
@@ -124,8 +126,17 @@
         transform: translateX(-50%);
         transition: all 0.5s ease-in-out;
       }
+
+      /* --- STYLE POPUP THÔNG BÁO MỐC --- */
+      #milestone-overlay {
+        pointer-events: none;
+        transition:
+          opacity 0.6s ease-in-out,
+          transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
     </style>
 
+    <!-- Inline Script tối ưu chặn Flash trắng trang chuẩn xác -->
     <script>
       (function () {
         const savedTheme = localStorage.getItem('rify-theme');
@@ -135,8 +146,51 @@
       })();
     </script>
   </head>
-  <body class="p-6 font-sans selection:bg-amber-500/30">
+  <body class="p-6 font-sans selection:bg-amber-500/30 relative">
+    <!-- KHỐI POPUP THÔNG BÁO CHỈ HIỂN THỊ SỐ % KHỦNG -->
+    <div
+      id="milestone-overlay"
+      class="fixed inset-0 flex items-center justify-center z-[99999] opacity-0 scale-90 pointer-events-none transition-all duration-700 ease-out"
+    >
+      <div
+        class="relative bg-stone-950/90 backdrop-blur-xl border border-amber-500/40 p-8 sm:p-10 rounded-[2.5rem] shadow-[0_0_80px_rgba(245,158,11,0.25),inset_0_0_20px_rgba(245,158,11,0.1)] text-center min-w-[280px] sm:min-w-[360px] max-w-md mx-4 ring-1 ring-amber-500/20"
+      >
+        <div
+          class="absolute top-4 left-4 text-xs opacity-20 text-amber-500 font-mono"
+        >
+          ✦
+        </div>
+        <div
+          class="absolute bottom-4 right-4 text-xs opacity-20 text-amber-500 font-mono"
+        >
+          ✦
+        </div>
+
+        <div
+          id="milestone-overlay-text"
+          class="text-xs sm:text-sm font-black uppercase tracking-[0.3em] text-emerald-400 mb-3 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+        ></div>
+
+        <div
+          id="milestone-overlay-percent"
+          class="text-7xl sm:text-8xl font-black italic tracking-tighter bg-gradient-to-b from-amber-300 via-amber-500 to-amber-600 bg-clip-text text-transparent drop-shadow-[0_8px_16px_rgba(0,0,0,0.7)] select-none font-mono"
+        >
+          --%
+        </div>
+
+        <div
+          class="w-16 h-[1px] bg-gradient-to-r from-transparent via-amber-500/30 to-transparent mx-auto my-4 border-dashed border-t border-amber-500/20"
+        ></div>
+
+        <div
+          id="milestone-overlay-description"
+          class="text-xs sm:text-sm font-medium tracking-wide text-stone-300 opacity-90 leading-relaxed max-w-xs mx-auto"
+        ></div>
+      </div>
+    </div>
+
     <div class="max-w-[1600px] mx-auto">
+      <!-- Hàng Header điều khiển -->
       <div
         class="flex flex-col sm:flex-row justify-between items-center gap-4 mb-6"
       >
@@ -164,6 +218,7 @@
         </button>
       </div>
 
+      <!-- THANH TIẾN ĐỘ TỔNG THỂ -->
       <div
         class="theme-inner p-6 rounded-3xl border border-dashed shadow-inner mb-6 select-none"
         style="border-color: var(--border-color)"
@@ -172,41 +227,50 @@
           class="relative w-full theme-card h-7 rounded-2xl border p-[3px] flex items-center overflow-visible mt-5 mb-1"
           style="border-color: var(--border-color)"
         >
+          <!-- MỐC TIẾN TRÌNH THỰC TẾ -->
           <div
             class="absolute left-[60%] -top-7 marathon-marker flex flex-col items-center opacity-40 scale-90 transition-all duration-500"
             id="marker-60"
           >
-            <span class="text-[10px] font-mono font-bold text-amber-600/70"
+            <span
+              class="text-[10px] font-mono font-bold text-stone-400"
+              id="text-60"
               >60%</span
             >
-            <span class="text-sm mt-0.5">👟</span>
+            <span class="text-sm mt-0.5" title="Giày chạy">👟</span>
           </div>
           <div
             class="absolute left-[70%] -top-7 marathon-marker flex flex-col items-center opacity-40 scale-90 transition-all duration-500"
             id="marker-70"
           >
-            <span class="text-[10px] font-mono font-bold text-amber-600/70"
+            <span
+              class="text-[10px] font-mono font-bold text-stone-400"
+              id="text-70"
               >70%</span
             >
-            <span class="text-sm mt-0.5">🍯</span>
+            <span class="text-sm mt-0.5" title="Hũ mật">🍯</span>
           </div>
           <div
             class="absolute left-[80%] -top-7 marathon-marker flex flex-col items-center opacity-40 scale-90 transition-all duration-500"
             id="marker-80"
           >
-            <span class="text-[10px] font-mono font-bold text-amber-600/70"
+            <span
+              class="text-[10px] font-mono font-bold text-stone-400"
+              id="text-80"
               >80%</span
             >
-            <span class="text-sm mt-0.5">🍜</span>
+            <span class="text-sm mt-0.5" title="Tô mì">🍜</span>
           </div>
           <div
             class="absolute left-[90%] -top-7 marathon-marker flex flex-col items-center opacity-40 scale-90 transition-all duration-500"
             id="marker-90"
           >
-            <span class="text-[10px] font-mono font-bold text-amber-600/70"
+            <span
+              class="text-[10px] font-mono font-bold text-stone-400"
+              id="text-90"
               >90%</span
             >
-            <span class="text-sm mt-0.5">🥧</span>
+            <span class="text-sm mt-0.5" title="Bánh Pie">🥧</span>
           </div>
 
           <div
@@ -234,8 +298,35 @@
             >🐈‍⬛</span
           >
         </div>
+
+        <div
+          id="next-milestone-container"
+          class="mt-4 pt-3 border-t border-dashed flex flex-col sm:flex-row items-center justify-between gap-2 text-xs"
+          style="border-color: var(--border-color)"
+        >
+          <div class="flex items-center gap-2">
+            <span class="text-amber-500">🎯</span>
+            <span class="font-medium text-stone-400">Mục tiêu kế tiếp:</span>
+            <span
+              id="next-milestone-text"
+              class="font-bold text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded-md"
+              >--%</span
+            >
+          </div>
+          <div class="text-stone-400 font-medium">
+            Cần tắt đèn
+            <span
+              id="next-milestone-tickets"
+              class="font-black text-sm text-emerald-500 font-mono mx-0.5"
+              >--</span
+            >
+            ghế nữa để 🐻 có được
+            <span id="next-milestone-icon" class="text-sm ml-0.5">🐾</span>
+          </div>
+        </div>
       </div>
 
+      <!-- Hàng 4 Card KPI -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <div
           class="theme-card p-6 rounded-3xl border shadow-xl flex flex-col justify-between h-[120px]"
@@ -252,7 +343,6 @@
             0%
           </div>
         </div>
-
         <div
           class="theme-card p-6 rounded-3xl border shadow-xl flex flex-col justify-between h-[120px]"
         >
@@ -269,7 +359,6 @@
             0 / 0
           </div>
         </div>
-
         <div
           class="theme-card p-6 rounded-3xl border shadow-xl flex flex-col justify-between h-[120px]"
         >
@@ -286,7 +375,6 @@
             +0
           </div>
         </div>
-
         <div
           class="theme-card p-6 rounded-3xl border shadow-xl flex flex-col justify-between h-[120px]"
         >
@@ -306,7 +394,7 @@
       </div>
 
       <div
-        class="mb-8 px-6 py-4 text-center md:text-left flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl border border-dashed border-amber-600/40 style-invitation"
+        class="mb-8 px-6 py-4 text-center md:text-left flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl border border-dashed border-amber-600/40"
         style="background-color: var(--bg-card)"
       >
         <div class="flex items-center gap-3">
@@ -347,13 +435,10 @@
                 color: var(--text-muted);
                 border-color: var(--border-color);
               "
+              >Bộ lọc: 1 Điểm / Ngày</span
             >
-              Bộ lọc: 1 Điểm / Ngày
-            </span>
           </div>
-          <div class="h-[360px]">
-            <canvas id="mainChart"></canvas>
-          </div>
+          <div class="h-[360px]"><canvas id="mainChart"></canvas></div>
         </div>
       </div>
 
@@ -417,11 +502,133 @@
       </div>
     </div>
 
+    <!-- Nhúng thư viện Tenor -->
+    <script
+      type="text/javascript"
+      async
+      src="https://tenor.com/embed.js"
+    ></script>
+
     <script>
       let salesChart = null;
       let dailyHistoryGlobal = [];
+      let infiniteFireworksInterval = null;
+      let milestoneFireworksInterval = null;
 
-      // Logic Đếm Ngược Thời Gian Thực (19:30 20/06/2026)
+      // ĐIỀU CHỈNH: Tối ưu hiển thị text theo yêu cầu và đồng bộ style mới cho popup
+      function triggerMilestoneCelebration(milestoneValue, displayPercent) {
+        const overlay = document.getElementById('milestone-overlay');
+        const overlayText = document.getElementById('milestone-overlay-text');
+        const overlayPercent = document.getElementById(
+          'milestone-overlay-percent',
+        );
+        const overlayDescription = document.getElementById(
+          'milestone-overlay-description',
+        );
+
+        const currentPercent = parseFloat(displayPercent);
+        const currentMilestone = parseFloat(milestoneValue);
+        const nextMilestone =
+          currentMilestone + 10 > 100 ? 100 : currentMilestone + 10;
+
+        // 1. Cập nhật dòng tiêu đề trạng thái nhỏ (chữ in hoa phía trên)
+        overlayText.innerText =
+          currentPercent > currentMilestone
+            ? '🎉 Cột mốc mới đã vượt qua 🎉'
+            : '🎉 Chúc mừng đạt mốc mới 🎉';
+
+        // 2. Cập nhật con số phần trăm khổng lồ ở giữa
+        overlayPercent.innerText = `${currentMilestone}%`;
+
+        // 3. Cập nhật dòng mô tả chi tiết phía dưới theo đúng yêu cầu text của bạn
+        if (currentPercent > currentMilestone) {
+          // Trường hợp ví dụ: Đang là 69% (đã vượt mốc 60%)
+          overlayDescription.innerHTML = `Đã đạt <span class="text-amber-500 font-bold">${displayPercent}%</span>.<br>Mục tiêu tiếp theo là <span class="text-emerald-400 font-bold">${nextMilestone}%</span>! 🐻`;
+        } else {
+          // Trường hợp vừa đúng tròn mốc ví dụ 60.0%
+          overlayDescription.innerHTML = `Đạt mốc <span class="text-amber-500 font-bold">${currentMilestone}%</span>.<br>Mục tiêu tiếp theo là <span class="text-emerald-400 font-bold">${nextMilestone}%</span>! 🐻`;
+        }
+
+        // Hiện hộp modal chứa số mốc (Xóa opacity-0 và pointer-events-none để user không bấm xuyên qua được)
+        overlay.classList.remove(
+          'opacity-0',
+          'scale-90',
+          'pointer-events-none',
+        );
+        overlay.classList.add('opacity-100', 'scale-100');
+
+        function randomInRange(min, max) {
+          return Math.random() * (max - min) + min;
+        }
+
+        // Tạo vòng lặp bắn pháo hoa ngẫu nhiên ở nhiều tọa độ rộng khắp màn hình (như ban đầu)
+        const defaults = {
+          startVelocity: 28,
+          spread: 360,
+          ticks: 50,
+          zIndex: 99999,
+        };
+
+        // Xóa interval cũ nếu có để tránh trùng lặp hiệu ứng
+        if (milestoneFireworksInterval) {
+          clearInterval(milestoneFireworksInterval);
+        }
+
+        milestoneFireworksInterval = setInterval(() => {
+          // Phát bắn bên khu vực trái (tầm cao ngẫu nhiên)
+          confetti(
+            Object.assign({}, defaults, {
+              particleCount: 35,
+              origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+            }),
+          );
+          // Phát bắn bên khu vực phải (tầm cao ngẫu nhiên)
+          confetti(
+            Object.assign({}, defaults, {
+              particleCount: 35,
+              origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+            }),
+          );
+        }, 250); // Mỗi 250ms lại nổ liên tiếp các cụm mới khắp nơi
+
+        // Đóng toàn bộ sau 4 giây đồng bộ hoàn hảo
+        setTimeout(() => {
+          overlay.classList.remove('opacity-100', 'scale-100');
+          overlay.classList.add('opacity-0', 'scale-90', 'pointer-events-none');
+
+          if (milestoneFireworksInterval) {
+            clearInterval(milestoneFireworksInterval);
+            milestoneFireworksInterval = null;
+          }
+        }, 4000);
+      }
+      function startInfiniteFireworks() {
+        if (infiniteFireworksInterval) return;
+        infiniteFireworksInterval = setInterval(() => {
+          confetti({
+            particleCount: Math.floor(Math.random() * 40) + 30,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0, y: 0.8 },
+            zIndex: 9999,
+          });
+          confetti({
+            particleCount: Math.floor(Math.random() * 40) + 30,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1, y: 0.8 },
+            zIndex: 9999,
+          });
+        }, 400);
+      }
+
+      function stopInfiniteFireworks() {
+        if (infiniteFireworksInterval) {
+          clearInterval(infiniteFireworksInterval);
+          infiniteFireworksInterval = null;
+        }
+      }
+
       function initCountdown() {
         const targetDate = new Date(2026, 5, 20, 19, 30, 0).getTime();
         const timerElement = document.getElementById('countdown-timer');
@@ -463,9 +670,7 @@
           : 'rgba(16, 185, 129, 0.03)';
         const tickColor = isLight ? '#2d5a4c' : '#34d399';
 
-        if (salesChart) {
-          salesChart.destroy();
-        }
+        if (salesChart) salesChart.destroy();
 
         salesChart = new Chart(document.getElementById('mainChart'), {
           type: 'line',
@@ -511,177 +716,287 @@
                 grid: { color: gridColor },
                 ticks: { color: tickColor, font: { size: 10 } },
               },
-              y: {
-                grid: { color: gridColor },
-                ticks: { color: tickColor },
-              },
+              y: { grid: { color: gridColor }, ticks: { color: tickColor } },
             },
           },
         });
       }
 
       async function initDashboard() {
-        const res = await fetch('./data.json');
-        const db = await res.json();
-        const rawHistory = db.history;
+        try {
+          const res = await fetch('./data.json?t=' + new Date().getTime());
+          const db = await res.json();
+          const rawHistory = db.history;
 
-        if (!rawHistory || rawHistory.length === 0) return;
+          if (!rawHistory || rawHistory.length === 0) return;
 
-        const latestHourly = rawHistory[rawHistory.length - 1];
+          const latestHourly = rawHistory[rawHistory.length - 1];
 
-        const dailyMap = new Map();
-        rawHistory.forEach((entry) => {
-          const dateObj = new Date(entry.timestamp);
-          const vnDateKey = dateObj.toLocaleDateString('fr-CA', {
-            timeZone: 'Asia/Ho_Chi_Minh',
+          const dailyMap = new Map();
+          rawHistory.forEach((entry) => {
+            const dateObj = new Date(entry.timestamp);
+            const vnDateKey = dateObj.toLocaleDateString('fr-CA', {
+              timeZone: 'Asia/Ho_Chi_Minh',
+            });
+            dailyMap.set(vnDateKey, entry);
           });
-          dailyMap.set(vnDateKey, entry);
-        });
-        dailyHistoryGlobal = Array.from(dailyMap.values());
+          dailyHistoryGlobal = Array.from(dailyMap.values());
 
-        const prevDateHistory =
-          dailyHistoryGlobal[dailyHistoryGlobal.length - 2];
-        const typeNames = [
-          ...new Set(rawHistory.flatMap((h) => Object.keys(h.byType))),
-        ].sort();
+          const prevDateHistory =
+            dailyHistoryGlobal[dailyHistoryGlobal.length - 2];
+          const typeNames = [
+            ...new Set(rawHistory.flatMap((h) => Object.keys(h.byType))),
+          ].sort();
 
-        const head = document.getElementById('matrix-head');
-        const totalHeader = head.lastElementChild;
-        typeNames.forEach((name) => {
-          const th = document.createElement('th');
-          th.className = 'p-5 font-bold border-r min-w-[130px]';
-          th.style.borderColor = 'var(--border-color)';
-          th.innerText = name.replace('(Gift)', '').trim();
-          head.insertBefore(th, totalHeader);
-        });
-
-        const body = document.getElementById('matrix-body');
-        for (let i = dailyHistoryGlobal.length - 1; i >= 0; i--) {
-          const cur = dailyHistoryGlobal[i];
-          const prev = dailyHistoryGlobal[i - 1];
-          const tr = document.createElement('tr');
-          tr.className = 'border-b transition group';
-          tr.style.borderColor = 'var(--border-color)';
-
-          tr.addEventListener(
-            'mouseenter',
-            () => (tr.style.backgroundColor = 'var(--matrix-hover)'),
+          const head = document.getElementById('matrix-head');
+          const oldThs = head.querySelectorAll(
+            'th:not(#th-date):not(:last-child)',
           );
-          tr.addEventListener(
-            'mouseleave',
-            () => (tr.style.backgroundColor = 'transparent'),
-          );
+          oldThs.forEach((th) => th.remove());
 
-          const dateObj = new Date(cur.timestamp);
-          const dateStr = dateObj.toLocaleDateString('vi-VN', {
-            timeZone: 'Asia/Ho_Chi_Minh',
-            weekday: 'short',
-            month: 'numeric',
-            day: 'numeric',
+          const totalHeader = head.lastElementChild;
+          typeNames.forEach((name) => {
+            const th = document.createElement('th');
+            th.className = 'p-5 font-bold border-r min-w-[130px]';
+            th.style.borderColor = 'var(--border-color)';
+            th.innerText = name.replace('(Gift)', '').trim();
+            head.insertBefore(th, totalHeader);
           });
-          const timeStr = dateObj.toLocaleTimeString('en-US', {
+
+          const body = document.getElementById('matrix-body');
+          body.innerHTML = '';
+
+          for (let i = dailyHistoryGlobal.length - 1; i >= 0; i--) {
+            const cur = dailyHistoryGlobal[i];
+            const prev = dailyHistoryGlobal[i - 1];
+            const tr = document.createElement('tr');
+            tr.className = 'border-b transition group';
+            tr.style.borderColor = 'var(--border-color)';
+
+            tr.addEventListener(
+              'mouseenter',
+              () => (tr.style.backgroundColor = 'var(--matrix-hover)'),
+            );
+            tr.addEventListener(
+              'mouseleave',
+              () => (tr.style.backgroundColor = 'transparent'),
+            );
+
+            const dateObj = new Date(cur.timestamp);
+            const dateStr = dateObj.toLocaleDateString('vi-VN', {
+              timeZone: 'Asia/Ho_Chi_Minh',
+              weekday: 'short',
+              month: 'numeric',
+              day: 'numeric',
+            });
+            const timeStr = dateObj.toLocaleTimeString('en-US', {
+              timeZone: 'Asia/Ho_Chi_Minh',
+              hour: '2-digit',
+              minute: '2-digit',
+              hour12: false,
+            });
+
+            let rowHtml = `<td class="p-5 font-mono text-stone-400 sticky left-0 z-10 border-r transition class-date-cell" style="border-color: var(--border-color); background-color: var(--bg-inner);">
+                                  <span class="font-medium text-current-main">${dateStr}</span> 
+                                  <span class="text-emerald-700 text-[10px] ml-1">(${timeStr})</span>
+                                 </td>`;
+
+            typeNames.forEach((name) => {
+              const currentSold = cur.byType[name]?.sold || 0;
+              const previousSold = prev ? prev.byType[name]?.sold || 0 : 0;
+              const diff = currentSold - previousSold;
+              rowHtml += `<td class="p-5 font-bold ${diff > 0 ? 'text-amber-500 bg-amber-500/5' : 'text-emerald-900/40'}">${diff > 0 ? '+' + diff : '•'}</td>`;
+            });
+
+            const prevTotalSold = prev ? prev.totalSold : 0;
+            const totalDiff = cur.totalSold - prevTotalSold;
+
+            rowHtml += `<td class="p-5 font-black sticky right-0 z-10 border-l ${totalDiff > 0 ? 'text-amber-500' : 'text-emerald-800/60'}" style="border-color: var(--border-color); background-color: var(--bg-card);">${totalDiff > 0 ? '+' + totalDiff : '0'}</td>`;
+            tr.innerHTML = rowHtml;
+            body.appendChild(tr);
+          }
+
+          // --- HOẠT HỌA THANH TIẾN ĐỘ ---
+          const percentSold =
+            (latestHourly.totalSold / latestHourly.totalCapacity) * 100;
+          const percentStr = percentSold.toFixed(1) + '%';
+          const displayPercent = parseFloat(percentStr);
+
+          document.getElementById('stat-pct').innerText = percentStr;
+
+          const progressFill = document.getElementById('progress-fill');
+          const bearIcon = document.getElementById('bear-icon');
+
+          setTimeout(() => {
+            if (displayPercent >= 100) {
+              progressFill.style.width = '100%';
+              bearIcon.style.right = '24px';
+            } else {
+              progressFill.style.width = percentStr;
+              bearIcon.style.right = '-12px';
+            }
+
+            bearIcon.classList.add('animate-bear');
+            bearIcon.style.opacity = '1';
+
+            const markers = [60, 70, 80, 90];
+            let currentMaxMilestone = 0;
+
+            markers.forEach((milestone) => {
+              const markerEl = document.getElementById(`marker-${milestone}`);
+              const textEl = document.getElementById(`text-${milestone}`);
+
+              if (markerEl && textEl) {
+                if (displayPercent >= milestone) {
+                  markerEl.classList.remove('opacity-40', 'scale-90');
+                  markerEl.classList.add('opacity-100', 'scale-110');
+                  textEl.classList.remove('text-stone-400');
+                  textEl.classList.add('text-amber-500', 'font-black');
+                  currentMaxMilestone = milestone;
+                } else {
+                  markerEl.classList.remove('opacity-100', 'scale-110');
+                  markerEl.classList.add('opacity-40', 'scale-90');
+                  textEl.classList.remove('text-amber-500', 'font-black');
+                  textEl.classList.add('text-stone-400');
+                }
+              }
+            });
+
+            const isSoldOut = displayPercent >= 100;
+
+            if (isSoldOut) {
+              startInfiniteFireworks();
+            } else {
+              stopInfiniteFireworks();
+
+              if (currentMaxMilestone >= 60) {
+                const lastFiredMilestone = parseInt(
+                  localStorage.getItem('rify-fired-milestone') || '0',
+                  10,
+                );
+                if (currentMaxMilestone > lastFiredMilestone) {
+                  triggerMilestoneCelebration(
+                    currentMaxMilestone,
+                    displayPercent,
+                  );
+                  localStorage.setItem(
+                    'rify-fired-milestone',
+                    currentMaxMilestone.toString(),
+                  );
+                }
+              }
+            }
+          }, 150);
+
+          // --- LOGIC TÍNH TOÁN MỐC HÀNG CHỤC ĐỒNG BỘ ---
+          const currentTotalSold = latestHourly.totalSold;
+          const totalCap = latestHourly.totalCapacity;
+
+          let nextMilestonePct = Math.ceil((displayPercent + 0.01) / 10) * 10;
+          if (nextMilestonePct > 100) nextMilestonePct = 100;
+
+          let ticketsLeft = 0;
+          if (displayPercent < 100) {
+            while (true) {
+              const testTotalSold = currentTotalSold + ticketsLeft;
+              const testPercent = (testTotalSold / totalCap) * 100;
+              const testPercentStr = parseFloat(testPercent.toFixed(1));
+
+              if (testPercentStr >= nextMilestonePct) break;
+              ticketsLeft++;
+
+              if (currentTotalSold + ticketsLeft > totalCap) {
+                ticketsLeft = totalCap - currentTotalSold;
+                break;
+              }
+            }
+          }
+
+          const milestoneIcons = {
+            60: '👟',
+            70: '🍯',
+            80: '🍜',
+            90: '🥧',
+            100: '🐈‍⬛',
+          };
+          const nextIcon = milestoneIcons[nextMilestonePct] || '🎁';
+
+          const milestoneContainer = document.getElementById(
+            'next-milestone-container',
+          );
+
+          if (displayPercent >= 100) {
+            milestoneContainer.innerHTML = `
+              <div class="w-full flex flex-col items-center justify-center py-4 gap-4 text-center">
+                <div class="text-emerald-500 font-black text-xl animate-bounce tracking-widest">
+                  🎉 CHÍNH THỨC SOLD OUT 100%! 🎉
+                </div>
+                <div class="w-48 h-48 rounded-2xl overflow-hidden shadow-xl border border-emerald-500/30">
+                  <div class="tenor-gif-embed" data-postid="5491638008443168963" data-share-method="host" data-aspect-ratio="1.0332" data-width="100%">
+                    <a href="https://tenor.com/view/racoon-gif-5491638008443168963">Racoon GIF</a>
+                  </div>
+                </div>
+              </div>
+            `;
+            if (window.tenor && typeof window.tenor.discover === 'function')
+              window.tenor.discover();
+          } else {
+            milestoneContainer.innerHTML = `
+              <div class="flex items-center gap-2">
+                <span class="text-amber-500">🎯</span>
+                <span class="font-medium text-stone-400">Mục tiêu kế tiếp:</span>
+                <span id="next-milestone-text" class="font-bold text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded-md">${nextMilestonePct}%</span>
+              </div>
+              <div class="text-stone-400 font-medium">
+                Cần tắt đèn <span id="next-milestone-tickets" class="font-black text-sm text-emerald-500 font-mono mx-0.5">${ticketsLeft.toLocaleString()}</span> ghế nữa để 🐻 có được <span id="next-milestone-icon" class="text-sm ml-0.5">${nextIcon}</span>
+              </div>
+            `;
+          }
+
+          document.getElementById('stat-total').innerText =
+            `${latestHourly.totalSold.toLocaleString()} / ${latestHourly.totalCapacity.toLocaleString()}`;
+
+          const hourlyDelta = prevDateHistory
+            ? latestHourly.totalSold - prevDateHistory.totalSold
+            : latestHourly.totalSold;
+          document.getElementById('stat-delta').innerText = `+${hourlyDelta}`;
+
+          document.getElementById('stat-time').innerText = new Date(
+            latestHourly.timestamp,
+          ).toLocaleTimeString('en-US', {
             timeZone: 'Asia/Ho_Chi_Minh',
             hour: '2-digit',
             minute: '2-digit',
             hour12: false,
           });
 
-          let rowHtml = `<td class="p-5 font-mono text-stone-400 sticky left-0 z-10 border-r transition class-date-cell" style="border-color: var(--border-color); background-color: var(--bg-inner);">
-                                <span class="font-medium text-current-main">${dateStr}</span> 
-                                <span class="text-emerald-700 text-[10px] ml-1">(${timeStr})</span>
-                               </td>`;
+          renderChart(dailyHistoryGlobal);
 
-          typeNames.forEach((name) => {
-            const currentSold = cur.byType[name]?.sold || 0;
-            const previousSold = prev ? prev.byType[name]?.sold || 0 : 0;
-            const diff = currentSold - previousSold;
+          const grid = document.getElementById('seat-grid');
+          grid.innerHTML = '';
+          typeNames.forEach((name, index) => {
+            const t = latestHourly.byType[name];
+            const inc = prevDateHistory
+              ? t.sold - (prevDateHistory.byType[name]?.sold || 0)
+              : t.sold;
+            const pct = ((t.sold / t.total) * 100).toFixed(1);
 
-            rowHtml += `<td class="p-5 font-bold ${diff > 0 ? 'text-amber-500 bg-amber-500/5' : 'text-emerald-900/40'}">${diff > 0 ? '+' + diff : '•'}</td>`;
+            grid.innerHTML += `
+                      <div class="theme-card p-8 rounded-[2.5rem] border relative shadow-xl">
+                          ${inc > 0 ? `<div class="absolute top-6 right-6 bg-amber-500 text-black text-[10px] font-black px-2 py-1 rounded-lg animate-pulse">+${inc} MỚI</div>` : ''}
+                          <div class="text-[11px] text-emerald-600 uppercase font-black mb-4 truncate">${index % 2 ? '🐻' : '🐈‍⬛'} ${name}</div>
+                          <div class="flex justify-between items-end mb-2">
+                              <div class="text-4xl font-black">${t.sold}<span class="text-emerald-800 text-lg font-normal ml-1">/${t.total}</span></div>
+                              <div class="text-xl font-black italic" style="color: ${t.color}">${pct}%</div>
+                          </div>
+                          <div class="w-full theme-inner h-3 mt-4 rounded-full overflow-hidden p-[2px] border" style="border-color: var(--border-color);">
+                              <div class="h-full rounded-full" style="width:${pct}%; background:${t.color}"></div>
+                          </div>
+                      </div>`;
           });
-
-          const prevTotalSold = prev ? prev.totalSold : 0;
-          const totalDiff = cur.totalSold - prevTotalSold;
-
-          rowHtml += `<td class="p-5 font-black sticky right-0 z-10 border-l ${totalDiff > 0 ? 'text-amber-500' : 'text-emerald-800/60'}" style="border-color: var(--border-color); background-color: var(--bg-card);">${totalDiff > 0 ? '+' + totalDiff : '0'}</td>`;
-          tr.innerHTML = rowHtml;
-          body.appendChild(tr);
+        } catch (error) {
+          console.error('Lỗi khi cập nhật dữ liệu tự động:', error);
         }
-
-        // --- HOẠT HỌA THANH TIẾN ĐỘ ---
-        const percentSold =
-          (latestHourly.totalSold / latestHourly.totalCapacity) * 100;
-        // (latestHourly.totalSold / latestHourly.totalCapacity) * 100;
-        const percentStr = percentSold.toFixed(1) + '%';
-
-        document.getElementById('stat-pct').innerText = percentStr;
-
-        const progressFill = document.getElementById('progress-fill');
-        const bearIcon = document.getElementById('bear-icon');
-
-        setTimeout(() => {
-          // Xử lý vị trí gấu khi tiến sát hoặc đạt vạch đích để không đè lên mèo
-          if (percentSold >= 100) {
-            progressFill.style.width = '100%';
-            bearIcon.style.right = '24px'; // Đứng lùi lại bên trái mèo một chút
-          } else {
-            progressFill.style.width = percentStr;
-            bearIcon.style.right = '-12px';
-          }
-
-          bearIcon.classList.add('animate-bear');
-          bearIcon.style.opacity = '1'; // Đảm bảo gấu luôn hiện diện
-
-          // Kích hoạt trạng thái active cho các mốc thử thách
-          const markers = [60, 70, 80, 90];
-          markers.forEach((mốc) => {
-            const el = document.getElementById(`marker-${mốc}`);
-            if (el && percentSold >= mốc) {
-              el.classList.remove('opacity-40', 'scale-90');
-              el.classList.add('opacity-100', 'scale-110', 'font-black');
-            }
-          });
-        }, 150);
-
-        document.getElementById('stat-total').innerText =
-          `${latestHourly.totalSold.toLocaleString()} / ${latestHourly.totalCapacity.toLocaleString()}`;
-
-        const hourlyDelta = prevDateHistory
-          ? latestHourly.totalSold - prevDateHistory.totalSold
-          : latestHourly.totalSold;
-        document.getElementById('stat-delta').innerText = `+${hourlyDelta}`;
-
-        document.getElementById('stat-time').innerText = new Date(
-          latestHourly.timestamp,
-        ).toLocaleTimeString('en-US', {
-          timeZone: 'Asia/Ho_Chi_Minh',
-          hour: '2-digit',
-          minute: '2-digit',
-          hour12: false,
-        });
-
-        renderChart(dailyHistoryGlobal);
-
-        const grid = document.getElementById('seat-grid');
-        typeNames.forEach((name, index) => {
-          const t = latestHourly.byType[name];
-          const inc = prevDateHistory
-            ? t.sold - (prevDateHistory.byType[name]?.sold || 0)
-            : t.sold;
-          const pct = ((t.sold / t.total) * 100).toFixed(1);
-
-          grid.innerHTML += `
-                    <div class="theme-card p-8 rounded-[2.5rem] border relative shadow-xl">
-                        ${inc > 0 ? `<div class="absolute top-6 right-6 bg-amber-500 text-black text-[10px] font-black px-2 py-1 rounded-lg animate-pulse">+${inc} MỚI</div>` : ''}
-                        <div class="text-[11px] text-emerald-600 uppercase font-black mb-4 truncate">${index % 2 ? '🐻' : '🐈‍⬛'} ${name}</div>
-                        <div class="flex justify-between items-end mb-2">
-                            <div class="text-4xl font-black">${t.sold}<span class="text-emerald-800 text-lg font-normal ml-1">/${t.total}</span></div>
-                            <div class="text-xl font-black italic" style="color: ${t.color}">${pct}%</div>
-                        </div>
-                        <div class="w-full theme-inner h-3 mt-4 rounded-full overflow-hidden p-[2px] border" style="border-color: var(--border-color);">
-                            <div class="h-full rounded-full" style="width:${pct}%; background:${t.color}"></div>
-                        </div>
-                    </div>`;
-        });
       }
 
       const themeToggleBtn = document.getElementById('theme-toggle');
@@ -703,23 +1018,22 @@
       themeToggleBtn.addEventListener('click', () => {
         const rootHtml = document.documentElement;
         rootHtml.classList.toggle('light-theme');
-
         if (rootHtml.classList.contains('light-theme')) {
           localStorage.setItem('rify-theme', 'light');
         } else {
           localStorage.setItem('rify-theme', 'dark');
         }
-
         updateButtonUI();
-
-        if (dailyHistoryGlobal.length > 0) {
-          renderChart(dailyHistoryGlobal);
-        }
+        if (dailyHistoryGlobal.length > 0) renderChart(dailyHistoryGlobal);
       });
 
       updateButtonUI();
       initCountdown();
       initDashboard();
+
+      setInterval(() => {
+        initDashboard();
+      }, 120000);
     </script>
   </body>
 </html>
