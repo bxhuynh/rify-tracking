@@ -6113,8 +6113,8 @@
             }
         },
         {
-            "timestamp": "2026-06-07T16:50:35.337Z",
-            "totalSold": 432,
+            "timestamp": "2026-06-07T16:55:25.170Z",
+            "totalSold": 433,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -6133,7 +6133,7 @@
                     "color": "#8baf54"
                 },
                 "IN (VIP)": {
-                    "sold": 65,
+                    "sold": 66,
                     "total": 189,
                     "color": "#d7a691"
                 },
