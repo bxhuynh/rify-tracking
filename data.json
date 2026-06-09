@@ -6177,8 +6177,8 @@
             }
         },
         {
-            "timestamp": "2026-06-09T10:05:33.024Z",
-            "totalSold": 437,
+            "timestamp": "2026-06-09T10:10:35.003Z",
+            "totalSold": 440,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -6192,7 +6192,7 @@
                     "color": " #113a23"
                 },
                 "FLOW (Pre)": {
-                    "sold": 95,
+                    "sold": 98,
                     "total": 172,
                     "color": "#8baf54"
                 },
