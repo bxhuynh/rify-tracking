@@ -6209,8 +6209,8 @@
             }
         },
         {
-            "timestamp": "2026-06-10T16:01:00.858Z",
-            "totalSold": 447,
+            "timestamp": "2026-06-10T16:05:30.502Z",
+            "totalSold": 449,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -6219,7 +6219,7 @@
                     "color": "#face43"
                 },
                 "RIVER (Standard)": {
-                    "sold": 84,
+                    "sold": 86,
                     "total": 93,
                     "color": " #113a23"
                 },
