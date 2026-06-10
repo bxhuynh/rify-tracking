@@ -6241,7 +6241,7 @@
             }
         },
         {
-            "timestamp": "2026-06-10T23:40:35.181Z",
+            "timestamp": "2026-06-10T23:45:32.651Z",
             "totalSold": 459,
             "totalCapacity": 722,
             "byType": {
@@ -6271,7 +6271,7 @@
                     "color": "#297884"
                 }
             },
-            "holdingSeatsCount": 6,
+            "holdingSeatsCount": 7,
             "holdingSeats": [
                 {
                     "id": 45666,
@@ -6326,6 +6326,15 @@
                     "type": "FLOW (Pre)",
                     "status": 5,
                     "expireAt": "2026-06-11T06:46:47"
+                },
+                {
+                    "id": 45811,
+                    "code": "C22",
+                    "row": 10,
+                    "col": 38,
+                    "type": "IN (VIP)",
+                    "status": 5,
+                    "expireAt": "2026-06-11T06:52:26"
                 }
             ]
         }
