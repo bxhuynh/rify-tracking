@@ -767,57 +767,98 @@
         });
       }
 
-      // ĐIỀU CHỈNH: Lọc & Highlight ghế status = 5 (Giữ chỗ hệ thống)
+      // ĐIỀU CHỈNH CHÍNH XÁC: Lọc chuẩn thời gian từ 00:00:00 -> 23:59:59 Giờ VN hôm nay dựa trên lúc bắt đầu hold
       function renderHoldingSeats(latestSnapshot) {
         const tbody = document.getElementById('holding-seats-tbody');
         const badge = document.getElementById('holding-total-badge');
 
         if (!tbody || !badge) return;
 
-        const count = latestSnapshot.holdingSeatsCount || 0;
-        badge.innerText = `${count} ghế`;
+        // Tạo mốc thời gian Hôm nay (00:00:00 -> 23:59:59) theo múi giờ Việt Nam
+        const nowVN = new Date(
+          new Date().toLocaleString('en-US', { timeZone: 'Asia/Ho_Chi_Minh' }),
+        );
+        const startOfTodayVN = new Date(
+          nowVN.getFullYear(),
+          nowVN.getMonth(),
+          nowVN.getDate(),
+          0,
+          0,
+          0,
+          0,
+        );
+        const endOfTodayVN = new Date(
+          nowVN.getFullYear(),
+          nowVN.getMonth(),
+          nowVN.getDate(),
+          23,
+          5,
+          59,
+          999,
+        );
 
-        if (
-          !latestSnapshot.holdingSeats ||
-          latestSnapshot.holdingSeats.length === 0
-        ) {
+        const rawSeats = latestSnapshot.holdingSeats || [];
+
+        // Tiến hành bóc tách, tính toán startTime của tất cả các ghế và FILTER lọc đúng "ngày hôm nay"
+        const todayHoldingSeats = rawSeats
+          .map((seat) => {
+            const expireTime = new Date(seat.expireAt);
+            // Thời gian bắt đầu hold thực tế = Thời gian hết hạn trừ đi 10 phút
+            const startTime = new Date(expireTime.getTime() - 10 * 60 * 1000);
+
+            // Chuyển startTime về đối tượng Date khớp múi giờ Việt Nam để so sánh chuẩn ngày
+            const startTimeVN = new Date(
+              startTime.toLocaleString('en-US', {
+                timeZone: 'Asia/Ho_Chi_Minh',
+              }),
+            );
+
+            return { ...seat, startTime, expireTime, startTimeVN };
+          })
+          .filter((seat) => {
+            // LỌC CHUẨN: Thời điểm bắt đầu hold phải nằm trọn trong khoảng 0h -> 23h59 hôm nay của VN
+            return (
+              seat.startTimeVN >= startOfTodayVN &&
+              seat.startTimeVN <= endOfTodayVN
+            );
+          });
+
+        // Cập nhật lại số lượng badge hiển thị theo danh sách thực tế của ngày hôm nay
+        badge.innerText = `${todayHoldingSeats.length} ghế`;
+
+        if (todayHoldingSeats.length === 0) {
           tbody.innerHTML = `
             <tr>
               <td colspan="5" class="py-8 text-center text-stone-500 italic tracking-wide">
-                🟢 Hiện tại không có ghế nào đang trong trạng thái chờ thanh toán.
+                🟢 Hôm nay chưa có ghế nào bước vào trạng thái chờ thanh toán trong khung giờ này.
               </td>
             </tr>
           `;
           return;
         }
 
+        // Sắp xếp các ghế đang giữ theo thời gian hết hạn tăng dần (Ghế sắp hết hạn lên đầu)
+        todayHoldingSeats.sort((a, b) => a.expireTime - b.expireTime);
+
         let htmlContent = '';
-        const sortedSeats = [...latestSnapshot.holdingSeats].sort(
-          (a, b) => new Date(a.expireAt) - new Date(b.expireAt),
-        );
-
-        sortedSeats.forEach((seat) => {
-          const expireTime = new Date(seat.expireAt);
-          const startTime = new Date(expireTime.getTime() - 10 * 60 * 1000);
-
+        todayHoldingSeats.forEach((seat) => {
           const timeFormatOptions = {
             hour: '2-digit',
             minute: '2-digit',
             second: '2-digit',
+            timeZone: 'Asia/Ho_Chi_Minh',
           };
-          const startStr = startTime.toLocaleTimeString('vi-VN', {
+          const startStr = seat.startTime.toLocaleTimeString('vi-VN', {
             ...timeFormatOptions,
             hour12: false,
           });
-          const expireStr = expireTime.toLocaleTimeString('vi-VN', {
+          const expireStr = seat.expireTime.toLocaleTimeString('vi-VN', {
             ...timeFormatOptions,
             hour12: false,
           });
 
           const typeColor =
             latestSnapshot.byType[seat.type]?.color || '#a8a29e';
-
-          // KIỂM TRA ĐIỀU KIỆN HIGHLIGHT STATUS = 5
           const isStatus5 = seat.status === 5;
           const rowHighlightClass = isStatus5
             ? 'bg-orange-500/10 border-l-2 border-l-orange-500'
