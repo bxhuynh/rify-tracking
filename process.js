@@ -53,7 +53,6 @@ function processEntry() {
         );
 
         if (expireDateInVN === todayStr) {
-          snapshot.holdingSeatsCount++;
           snapshot.holdingSeats.push({
             id: item.id,
             code: item.code, // Ví dụ: "GG31"
@@ -66,24 +65,6 @@ function processEntry() {
         }
       }
     });
-
-    // In nhanh ra console để bạn dễ debug theo dõi khi chạy script
-    if (snapshot.holdingSeatsCount > 0) {
-      console.log(
-        `⏳ Phát hiện ${snapshot.holdingSeatsCount} ghế đang được chọn giữ chỗ hôm nay chưa mua!`,
-      );
-      console.table(
-        snapshot.holdingSeats.map((s) => ({
-          Mã: s.code,
-          Hạng: s.type,
-          HếtHạn: s.expireAt,
-        })),
-      );
-    } else {
-      console.log(
-        `🟢 Hiện tại không có ghế nào đang trong trạng thái chờ giữ chỗ hôm nay.`,
-      );
-    }
 
     // Đọc cơ sở dữ liệu cũ
     let db = { history: [] };
@@ -105,19 +86,88 @@ function processEntry() {
       ).toLocaleDateString('fr-CA', { timeZone: 'Asia/Ho_Chi_Minh' });
 
       if (todayStr === lastSnapshotDateStr) {
+        // SỬA ĐỔI: Tích lũy gộp dữ liệu danh sách ghế thay vì ghi đè mất dấu
+        const seatMap = new Map();
+
+        // 1. Nạp các ghế đã lưu trước đó trong ngày vào Map để giữ lại lịch sử thông tin gốc
+        if (
+          lastSnapshot.holdingSeats &&
+          Array.isArray(lastSnapshot.holdingSeats)
+        ) {
+          lastSnapshot.holdingSeats.forEach((seat) => {
+            seatMap.set(seat.code || seat.id, seat);
+          });
+        }
+
+        // ĐIỀU CHỈNH ĐẶC BIỆT 1: Nếu ghế cũ trong Map hiện tại đã chuyển thành ĐÃ BÁN (status 3 hoặc 4), phải xóa khỏi danh sách hold
+        rawData.result.forEach((item) => {
+          if (item.status === 3 || item.status === 4) {
+            seatMap.delete(item.code || item.id);
+          }
+        });
+
+        // ĐIỀU CHỈNH ĐẶC BIỆT 2: Quét qua TOÀN BỘ rawData lần nữa để ép cập nhật trạng thái mới cho các ghế ĐÃ TỒN TẠI trong Map lịch sử (bất kể có expire_date hay không)
+        rawData.result.forEach((item) => {
+          const seatKey = item.code || item.id;
+          if (seatMap.has(seatKey)) {
+            const existingSeat = seatMap.get(seatKey);
+            // Override cập nhật trạng thái mới nhất và thời gian mới nhất từ API (kể cả khi rỗng hoặc null)
+            seatMap.set(seatKey, {
+              ...existingSeat,
+              status: item.status,
+              expireAt: item.expired_date || existingSeat.expireAt || '', // Cập nhật rỗng nếu API gửi về ko có expire_date
+            });
+          }
+        });
+
+        // 2. Duyệt qua dữ liệu mới quét từ API (những ghế mới thỏa điều kiện hold trong ngày hôm nay) để thêm vào Map nếu chưa có
+        snapshot.holdingSeats.forEach((newSeat) => {
+          const seatKey = newSeat.code || newSeat.id;
+          if (!seatMap.has(seatKey)) {
+            seatMap.set(seatKey, newSeat);
+          }
+        });
+
+        // 3. Đổ ngược Map tích lũy vào lại snapshot hiện tại
+        snapshot.holdingSeats = Array.from(seatMap.values());
+        snapshot.holdingSeatsCount = snapshot.holdingSeats.length;
+
         db.history[db.history.length - 1] = snapshot;
         console.log(
           `🔄 [Múi giờ VN] Ghi đè snapshot mới nhất cho ngày: ${todayStr}`,
         );
       } else {
+        // Ngày mới: Khởi tạo số lượng đếm từ danh sách thực tế của snapshot mới
+        snapshot.holdingSeatsCount = snapshot.holdingSeats.length;
         db.history.push(snapshot);
         console.log(
           `✅ [Múi giờ VN] Phát hiện ngày mới, thêm snapshot mới cho ngày: ${todayStr}`,
         );
       }
     } else {
+      // Database rỗng: Khởi tạo lần đầu và cập nhật chính xác thuộc tính đếm
+      snapshot.holdingSeatsCount = snapshot.holdingSeats.length;
       db.history.push(snapshot);
       console.log(`✅ Khởi tạo snapshot đầu tiên cho ngày: ${todayStr}`);
+    }
+
+    // In nhanh ra console để bạn dễ debug theo dõi khi chạy script
+    if (snapshot.holdingSeatsCount > 0) {
+      console.log(
+        `⏳ Phát hiện ${snapshot.holdingSeatsCount} ghế đang được chọn giữ chỗ hôm nay chưa mua!`,
+      );
+      console.table(
+        snapshot.holdingSeats.map((s) => ({
+          Mã: s.code,
+          Hạng: s.type,
+          TrạngThái: s.status,
+          HếtHạn: s.expireAt,
+        })),
+      );
+    } else {
+      console.log(
+        `🟢 Hiện tại không có ghế nào đang trong trạng thái chờ giữ chỗ hôm nay.`,
+      );
     }
 
     // Ghi lại vào file dữ liệu
