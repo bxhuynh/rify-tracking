@@ -6241,7 +6241,7 @@
             }
         },
         {
-            "timestamp": "2026-06-10T19:25:34.292Z",
+            "timestamp": "2026-06-10T19:30:51.956Z",
             "totalSold": 459,
             "totalCapacity": 722,
             "byType": {
@@ -6271,7 +6271,7 @@
                     "color": "#297884"
                 }
             },
-            "holdingSeatsCount": 3,
+            "holdingSeatsCount": 4,
             "holdingSeats": [
                 {
                     "id": 45666,
@@ -6281,6 +6281,15 @@
                     "type": "FLOW (Pre)",
                     "status": 1,
                     "expireAt": "2026-06-11T00:16:26"
+                },
+                {
+                    "id": 45730,
+                    "code": "GA30",
+                    "row": 27,
+                    "col": 38,
+                    "type": "FLOW (Pre)",
+                    "status": 5,
+                    "expireAt": "2026-06-11T02:38:08"
                 },
                 {
                     "id": 45754,
