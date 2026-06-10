@@ -14,6 +14,7 @@ function processEntry() {
 
     const timestamp = new Date().toISOString();
 
+    // Lấy chuỗi ngày hôm nay của Việt Nam (Định dạng: YYYY-MM-DD)
     const todayStr = new Date().toLocaleDateString('fr-CA', {
       timeZone: 'Asia/Ho_Chi_Minh',
     });
@@ -23,6 +24,8 @@ function processEntry() {
       totalSold: 0,
       totalCapacity: 0,
       byType: {},
+      holdingSeatsCount: 0, // Đếm tổng số ghế đang giữ hôm nay
+      holdingSeats: [], // Danh sách chi tiết các ghế đang giữ
     };
 
     // Parse thông tin vé từ kết quả API
@@ -33,11 +36,54 @@ function processEntry() {
       }
       snapshot.byType[name].total++;
       snapshot.totalCapacity++;
+
+      // Ghế đã bán chính thức hoặc đã thanh toán thành công
       if (item.status === 3 || item.status === 4) {
         snapshot.byType[name].sold++;
         snapshot.totalSold++;
       }
+      // LOGIC KIỂM TRA GHẾ ĐANG GIỮ (HOLD) CHƯA MUA TRONG NGÀY HÔM NAY
+      else if (item.expired_date && item.status !== 3 && item.status !== 4) {
+        // Chuyển expired_date sang chuỗi ngày của Việt Nam để so sánh xem có phải thao tác hôm nay không
+        const expireDateInVN = new Date(item.expired_date).toLocaleDateString(
+          'fr-CA',
+          {
+            timeZone: 'Asia/Ho_Chi_Minh',
+          },
+        );
+
+        if (expireDateInVN === todayStr) {
+          snapshot.holdingSeatsCount++;
+          snapshot.holdingSeats.push({
+            id: item.id,
+            code: item.code, // Ví dụ: "GG31"
+            row: item.row, // Hàng
+            col: item.col, // Cột
+            type: name, // Hạng vé
+            status: item.status, // Trạng thái hiện tại
+            expireAt: item.expired_date, // Thời gian hết hạn giữ ghế
+          });
+        }
+      }
     });
+
+    // In nhanh ra console để bạn dễ debug theo dõi khi chạy script
+    if (snapshot.holdingSeatsCount > 0) {
+      console.log(
+        `⏳ Phát hiện ${snapshot.holdingSeatsCount} ghế đang được chọn giữ chỗ hôm nay chưa mua!`,
+      );
+      console.table(
+        snapshot.holdingSeats.map((s) => ({
+          Mã: s.code,
+          Hạng: s.type,
+          HếtHạn: s.expireAt,
+        })),
+      );
+    } else {
+      console.log(
+        `🟢 Hiện tại không có ghế nào đang trong trạng thái chờ giữ chỗ hôm nay.`,
+      );
+    }
 
     // Đọc cơ sở dữ liệu cũ
     let db = { history: [] };
@@ -50,23 +96,20 @@ function processEntry() {
       }
     }
 
-    // --- LOGIC GIỮ 1 BẢN GHI MỖI NGÀY (ĐÃ SỬA THEO MÚI GIỜ VN) ---
+    // --- LOGIC GIỮ 1 BẢN GHI MỖI NGÀY (MÚI GIỜ VN) ---
     if (db.history.length > 0) {
       const lastSnapshot = db.history[db.history.length - 1];
 
-      // Chuyển đổi timestamp UTC của bản ghi cuối cùng trong DB sang ngày của Việt Nam để so sánh
       const lastSnapshotDateStr = new Date(
         lastSnapshot.timestamp,
       ).toLocaleDateString('fr-CA', { timeZone: 'Asia/Ho_Chi_Minh' });
 
       if (todayStr === lastSnapshotDateStr) {
-        // Nếu trùng ngày theo giờ VN: Ghi đè bản ghi cuối cùng
         db.history[db.history.length - 1] = snapshot;
         console.log(
           `🔄 [Múi giờ VN] Ghi đè snapshot mới nhất cho ngày: ${todayStr}`,
         );
       } else {
-        // Nếu đã bước sang ngày mới theo giờ VN: Push bản ghi mới
         db.history.push(snapshot);
         console.log(
           `✅ [Múi giờ VN] Phát hiện ngày mới, thêm snapshot mới cho ngày: ${todayStr}`,
@@ -77,7 +120,7 @@ function processEntry() {
       console.log(`✅ Khởi tạo snapshot đầu tiên cho ngày: ${todayStr}`);
     }
 
-    // Ghi lại vào file dữ liệu với cấu trúc thụt lề cũ của bạn
+    // Ghi lại vào file dữ liệu
     fs.writeFileSync(DB_FILE, JSON.stringify(db, null, 4));
     console.log(`💾 Đã lưu database thành công.`);
   } catch (err) {
