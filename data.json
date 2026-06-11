@@ -6241,7 +6241,7 @@
             }
         },
         {
-            "timestamp": "2026-06-11T04:55:28.321Z",
+            "timestamp": "2026-06-11T05:00:56.303Z",
             "totalSold": 461,
             "totalCapacity": 722,
             "byType": {
@@ -6441,7 +6441,7 @@
                     "row": 12,
                     "col": 16,
                     "type": "YOU (SVIP)",
-                    "status": 5,
+                    "status": 1,
                     "expireAt": "2026-06-11T11:58:21"
                 }
             ],
