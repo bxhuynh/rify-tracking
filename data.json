@@ -6645,6 +6645,51 @@
                     "expireAt": "2026-06-12T00:00:47"
                 }
             ]
+        },
+        {
+            "timestamp": "2026-06-11T17:01:00.209Z",
+            "totalSold": 472,
+            "totalCapacity": 722,
+            "byType": {
+                "CHILL (Gift)": {
+                    "sold": 62,
+                    "total": 62,
+                    "color": "#face43"
+                },
+                "RIVER (Standard)": {
+                    "sold": 93,
+                    "total": 93,
+                    "color": " #113a23"
+                },
+                "FLOW (Pre)": {
+                    "sold": 107,
+                    "total": 172,
+                    "color": "#8baf54"
+                },
+                "IN (VIP)": {
+                    "sold": 76,
+                    "total": 189,
+                    "color": "#d7a691"
+                },
+                "YOU (SVIP)": {
+                    "sold": 134,
+                    "total": 206,
+                    "color": "#297884"
+                }
+            },
+            "holdingSeatsCount": 1,
+            "holdingSeats": [
+                {
+                    "id": 45977,
+                    "code": "VB15",
+                    "row": 2,
+                    "col": 6,
+                    "type": "YOU (SVIP)",
+                    "status": 1,
+                    "expireAt": "2026-06-11T21:57:37"
+                }
+            ],
+            "soldTodaySeats": []
         }
     ]
 }
