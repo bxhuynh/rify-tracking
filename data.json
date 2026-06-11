@@ -6241,7 +6241,7 @@
             }
         },
         {
-            "timestamp": "2026-06-11T13:15:42.804Z",
+            "timestamp": "2026-06-11T13:20:41.250Z",
             "totalSold": 465,
             "totalCapacity": 722,
             "byType": {
@@ -6324,8 +6324,8 @@
                     "row": 27,
                     "col": 10,
                     "type": "FLOW (Pre)",
-                    "status": 1,
-                    "expireAt": "2026-06-11T07:06:28"
+                    "status": 5,
+                    "expireAt": "2026-06-11T20:29:20"
                 },
                 {
                     "id": 45974,
@@ -6360,7 +6360,7 @@
                     "row": 28,
                     "col": 32,
                     "type": "FLOW (Pre)",
-                    "status": 5,
+                    "status": 1,
                     "expireAt": "2026-06-11T20:16:34"
                 },
                 {
