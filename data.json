@@ -6241,7 +6241,7 @@
             }
         },
         {
-            "timestamp": "2026-06-11T06:00:55.599Z",
+            "timestamp": "2026-06-11T06:05:29.930Z",
             "totalSold": 462,
             "totalCapacity": 722,
             "byType": {
@@ -6271,7 +6271,7 @@
                     "color": "#297884"
                 }
             },
-            "holdingSeatsCount": 19,
+            "holdingSeatsCount": 20,
             "holdingSeats": [
                 {
                     "id": 45666,
@@ -6443,6 +6443,15 @@
                     "type": "IN (VIP)",
                     "status": 1,
                     "expireAt": "2026-06-11T12:41:24"
+                },
+                {
+                    "id": 45591,
+                    "code": "I25",
+                    "row": 15,
+                    "col": 3,
+                    "type": "FLOW (Pre)",
+                    "status": 5,
+                    "expireAt": "2026-06-11T13:15:18"
                 }
             ],
             "soldTodaySeats": [
