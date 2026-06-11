@@ -6241,7 +6241,7 @@
             }
         },
         {
-            "timestamp": "2026-06-11T01:00:51.746Z",
+            "timestamp": "2026-06-11T01:05:27.493Z",
             "totalSold": 459,
             "totalCapacity": 722,
             "byType": {
@@ -6271,7 +6271,7 @@
                     "color": "#297884"
                 }
             },
-            "holdingSeatsCount": 12,
+            "holdingSeatsCount": 13,
             "holdingSeats": [
                 {
                     "id": 45666,
@@ -6380,6 +6380,15 @@
                     "type": "FLOW (Pre)",
                     "status": 1,
                     "expireAt": "2026-06-11T07:53:49"
+                },
+                {
+                    "id": 45899,
+                    "code": "K5",
+                    "row": 16,
+                    "col": 19,
+                    "type": "IN (VIP)",
+                    "status": 5,
+                    "expireAt": "2026-06-11T08:14:13"
                 }
             ]
         }
