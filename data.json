@@ -6241,7 +6241,7 @@
             }
         },
         {
-            "timestamp": "2026-06-11T02:21:18.618Z",
+            "timestamp": "2026-06-11T02:25:27.606Z",
             "totalSold": 460,
             "totalCapacity": 722,
             "byType": {
@@ -6271,7 +6271,7 @@
                     "color": "#297884"
                 }
             },
-            "holdingSeatsCount": 15,
+            "holdingSeatsCount": 16,
             "holdingSeats": [
                 {
                     "id": 45666,
@@ -6407,6 +6407,15 @@
                     "type": "IN (VIP)",
                     "status": 1,
                     "expireAt": "2026-06-11T08:58:11"
+                },
+                {
+                    "id": 46002,
+                    "code": "VC13",
+                    "row": 3,
+                    "col": 8,
+                    "type": "YOU (SVIP)",
+                    "status": 5,
+                    "expireAt": "2026-06-11T09:35:05"
                 }
             ],
             "soldTodaySeats": [
@@ -6508,6 +6517,42 @@
                     "type": "YOU (SVIP)",
                     "status": 3,
                     "expireAt": "2026-06-11T08:36:45"
+                },
+                {
+                    "id": 45498,
+                    "code": "GE29",
+                    "row": 31,
+                    "col": 6,
+                    "type": "RIVER (Standard)",
+                    "status": 3,
+                    "expireAt": "2026-06-10T23:13:41"
+                },
+                {
+                    "id": 45499,
+                    "code": "GE27",
+                    "row": 31,
+                    "col": 7,
+                    "type": "RIVER (Standard)",
+                    "status": 3,
+                    "expireAt": "2026-06-10T23:13:41"
+                },
+                {
+                    "id": 45646,
+                    "code": "M24",
+                    "row": 18,
+                    "col": 37,
+                    "type": "FLOW (Pre)",
+                    "status": 3,
+                    "expireAt": "2026-06-10T18:43:09"
+                },
+                {
+                    "id": 45647,
+                    "code": "M26",
+                    "row": 18,
+                    "col": 38,
+                    "type": "FLOW (Pre)",
+                    "status": 3,
+                    "expireAt": "2026-06-10T18:43:09"
                 }
             ]
         }
