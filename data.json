@@ -6241,8 +6241,8 @@
             }
         },
         {
-            "timestamp": "2026-06-11T13:50:38.258Z",
-            "totalSold": 465,
+            "timestamp": "2026-06-11T13:55:37.182Z",
+            "totalSold": 466,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -6261,7 +6261,7 @@
                     "color": "#8baf54"
                 },
                 "IN (VIP)": {
-                    "sold": 72,
+                    "sold": 73,
                     "total": 189,
                     "color": "#d7a691"
                 },
@@ -6432,7 +6432,7 @@
                     "row": 27,
                     "col": 34,
                     "type": "FLOW (Pre)",
-                    "status": 5,
+                    "status": 1,
                     "expireAt": "2026-06-11T20:51:11"
                 },
                 {
