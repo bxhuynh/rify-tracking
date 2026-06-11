@@ -6241,8 +6241,8 @@
             }
         },
         {
-            "timestamp": "2026-06-11T16:50:40.824Z",
-            "totalSold": 471,
+            "timestamp": "2026-06-11T16:53:53.520Z",
+            "totalSold": 472,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -6256,7 +6256,7 @@
                     "color": " #113a23"
                 },
                 "FLOW (Pre)": {
-                    "sold": 106,
+                    "sold": 107,
                     "total": 172,
                     "color": "#8baf54"
                 },
@@ -6271,7 +6271,7 @@
                     "color": "#297884"
                 }
             },
-            "holdingSeatsCount": 21,
+            "holdingSeatsCount": 20,
             "holdingSeats": [
                 {
                     "id": 45666,
@@ -6281,15 +6281,6 @@
                     "type": "FLOW (Pre)",
                     "status": 1,
                     "expireAt": "2026-06-11T00:16:26"
-                },
-                {
-                    "id": 45754,
-                    "code": "GB16",
-                    "row": 28,
-                    "col": 31,
-                    "type": "FLOW (Pre)",
-                    "status": 1,
-                    "expireAt": "2026-06-11T20:15:28"
                 },
                 {
                     "id": 45827,
@@ -6643,6 +6634,15 @@
                     "type": "FLOW (Pre)",
                     "status": 3,
                     "expireAt": "2026-06-11T19:57:27"
+                },
+                {
+                    "id": 45754,
+                    "code": "GB16",
+                    "row": 28,
+                    "col": 31,
+                    "type": "FLOW (Pre)",
+                    "status": 3,
+                    "expireAt": "2026-06-12T00:00:47"
                 }
             ]
         }
