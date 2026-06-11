@@ -82,9 +82,12 @@ function processEntry() {
     if (db.history.length > 0) {
       const lastSnapshot = db.history[db.history.length - 1];
 
+      // SỬA ĐỔI CHÍ MẠNG: Ép kiểu chặt chẽ timezone Asia/Ho_Chi_Minh cho timestamp cũ để loại bỏ sai lệch khi chạy trên GitHub (UTC)
       const lastSnapshotDateStr = new Date(
         lastSnapshot.timestamp,
-      ).toLocaleDateString('fr-CA', { timeZone: 'Asia/Ho_Chi_Minh' });
+      ).toLocaleDateString('fr-CA', {
+        timeZone: 'Asia/Ho_Chi_Minh',
+      });
 
       if (todayStr === lastSnapshotDateStr) {
         // SỬA ĐỔI: Tích lũy gộp dữ liệu danh sách ghế thay vì ghi đè mất dấu
@@ -175,8 +178,20 @@ function processEntry() {
         snapshot.holdingSeats = Array.from(seatMap.values());
         snapshot.holdingSeatsCount = snapshot.holdingSeats.length;
 
-        // Lưu danh sách ghế đã sold thỏa điều kiện trong ngày vào DB
-        snapshot.soldTodaySeats = Array.from(soldSeatMap.values());
+        // SỬA ĐỔI: Kế thừa lại các ghế đã sold từ trước đó của ngày hôm nay sang snapshot mới, tránh mất dấu dữ liệu qua các phiên quét tự động
+        const combinedSoldMap = new Map();
+        if (
+          lastSnapshot.soldTodaySeats &&
+          Array.isArray(lastSnapshot.soldTodaySeats)
+        ) {
+          lastSnapshot.soldTodaySeats.forEach((seat) =>
+            combinedSoldMap.set(seat.code || seat.id, seat),
+          );
+        }
+        Array.from(soldSeatMap.values()).forEach((seat) =>
+          combinedSoldMap.set(seat.code || seat.id, seat),
+        );
+        snapshot.soldTodaySeats = Array.from(combinedSoldMap.values());
 
         db.history[db.history.length - 1] = snapshot;
         console.log(
