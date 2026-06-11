@@ -6241,7 +6241,7 @@
             }
         },
         {
-            "timestamp": "2026-06-11T00:20:31.473Z",
+            "timestamp": "2026-06-11T00:25:25.706Z",
             "totalSold": 459,
             "totalCapacity": 722,
             "byType": {
@@ -6271,7 +6271,7 @@
                     "color": "#297884"
                 }
             },
-            "holdingSeatsCount": 9,
+            "holdingSeatsCount": 11,
             "holdingSeats": [
                 {
                     "id": 45666,
@@ -6333,7 +6333,7 @@
                     "row": 10,
                     "col": 38,
                     "type": "IN (VIP)",
-                    "status": 2,
+                    "status": 1,
                     "expireAt": "2026-06-11T07:19:02"
                 },
                 {
@@ -6353,6 +6353,24 @@
                     "type": "FLOW (Pre)",
                     "status": 1,
                     "expireAt": "2026-06-11T07:15:54"
+                },
+                {
+                    "id": 45921,
+                    "code": "L12",
+                    "row": 17,
+                    "col": 27,
+                    "type": "IN (VIP)",
+                    "status": 5,
+                    "expireAt": "2026-06-11T07:31:46"
+                },
+                {
+                    "id": 45922,
+                    "code": "L14",
+                    "row": 17,
+                    "col": 28,
+                    "type": "IN (VIP)",
+                    "status": 5,
+                    "expireAt": "2026-06-11T07:31:46"
                 }
             ]
         }
