@@ -6241,7 +6241,7 @@
             }
         },
         {
-            "timestamp": "2026-06-11T01:10:31.369Z",
+            "timestamp": "2026-06-11T01:15:31.433Z",
             "totalSold": 459,
             "totalCapacity": 722,
             "byType": {
@@ -6387,7 +6387,7 @@
                     "row": 16,
                     "col": 19,
                     "type": "IN (VIP)",
-                    "status": 5,
+                    "status": 1,
                     "expireAt": "2026-06-11T08:14:13"
                 }
             ]
