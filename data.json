@@ -6241,7 +6241,7 @@
             }
         },
         {
-            "timestamp": "2026-06-10T23:55:28.734Z",
+            "timestamp": "2026-06-11T00:00:55.874Z",
             "totalSold": 459,
             "totalCapacity": 722,
             "byType": {
@@ -6271,7 +6271,7 @@
                     "color": "#297884"
                 }
             },
-            "holdingSeatsCount": 7,
+            "holdingSeatsCount": 8,
             "holdingSeats": [
                 {
                     "id": 45666,
@@ -6315,8 +6315,8 @@
                     "row": 20,
                     "col": 8,
                     "type": "FLOW (Pre)",
-                    "status": 1,
-                    "expireAt": "2026-06-11T02:57:38"
+                    "status": 5,
+                    "expireAt": "2026-06-11T07:10:07"
                 },
                 {
                     "id": 45705,
@@ -6324,8 +6324,8 @@
                     "row": 27,
                     "col": 10,
                     "type": "FLOW (Pre)",
-                    "status": 1,
-                    "expireAt": "2026-06-11T06:46:47"
+                    "status": 5,
+                    "expireAt": "2026-06-11T07:06:28"
                 },
                 {
                     "id": 45811,
@@ -6335,6 +6335,15 @@
                     "type": "IN (VIP)",
                     "status": 2,
                     "expireAt": "2026-06-11T06:52:26"
+                },
+                {
+                    "id": 45974,
+                    "code": "VB21",
+                    "row": 2,
+                    "col": 3,
+                    "type": "YOU (SVIP)",
+                    "status": 5,
+                    "expireAt": "2026-06-11T07:06:28"
                 }
             ]
         }
