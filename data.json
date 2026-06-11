@@ -6241,7 +6241,7 @@
             }
         },
         {
-            "timestamp": "2026-06-11T01:45:33.634Z",
+            "timestamp": "2026-06-11T01:50:34.204Z",
             "totalSold": 460,
             "totalCapacity": 722,
             "byType": {
@@ -6271,7 +6271,7 @@
                     "color": "#297884"
                 }
             },
-            "holdingSeatsCount": 14,
+            "holdingSeatsCount": 15,
             "holdingSeats": [
                 {
                     "id": 45666,
@@ -6398,6 +6398,15 @@
                     "type": "YOU (SVIP)",
                     "status": 5,
                     "expireAt": "2026-06-11T08:50:42"
+                },
+                {
+                    "id": 45883,
+                    "code": "I9",
+                    "row": 15,
+                    "col": 17,
+                    "type": "IN (VIP)",
+                    "status": 2,
+                    "expireAt": "2026-06-11T08:58:11"
                 }
             ]
         }
