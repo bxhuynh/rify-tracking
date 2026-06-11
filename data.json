@@ -6241,7 +6241,7 @@
             }
         },
         {
-            "timestamp": "2026-06-11T02:20:31.439Z",
+            "timestamp": "2026-06-11T02:21:18.618Z",
             "totalSold": 460,
             "totalCapacity": 722,
             "byType": {
@@ -6407,6 +6407,107 @@
                     "type": "IN (VIP)",
                     "status": 1,
                     "expireAt": "2026-06-11T08:58:11"
+                }
+            ],
+            "soldTodaySeats": [
+                {
+                    "id": 45497,
+                    "code": "GE31",
+                    "row": 31,
+                    "col": 5,
+                    "type": "RIVER (Standard)",
+                    "status": 3,
+                    "expireAt": "2026-06-11T00:19:06"
+                },
+                {
+                    "id": 45523,
+                    "code": "GE22",
+                    "row": 31,
+                    "col": 34,
+                    "type": "RIVER (Standard)",
+                    "status": 3,
+                    "expireAt": "2026-06-11T00:23:56"
+                },
+                {
+                    "id": 45524,
+                    "code": "GE24",
+                    "row": 31,
+                    "col": 35,
+                    "type": "RIVER (Standard)",
+                    "status": 3,
+                    "expireAt": "2026-06-11T00:10:28"
+                },
+                {
+                    "id": 45525,
+                    "code": "GE26",
+                    "row": 31,
+                    "col": 36,
+                    "type": "RIVER (Standard)",
+                    "status": 3,
+                    "expireAt": "2026-06-11T00:08:24"
+                },
+                {
+                    "id": 45526,
+                    "code": "GE28",
+                    "row": 31,
+                    "col": 37,
+                    "type": "RIVER (Standard)",
+                    "status": 3,
+                    "expireAt": "2026-06-11T00:08:24"
+                },
+                {
+                    "id": 45557,
+                    "code": "GC60",
+                    "row": 29,
+                    "col": 37,
+                    "type": "RIVER (Standard)",
+                    "status": 3,
+                    "expireAt": "2026-06-11T00:23:08"
+                },
+                {
+                    "id": 45589,
+                    "code": "GD30",
+                    "row": 30,
+                    "col": 38,
+                    "type": "RIVER (Standard)",
+                    "status": 3,
+                    "expireAt": "2026-06-11T00:10:34"
+                },
+                {
+                    "id": 45884,
+                    "code": "I7",
+                    "row": 15,
+                    "col": 18,
+                    "type": "IN (VIP)",
+                    "status": 3,
+                    "expireAt": "2026-06-11T00:12:26"
+                },
+                {
+                    "id": 45907,
+                    "code": "K12",
+                    "row": 16,
+                    "col": 27,
+                    "type": "IN (VIP)",
+                    "status": 3,
+                    "expireAt": "2026-06-11T00:45:58"
+                },
+                {
+                    "id": 45908,
+                    "code": "K14",
+                    "row": 16,
+                    "col": 28,
+                    "type": "IN (VIP)",
+                    "status": 3,
+                    "expireAt": "2026-06-11T00:45:58"
+                },
+                {
+                    "id": 46107,
+                    "code": "D11",
+                    "row": 11,
+                    "col": 16,
+                    "type": "YOU (SVIP)",
+                    "status": 3,
+                    "expireAt": "2026-06-11T08:36:45"
                 }
             ]
         }

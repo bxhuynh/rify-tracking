@@ -448,11 +448,12 @@
                 class="text-stone-500 uppercase font-mono tracking-wider border-b border-stone-800/40"
                 style="border-color: var(--border-color)"
               >
-                <th class="pb-3 pl-2 w-28">Mã Ghế</th>
-                <th class="pb-3 w-40">Vị trí (Hàng/Cột)</th>
+                <th class="pb-3 pl-2 w-24">Mã Ghế</th>
+                <th class="pb-3 w-28">Trạng thái</th>
+                <th class="pb-3 w-36">Vị trí (Hàng/Cột)</th>
                 <th class="pb-3">Hạng Vé</th>
-                <th class="pb-3 w-32 text-left">Bắt đầu lúc</th>
-                <th class="pb-3 pr-2 text-right w-32">Hết hạn lúc</th>
+                <th class="pb-3 w-28 text-left">Bắt đầu lúc</th>
+                <th class="pb-3 pr-2 text-right w-28">Hết hạn lúc</th>
               </tr>
             </thead>
             <tbody
@@ -461,7 +462,7 @@
               style="border-color: var(--border-color)"
             >
               <tr>
-                <td colspan="5" class="py-8 text-center text-stone-500 italic">
+                <td colspan="6" class="py-8 text-center text-stone-500 italic">
                   Đang tải dữ liệu giữ ghế...
                 </td>
               </tr>
@@ -767,14 +768,13 @@
         });
       }
 
-      // ĐIỀU CHỈNH CHÍNH XÁC: Lọc chuẩn thời gian từ 00:00:00 -> 23:59:59 Giờ VN hôm nay dựa trên lúc bắt đầu hold
+      // FULL PROCESS: Render gộp cả ghế đang giữ và ghế đã bán vào chung 1 bảng theo phong cách đồng nhất
       function renderHoldingSeats(latestSnapshot) {
         const tbody = document.getElementById('holding-seats-tbody');
         const badge = document.getElementById('holding-total-badge');
 
         if (!tbody || !badge) return;
 
-        // Tạo mốc thời gian Hôm nay (00:00:00 -> 23:59:59) theo múi giờ Việt Nam
         const nowVN = new Date(
           new Date().toLocaleString('en-US', { timeZone: 'Asia/Ho_Chi_Minh' }),
         );
@@ -792,21 +792,26 @@
           nowVN.getMonth(),
           nowVN.getDate(),
           23,
-          5,
+          59,
           59,
           999,
         );
 
-        const rawSeats = latestSnapshot.holdingSeats || [];
+        const validHolding = (latestSnapshot.holdingSeats || []).filter(
+          (seat) => seat,
+        );
+        const validSoldToday = (latestSnapshot.soldTodaySeats || []).filter(
+          (seat) => seat,
+        );
 
-        // Tiến hành bóc tách, tính toán startTime của tất cả các ghế và FILTER lọc đúng "ngày hôm nay"
-        const todayHoldingSeats = rawSeats
+        const rawSeats = [...validHolding, ...validSoldToday];
+
+        const todayCombinedSeats = rawSeats
           .map((seat) => {
-            const expireTime = new Date(seat.expireAt);
-            // Thời gian bắt đầu hold thực tế = Thời gian hết hạn trừ đi 10 phút
+            const expireTime = seat.expireAt
+              ? new Date(seat.expireAt)
+              : new Date(latestSnapshot.timestamp);
             const startTime = new Date(expireTime.getTime() - 10 * 60 * 1000);
-
-            // Chuyển startTime về đối tượng Date khớp múi giờ Việt Nam để so sánh chuẩn ngày
             const startTimeVN = new Date(
               startTime.toLocaleString('en-US', {
                 timeZone: 'Asia/Ho_Chi_Minh',
@@ -816,73 +821,88 @@
             return { ...seat, startTime, expireTime, startTimeVN };
           })
           .filter((seat) => {
-            // LỌC CHUẨN: Thời điểm bắt đầu hold phải nằm trọn trong khoảng 0h -> 23h59 hôm nay của VN
             return (
               seat.startTimeVN >= startOfTodayVN &&
               seat.startTimeVN <= endOfTodayVN
             );
           });
 
-        // Cập nhật lại số lượng badge hiển thị theo danh sách thực tế của ngày hôm nay
-        badge.innerText = `${todayHoldingSeats.length} ghế`;
+        badge.innerText = `${todayCombinedSeats.length} ghế`;
 
-        if (todayHoldingSeats.length === 0) {
+        if (todayCombinedSeats.length === 0) {
           tbody.innerHTML = `
             <tr>
-              <td colspan="5" class="py-8 text-center text-stone-500 italic tracking-wide">
-                🟢 Hôm nay chưa có ghế nào bước vào trạng thái chờ thanh toán trong khung giờ này.
+              <td colspan="6" class="py-8 text-center text-stone-500 italic">
+                🟢 Hôm nay chưa có ghế nào trong trạng thái giữ chỗ hoặc đã bán.
               </td>
             </tr>
           `;
           return;
         }
 
-        // Sắp xếp các ghế đang giữ theo thời gian hết hạn tăng dần (Ghế sắp hết hạn lên đầu)
-        todayHoldingSeats.sort((a, b) => a.expireTime - b.expireTime);
+        todayCombinedSeats.sort((a, b) => a.expireTime - b.expireTime);
 
         let htmlContent = '';
-        todayHoldingSeats.forEach((seat) => {
+        todayCombinedSeats.forEach((seat) => {
           const timeFormatOptions = {
             hour: '2-digit',
             minute: '2-digit',
             second: '2-digit',
             timeZone: 'Asia/Ho_Chi_Minh',
+            hour12: false,
           };
-          const startStr = seat.startTime.toLocaleTimeString('vi-VN', {
-            ...timeFormatOptions,
-            hour12: false,
-          });
-          const expireStr = seat.expireTime.toLocaleTimeString('vi-VN', {
-            ...timeFormatOptions,
-            hour12: false,
-          });
+          const startStr = seat.startTime.toLocaleTimeString(
+            'vi-VN',
+            timeFormatOptions,
+          );
+          const expireStr = seat.expireTime.toLocaleTimeString(
+            'vi-VN',
+            timeFormatOptions,
+          );
 
           const typeColor =
             latestSnapshot.byType[seat.type]?.color || '#a8a29e';
+
           const isStatus5 = seat.status === 5;
-          const rowHighlightClass = isStatus5
-            ? 'bg-orange-500/10 border-l-2 border-l-orange-500'
-            : 'hover:bg-amber-500/5';
+          const isStatus2 = seat.status === 2;
+          const isSold = seat.status === 3 || seat.status === 4;
+
+          let rowClass = 'hover:bg-amber-500/5 transition-colors duration-150';
+          let statusBadge = '';
+          let expireDisplayStr = expireStr;
+
+          if (isStatus5) {
+            statusBadge = `<span class="inline-block px-2 py-0.5 text-[9px] font-black rounded bg-orange-500 text-black uppercase tracking-wider animate-pulse">HOLD</span>`;
+          } else if (isStatus2) {
+            statusBadge = `<span class="inline-block px-2 py-0.5 text-[9px] font-black rounded bg-yellow-400 text-black uppercase tracking-wider animate-pulse">PAYING 💳</span>`;
+          } else if (isSold) {
+            rowClass =
+              'bg-emerald-500/5 hover:bg-emerald-500/10 opacity-60 transition-colors duration-150';
+            statusBadge = `<span class="inline-block px-2 py-0.5 text-[9px] font-black rounded bg-emerald-500 text-black uppercase tracking-wider">SOLD 🎉</span>`;
+            expireDisplayStr = 'Thành công';
+          }
 
           htmlContent += `
-            <tr class="transition-colors duration-150 group ${rowHighlightClass}">
-              <td class="py-3.5 pl-2 flex items-center gap-2">
-                <span class="inline-block px-2.5 py-1 text-[11px] font-mono font-black rounded-md text-black shadow-sm tracking-wide transition-transform group-hover:scale-105 duration-150" style="background-color: ${typeColor};">
+            <tr class="${rowClass}">
+              <td class="py-3.5 pl-2">
+                <span class="inline-block px-2 py-0.5 text-[10px] font-mono font-black rounded text-black shadow-sm" style="background-color: ${typeColor};">
                   ${seat.code || 'N/A'}
                 </span>
-                ${isStatus5 ? `<span class="inline-block px-1.5 py-0.5 text-[9px] font-black rounded bg-orange-500 text-black uppercase tracking-wider animate-pulse">HOLD</span>` : ''}
               </td>
-              <td class="py-3.5 font-mono ${isStatus5 ? 'text-orange-400 font-bold' : 'text-stone-400'}">
+              <td class="py-3.5 flex items-center">
+                ${statusBadge}
+              </td>
+              <td class="py-3.5 font-mono ${isSold ? 'text-stone-400' : 'text-stone-300'}">
                 Hàng ${seat.row} - Cột ${seat.col}
               </td>
-              <td class="py-3.5 font-bold text-stone-200">
+              <td class="py-3.5 font-bold ${isSold ? 'text-stone-400' : 'text-stone-200'}">
                 ${seat.type}
               </td>
-              <td class="py-3.5 font-mono text-stone-500 text-left">
+              <td class="py-3.5 font-mono ${isSold ? 'text-stone-500' : 'text-stone-400'} text-left">
                 ${startStr}
               </td>
-              <td class="py-3.5 pr-2 text-right font-mono ${isStatus5 ? 'text-orange-500' : 'text-amber-500'} font-bold">
-                ${expireStr}
+              <td class="py-3.5 pr-2 text-right font-mono ${isStatus5 ? 'text-orange-500' : isStatus2 ? 'text-yellow-400' : 'text-emerald-400 font-bold'}">
+                ${expireDisplayStr}
               </td>
             </tr>
           `;
@@ -890,7 +910,6 @@
 
         tbody.innerHTML = htmlContent;
       }
-
       async function initDashboard() {
         try {
           const res = await fetch('./data.json?t=' + new Date().getTime());
