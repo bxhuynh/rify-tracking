@@ -6241,7 +6241,7 @@
             }
         },
         {
-            "timestamp": "2026-06-11T08:05:33.755Z",
+            "timestamp": "2026-06-11T08:10:38.180Z",
             "totalSold": 463,
             "totalCapacity": 722,
             "byType": {
@@ -6271,7 +6271,7 @@
                     "color": "#297884"
                 }
             },
-            "holdingSeatsCount": 20,
+            "holdingSeatsCount": 23,
             "holdingSeats": [
                 {
                     "id": 45666,
@@ -6452,6 +6452,33 @@
                     "type": "FLOW (Pre)",
                     "status": 1,
                     "expireAt": "2026-06-11T15:01:16"
+                },
+                {
+                    "id": 45952,
+                    "code": "VA19",
+                    "row": 1,
+                    "col": 4,
+                    "type": "YOU (SVIP)",
+                    "status": 5,
+                    "expireAt": "2026-06-11T15:20:08"
+                },
+                {
+                    "id": 45953,
+                    "code": "VA17",
+                    "row": 1,
+                    "col": 5,
+                    "type": "YOU (SVIP)",
+                    "status": 5,
+                    "expireAt": "2026-06-11T15:20:08"
+                },
+                {
+                    "id": 45954,
+                    "code": "VA15",
+                    "row": 1,
+                    "col": 6,
+                    "type": "YOU (SVIP)",
+                    "status": 5,
+                    "expireAt": "2026-06-11T15:20:08"
                 }
             ],
             "soldTodaySeats": [
