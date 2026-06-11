@@ -6241,7 +6241,7 @@
             }
         },
         {
-            "timestamp": "2026-06-11T04:00:56.487Z",
+            "timestamp": "2026-06-11T04:05:26.585Z",
             "totalSold": 461,
             "totalCapacity": 722,
             "byType": {
@@ -6271,7 +6271,7 @@
                     "color": "#297884"
                 }
             },
-            "holdingSeatsCount": 16,
+            "holdingSeatsCount": 18,
             "holdingSeats": [
                 {
                     "id": 45666,
@@ -6416,6 +6416,24 @@
                     "type": "YOU (SVIP)",
                     "status": 1,
                     "expireAt": "2026-06-11T09:35:05"
+                },
+                {
+                    "id": 45734,
+                    "code": "GB25",
+                    "row": 28,
+                    "col": 8,
+                    "type": "FLOW (Pre)",
+                    "status": 5,
+                    "expireAt": "2026-06-11T11:11:08"
+                },
+                {
+                    "id": 45735,
+                    "code": "GB23",
+                    "row": 28,
+                    "col": 9,
+                    "type": "FLOW (Pre)",
+                    "status": 5,
+                    "expireAt": "2026-06-11T11:11:08"
                 }
             ],
             "soldTodaySeats": [
