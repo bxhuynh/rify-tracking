@@ -6647,7 +6647,7 @@
             ]
         },
         {
-            "timestamp": "2026-06-11T17:15:39.988Z",
+            "timestamp": "2026-06-11T17:20:37.762Z",
             "totalSold": 472,
             "totalCapacity": 722,
             "byType": {
@@ -6677,7 +6677,7 @@
                     "color": "#297884"
                 }
             },
-            "holdingSeatsCount": 1,
+            "holdingSeatsCount": 2,
             "holdingSeats": [
                 {
                     "id": 45977,
@@ -6687,6 +6687,15 @@
                     "type": "YOU (SVIP)",
                     "status": 1,
                     "expireAt": "2026-06-11T21:57:37"
+                },
+                {
+                    "id": 46001,
+                    "code": "VC15",
+                    "row": 3,
+                    "col": 7,
+                    "type": "YOU (SVIP)",
+                    "status": 5,
+                    "expireAt": "2026-06-12T00:27:55"
                 }
             ],
             "soldTodaySeats": [
