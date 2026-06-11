@@ -6241,7 +6241,7 @@
             }
         },
         {
-            "timestamp": "2026-06-11T00:05:34.514Z",
+            "timestamp": "2026-06-11T00:10:36.297Z",
             "totalSold": 459,
             "totalCapacity": 722,
             "byType": {
@@ -6271,7 +6271,7 @@
                     "color": "#297884"
                 }
             },
-            "holdingSeatsCount": 8,
+            "holdingSeatsCount": 9,
             "holdingSeats": [
                 {
                     "id": 45666,
@@ -6288,8 +6288,8 @@
                     "row": 28,
                     "col": 31,
                     "type": "FLOW (Pre)",
-                    "status": 1,
-                    "expireAt": "2026-06-11T00:17:08"
+                    "status": 5,
+                    "expireAt": "2026-06-11T07:15:54"
                 },
                 {
                     "id": 45827,
@@ -6324,7 +6324,7 @@
                     "row": 27,
                     "col": 10,
                     "type": "FLOW (Pre)",
-                    "status": 5,
+                    "status": 1,
                     "expireAt": "2026-06-11T07:06:28"
                 },
                 {
@@ -6334,7 +6334,7 @@
                     "col": 38,
                     "type": "IN (VIP)",
                     "status": 2,
-                    "expireAt": "2026-06-11T06:52:26"
+                    "expireAt": "2026-06-11T07:19:02"
                 },
                 {
                     "id": 45974,
@@ -6342,8 +6342,17 @@
                     "row": 2,
                     "col": 3,
                     "type": "YOU (SVIP)",
-                    "status": 5,
+                    "status": 1,
                     "expireAt": "2026-06-11T07:06:28"
+                },
+                {
+                    "id": 45753,
+                    "code": "GB14",
+                    "row": 28,
+                    "col": 30,
+                    "type": "FLOW (Pre)",
+                    "status": 5,
+                    "expireAt": "2026-06-11T07:15:54"
                 }
             ]
         }
