@@ -6241,7 +6241,7 @@
             }
         },
         {
-            "timestamp": "2026-06-11T06:05:29.930Z",
+            "timestamp": "2026-06-11T06:10:34.416Z",
             "totalSold": 462,
             "totalCapacity": 722,
             "byType": {
@@ -6450,7 +6450,7 @@
                     "row": 15,
                     "col": 3,
                     "type": "FLOW (Pre)",
-                    "status": 5,
+                    "status": 1,
                     "expireAt": "2026-06-11T13:15:18"
                 }
             ],
