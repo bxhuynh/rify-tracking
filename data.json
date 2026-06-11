@@ -6241,7 +6241,7 @@
             }
         },
         {
-            "timestamp": "2026-06-11T01:30:42.730Z",
+            "timestamp": "2026-06-11T01:35:25.916Z",
             "totalSold": 459,
             "totalCapacity": 722,
             "byType": {
@@ -6351,8 +6351,8 @@
                     "row": 28,
                     "col": 30,
                     "type": "FLOW (Pre)",
-                    "status": 1,
-                    "expireAt": "2026-06-11T07:15:54"
+                    "status": 5,
+                    "expireAt": "2026-06-11T08:44:06"
                 },
                 {
                     "id": 45921,
@@ -6396,7 +6396,7 @@
                     "row": 11,
                     "col": 16,
                     "type": "YOU (SVIP)",
-                    "status": 5,
+                    "status": 2,
                     "expireAt": "2026-06-11T08:36:45"
                 }
             ]
