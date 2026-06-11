@@ -6647,7 +6647,7 @@
             ]
         },
         {
-            "timestamp": "2026-06-11T17:01:00.209Z",
+            "timestamp": "2026-06-11T17:05:34.406Z",
             "totalSold": 472,
             "totalCapacity": 722,
             "byType": {
@@ -6689,7 +6689,89 @@
                     "expireAt": "2026-06-11T21:57:37"
                 }
             ],
-            "soldTodaySeats": []
+            "soldTodaySeats": [
+                {
+                    "id": 45753,
+                    "code": "GB14",
+                    "row": 28,
+                    "col": 30,
+                    "type": "FLOW (Pre)",
+                    "status": 3,
+                    "expireAt": "2026-06-11T19:57:27"
+                },
+                {
+                    "id": 45754,
+                    "code": "GB16",
+                    "row": 28,
+                    "col": 31,
+                    "type": "FLOW (Pre)",
+                    "status": 3,
+                    "expireAt": "2026-06-12T00:00:47"
+                },
+                {
+                    "id": 45821,
+                    "code": "D19",
+                    "row": 11,
+                    "col": 6,
+                    "type": "IN (VIP)",
+                    "status": 3,
+                    "expireAt": "2026-06-11T21:26:06"
+                },
+                {
+                    "id": 45840,
+                    "code": "E15",
+                    "row": 12,
+                    "col": 8,
+                    "type": "IN (VIP)",
+                    "status": 3,
+                    "expireAt": "2026-06-11T21:41:37"
+                },
+                {
+                    "id": 45874,
+                    "code": "H16",
+                    "row": 14,
+                    "col": 34,
+                    "type": "IN (VIP)",
+                    "status": 3,
+                    "expireAt": "2026-06-11T20:59:45"
+                },
+                {
+                    "id": 45894,
+                    "code": "I14",
+                    "row": 15,
+                    "col": 28,
+                    "type": "IN (VIP)",
+                    "status": 3,
+                    "expireAt": "2026-06-11T22:19:21"
+                },
+                {
+                    "id": 46002,
+                    "code": "VC13",
+                    "row": 3,
+                    "col": 8,
+                    "type": "YOU (SVIP)",
+                    "status": 3,
+                    "expireAt": "2026-06-11T17:29:57"
+                },
+                {
+                    "id": 46120,
+                    "code": "E9",
+                    "row": 12,
+                    "col": 17,
+                    "type": "YOU (SVIP)",
+                    "status": 3,
+                    "expireAt": "2026-06-11T22:33:47"
+                },
+                {
+                    "id": 46121,
+                    "code": "E7",
+                    "row": 12,
+                    "col": 18,
+                    "type": "YOU (SVIP)",
+                    "status": 3,
+                    "expireAt": "2026-06-11T22:33:47"
+                }
+            ]
         }
     ]
 }
