@@ -6241,8 +6241,8 @@
             }
         },
         {
-            "timestamp": "2026-06-11T10:20:36.010Z",
-            "totalSold": 463,
+            "timestamp": "2026-06-11T10:25:31.527Z",
+            "totalSold": 464,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -6266,12 +6266,12 @@
                     "color": "#d7a691"
                 },
                 "YOU (SVIP)": {
-                    "sold": 131,
+                    "sold": 132,
                     "total": 206,
                     "color": "#297884"
                 }
             },
-            "holdingSeatsCount": 23,
+            "holdingSeatsCount": 22,
             "holdingSeats": [
                 {
                     "id": 45666,
@@ -6389,15 +6389,6 @@
                     "type": "YOU (SVIP)",
                     "status": 1,
                     "expireAt": "2026-06-11T08:50:42"
-                },
-                {
-                    "id": 46002,
-                    "code": "VC13",
-                    "row": 3,
-                    "col": 8,
-                    "type": "YOU (SVIP)",
-                    "status": 5,
-                    "expireAt": "2026-06-11T17:29:57"
                 },
                 {
                     "id": 45734,
@@ -6643,6 +6634,15 @@
                     "type": "IN (VIP)",
                     "status": 3,
                     "expireAt": "2026-06-11T15:02:43"
+                },
+                {
+                    "id": 46002,
+                    "code": "VC13",
+                    "row": 3,
+                    "col": 8,
+                    "type": "YOU (SVIP)",
+                    "status": 3,
+                    "expireAt": "2026-06-11T17:29:57"
                 }
             ]
         }
