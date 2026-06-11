@@ -6241,7 +6241,7 @@
             }
         },
         {
-            "timestamp": "2026-06-11T02:25:27.606Z",
+            "timestamp": "2026-06-11T02:30:41.965Z",
             "totalSold": 460,
             "totalCapacity": 722,
             "byType": {
@@ -6271,7 +6271,7 @@
                     "color": "#297884"
                 }
             },
-            "holdingSeatsCount": 16,
+            "holdingSeatsCount": 17,
             "holdingSeats": [
                 {
                     "id": 45666,
@@ -6414,8 +6414,17 @@
                     "row": 3,
                     "col": 8,
                     "type": "YOU (SVIP)",
-                    "status": 5,
+                    "status": 1,
                     "expireAt": "2026-06-11T09:35:05"
+                },
+                {
+                    "id": 46108,
+                    "code": "D9",
+                    "row": 11,
+                    "col": 17,
+                    "type": "YOU (SVIP)",
+                    "status": 5,
+                    "expireAt": "2026-06-11T09:36:28"
                 }
             ],
             "soldTodaySeats": [
