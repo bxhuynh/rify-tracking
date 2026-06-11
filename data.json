@@ -6241,7 +6241,7 @@
             }
         },
         {
-            "timestamp": "2026-06-11T00:40:30.547Z",
+            "timestamp": "2026-06-11T00:45:33.406Z",
             "totalSold": 459,
             "totalCapacity": 722,
             "byType": {
@@ -6271,7 +6271,7 @@
                     "color": "#297884"
                 }
             },
-            "holdingSeatsCount": 11,
+            "holdingSeatsCount": 12,
             "holdingSeats": [
                 {
                     "id": 45666,
@@ -6371,6 +6371,15 @@
                     "type": "IN (VIP)",
                     "status": 1,
                     "expireAt": "2026-06-11T07:31:46"
+                },
+                {
+                    "id": 45755,
+                    "code": "GB18",
+                    "row": 28,
+                    "col": 32,
+                    "type": "FLOW (Pre)",
+                    "status": 5,
+                    "expireAt": "2026-06-11T07:53:49"
                 }
             ]
         }
