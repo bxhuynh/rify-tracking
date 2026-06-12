@@ -6792,7 +6792,7 @@
             ]
         },
         {
-            "timestamp": "2026-06-12T17:10:37.536Z",
+            "timestamp": "2026-06-12T17:15:38.132Z",
             "totalSold": 472,
             "totalCapacity": 722,
             "byType": {
@@ -6822,8 +6822,18 @@
                     "color": "#297884"
                 }
             },
-            "holdingSeatsCount": 0,
-            "holdingSeats": [],
+            "holdingSeatsCount": 1,
+            "holdingSeats": [
+                {
+                    "id": 45892,
+                    "code": "I10",
+                    "row": 15,
+                    "col": 26,
+                    "type": "IN (VIP)",
+                    "status": 5,
+                    "expireAt": "2026-06-13T00:20:58"
+                }
+            ],
             "soldTodaySeats": []
         }
     ]
