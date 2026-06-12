@@ -6647,7 +6647,7 @@
             ]
         },
         {
-            "timestamp": "2026-06-12T02:15:31.996Z",
+            "timestamp": "2026-06-12T02:20:30.641Z",
             "totalSold": 472,
             "totalCapacity": 722,
             "byType": {
@@ -6677,7 +6677,7 @@
                     "color": "#297884"
                 }
             },
-            "holdingSeatsCount": 2,
+            "holdingSeatsCount": 3,
             "holdingSeats": [
                 {
                     "id": 45977,
@@ -6696,6 +6696,15 @@
                     "type": "YOU (SVIP)",
                     "status": 1,
                     "expireAt": "2026-06-12T00:27:55"
+                },
+                {
+                    "id": 45669,
+                    "code": "O7",
+                    "row": 20,
+                    "col": 8,
+                    "type": "FLOW (Pre)",
+                    "status": 5,
+                    "expireAt": "2026-06-12T09:27:32"
                 }
             ],
             "soldTodaySeats": [
