@@ -6647,7 +6647,7 @@
             ]
         },
         {
-            "timestamp": "2026-06-12T16:30:50.466Z",
+            "timestamp": "2026-06-12T16:35:30.004Z",
             "totalSold": 472,
             "totalCapacity": 722,
             "byType": {
@@ -6703,8 +6703,8 @@
                     "row": 20,
                     "col": 8,
                     "type": "FLOW (Pre)",
-                    "status": 1,
-                    "expireAt": "2026-06-12T11:45:33"
+                    "status": 5,
+                    "expireAt": "2026-06-12T23:41:25"
                 }
             ],
             "soldTodaySeats": [
