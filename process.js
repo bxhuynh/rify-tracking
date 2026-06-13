@@ -21,7 +21,6 @@ function processEntry() {
     // 1. Khởi tạo cấu trúc Database mặc định
     let db = {
       allTimeSoldSeats: [],
-      soldSeatsByDate: {},
       todayHoldingSeats: [],
       history: [],
     };
@@ -37,12 +36,10 @@ function processEntry() {
 
     // Đảm bảo các nhánh dữ liệu luôn tồn tại
     if (!db.allTimeSoldSeats) db.allTimeSoldSeats = [];
-    if (!db.soldSeatsByDate) db.soldSeatsByDate = {};
     if (!db.todayHoldingSeats) db.todayHoldingSeats = [];
     if (!db.history) db.history = [];
 
-    // Nếu sang ngày mới, dọn sạch danh sách đang giữ (Holding) của ngày cũ để làm mới
-    // Kiểm tra dựa trên mốc timestamp cuối cùng trong history
+    // Nếu sang ngày mới, dọn sạch kho tích lũy Holding của ngày cũ
     if (db.history.length > 0) {
       const lastSnapshot = db.history[db.history.length - 1];
       const lastSnapshotDateStr = new Date(
@@ -51,24 +48,16 @@ function processEntry() {
         timeZone: 'Asia/Ho_Chi_Minh',
       });
       if (todayStr !== lastSnapshotDateStr) {
-        db.todayHoldingSeats = []; // Reset ghế hold khi qua ngày mới
+        db.todayHoldingSeats = [];
         console.log(
           `🌅 Sang ngày mới (${todayStr}): Đã giải phóng danh sách Holding cũ.`,
         );
       }
     }
 
-    // Khởi tạo mảng lưu ghế sold của ngày hôm nay nếu chưa tồn tại trong ngăn kéo
-    if (!db.soldSeatsByDate[todayStr]) {
-      db.soldSeatsByDate[todayStr] = [];
-    }
-
     // 2. Chuyển đổi dữ liệu sang Maps để xử lý tốc độ cao
     const allTimeSoldMap = new Map(
       db.allTimeSoldSeats.map((s) => [s.code || s.id, s]),
-    );
-    const todaySoldMap = new Map(
-      db.soldSeatsByDate[todayStr].map((s) => [s.code || s.id, s]),
     );
     const todayHoldMap = new Map(
       db.todayHoldingSeats.map((s) => [s.code || s.id, s]),
@@ -87,7 +76,7 @@ function processEntry() {
       const seatKey = item.code || item.id;
       const typeName = item.ticket_type_name;
 
-      // Tính toán meta-data
+      // Tính toán meta-data cho biểu đồ
       if (!metaSnapshot.byType[typeName]) {
         metaSnapshot.byType[typeName] = {
           sold: 0,
@@ -102,79 +91,97 @@ function processEntry() {
         metaSnapshot.totalSold++;
       }
 
-      // ------- LOGIC TÍCH LŨY THEO NGÀY CỦA BẠN -------
+      // ------- LOGIC TÍCH LŨY GIỮ VẾT HOÀN HẢO -------
 
-      // TRƯỜNG HỢP A: Ghế đã bán (status 3 hoặc 4)
+      // TRƯỜNG HỢP A: Ghế đã bán (status 3 hoặc 4) -> Lưu kho tổng vĩnh viễn
       if (item.status === 3 || item.status === 4) {
-        const historicalExpireAt = todayHoldMap.has(seatKey)
-          ? todayHoldMap.get(seatKey).expireAt
-          : '';
-        const seatData = {
-          id: item.id,
-          code: item.code,
-          row: item.row,
-          col: item.col,
-          type: typeName,
-          status: item.status,
-          expireAt: item.expired_date || historicalExpireAt || '',
-        };
-
-        // Nếu ghế CHƯA từng được bán từ trước tới nay
         if (!allTimeSoldMap.has(seatKey)) {
-          allTimeSoldMap.set(seatKey, seatData); // Đẩy vào kho tổng vĩnh viễn
-          todaySoldMap.set(seatKey, seatData); // Ghi nhận vào riêng ngày hôm nay
-          console.log(`🎉 Ghế mới chốt đơn thành công: ${seatKey}`);
-        } else {
-          // Nếu đã nằm trong kho tổng, cập nhật trạng thái mới nhất cho kho tổng
+          const historicalExpireAt = todayHoldMap.has(seatKey)
+            ? todayHoldMap.get(seatKey).expireAt
+            : '';
           allTimeSoldMap.set(seatKey, {
-            ...allTimeSoldMap.get(seatKey),
-            status: item.status,
-          });
-        }
-
-        // Đã bán thì xóa hoàn toàn khỏi danh sách đang giữ
-        todayHoldMap.delete(seatKey);
-      }
-
-      // TRƯỜNG HỢP B: Ghế đang giữ chỗ (status 2, 5 hoặc có expire_date)
-      else if (item.status === 2 || item.status === 5 || item.expired_date) {
-        // Chỉ theo dõi hold nếu ghế này chưa từng được bán
-        if (!allTimeSoldMap.has(seatKey)) {
-          todayHoldMap.set(seatKey, {
             id: item.id,
             code: item.code,
             row: item.row,
             col: item.col,
             type: typeName,
             status: item.status,
-            expireAt:
-              item.expired_date ||
-              (todayHoldMap.has(seatKey)
-                ? todayHoldMap.get(seatKey).expireAt
-                : ''),
+            expireAt: item.expired_date || historicalExpireAt || timestamp,
           });
+          console.log(`🎉 Kho tổng tích lũy đơn hàng mới: ${seatKey}`);
+        } else {
+          allTimeSoldMap.set(seatKey, {
+            ...allTimeSoldMap.get(seatKey),
+            status: item.status,
+          });
+        }
+
+        // Đã bán thành công -> Rút tên khỏi danh sách găm giữ live
+        todayHoldMap.delete(seatKey);
+      }
+
+      // TRƯỜNG HỢP B: Ghế đang giữ chỗ (status 2, 5 hoặc có expire_date)
+      else if (item.status === 2 || item.status === 5 || item.expired_date) {
+        if (!allTimeSoldMap.has(seatKey)) {
+          // Lấy mốc expireAt tối ưu nhất (từ API hoặc từ bộ nhớ đệm DB cũ)
+          let finalExpireAt =
+            item.expired_date ||
+            (todayHoldMap.has(seatKey)
+              ? todayHoldMap.get(seatKey).expireAt
+              : '');
+
+          // BẢO VỆ: Nếu API xóa mất expireAt VÀ DB chưa kịp lưu -> tự giả lập mốc +10 phút từ lúc cào
+          if (!finalExpireAt && (item.status === 2 || item.status === 5)) {
+            const fallbackDate = new Date(
+              new Date(timestamp).getTime() + 10 * 60 * 1000,
+            );
+            finalExpireAt = fallbackDate.toISOString();
+          }
+
+          // KIỂM TRA START TIME: Đảm bảo thời điểm bắt đầu găm ghế thuộc ngày hôm nay
+          let isStartToday = false;
+          if (finalExpireAt) {
+            const expireTime = new Date(finalExpireAt);
+            const startTime = new Date(expireTime.getTime() - 10 * 60 * 1000);
+
+            const startDateInVN = startTime.toLocaleDateString('fr-CA', {
+              timeZone: 'Asia/Ho_Chi_Minh',
+            });
+
+            if (startDateInVN === todayStr) {
+              isStartToday = true;
+            }
+          }
+
+          if (isStartToday) {
+            // Cập nhật hoặc ghi mới vào kho tích lũy holding
+            todayHoldMap.set(seatKey, {
+              id: item.id,
+              code: item.code,
+              row: item.row,
+              col: item.col,
+              type: typeName,
+              status: item.status,
+              expireAt: finalExpireAt,
+            });
+          }
         }
       }
 
-      // TRƯỜNG HỢP C: Ghế trống (Nhà đài nhả giữ chỗ ra)
-      else {
-        todayHoldMap.delete(seatKey);
-      }
+      // 🟢 TRƯỜNG HỢP C (Ghế trống trên API): Không làm gì cả!
+      // Không gọi delete, giữ nguyên dữ liệu đã tích lũy trước đó trong todayHoldMap.
     });
 
     // 4. Đồng bộ dữ liệu ngược lại đối tượng Database
     db.allTimeSoldSeats = Array.from(allTimeSoldMap.values());
-    db.soldSeatsByDate[todayStr] = Array.from(todaySoldMap.values());
     db.todayHoldingSeats = Array.from(todayHoldMap.values());
 
-    // Đẩy thông số tổng quan vào lịch sử history (giữ tối đa 2000 bản ghi)
     db.history.push(metaSnapshot);
     if (db.history.length > 2000) db.history.shift();
 
-    // Ghi file xuống ổ đĩa
     fs.writeFileSync(DB_FILE, JSON.stringify(db, null, 4));
     console.log(
-      `💾 Đã lưu! Kho tổng: ${db.allTimeSoldSeats.length} | Bán được hôm nay: ${db.soldSeatsByDate[todayStr].length} | Đang hold: ${db.todayHoldingSeats.length}`,
+      `💾 Đã lưu tích lũy! Kho tổng: ${db.allTimeSoldSeats.length} | Tổng ghế giữ chỗ hôm nay: ${db.todayHoldingSeats.length}`,
     );
   } catch (err) {
     console.error('❌ Thao tác xử lý thất bại:', err.message);
