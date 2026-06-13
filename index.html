@@ -455,7 +455,7 @@
         ></div>
       </div>
 
-      <div class="theme-card border rounded-3xl p-6 shadow-sm mb-6 mt-6">
+      <div class="theme-card border rounded-3xl p-6 shadow-sm mb-6 mt-6 hidden">
         <div
           class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-4 border-b border-dashed pb-4"
           style="border-color: var(--border-color)"
@@ -773,57 +773,80 @@
           },
         });
       }
-      function renderHoldingSeats(db) {
+
+      function renderHoldingSeats(latestSnapshot) {
         const tbody = document.getElementById('holding-seats-tbody');
         const badge = document.getElementById('holding-total-badge');
 
         if (!tbody || !badge) return;
 
-        // 1. Lấy chuỗi ngày hôm nay (Múi giờ VN) để tìm ngăn kéo dữ liệu bán trong ngày
-        const todayStr = new Date().toLocaleDateString('fr-CA', {
-          timeZone: 'Asia/Ho_Chi_Minh',
-        });
+        const nowVN = new Date(
+          new Date().toLocaleString('en-US', { timeZone: 'Asia/Ho_Chi_Minh' }),
+        );
+        const startOfTodayVN = new Date(
+          nowVN.getFullYear(),
+          nowVN.getMonth(),
+          nowVN.getDate(),
+          0,
+          0,
+          0,
+          0,
+        );
+        const endOfTodayVN = new Date(
+          nowVN.getFullYear(),
+          nowVN.getMonth(),
+          nowVN.getDate(),
+          23,
+          59,
+          59,
+          999,
+        );
 
-        // Lấy danh sách từ DB
-        const liveHolding = db.todayHoldingSeats || [];
-        const todaySold =
-          (db.soldSeatsByDate && db.soldSeatsByDate[todayStr]) || [];
+        const validHolding = (latestSnapshot.holdingSeats || []).filter(
+          (seat) => seat,
+        );
+        const validSoldToday = (latestSnapshot.soldTodaySeats || []).filter(
+          (seat) => seat,
+        );
 
-        // Lấy snapshot cuối cùng để map màu sắc hạng vé
-        const latestSnapshot =
-          db.history && db.history.length > 0
-            ? db.history[db.history.length - 1]
-            : { byType: {} };
+        const rawSeats = [...validHolding, ...validSoldToday];
 
-        // 2. Gộp mảng và chuẩn hóa dữ liệu thời gian cho cả 2 loại ghế
-        const todayCombinedSeats = [
-          ...liveHolding.map((seat) => ({ ...seat, isSoldEvent: false })),
-          ...todaySold.map((seat) => ({ ...seat, isSoldEvent: true })),
-        ].map((seat) => {
-          const expireTime = seat.expireAt
-            ? new Date(seat.expireAt)
-            : new Date();
-          const startTime = new Date(expireTime.getTime() - 10 * 60 * 1000);
-          return { ...seat, startTime, expireTime };
-        });
+        const todayCombinedSeats = rawSeats
+          .map((seat) => {
+            const expireTime = seat.expireAt
+              ? new Date(seat.expireAt)
+              : new Date(latestSnapshot.timestamp);
+            const startTime = new Date(expireTime.getTime() - 10 * 60 * 1000);
+            const startTimeVN = new Date(
+              startTime.toLocaleString('en-US', {
+                timeZone: 'Asia/Ho_Chi_Minh',
+              }),
+            );
+
+            return { ...seat, startTime, expireTime, startTimeVN };
+          })
+          .filter((seat) => {
+            return (
+              seat.startTimeVN >= startOfTodayVN &&
+              seat.startTimeVN <= endOfTodayVN
+            );
+          });
 
         badge.innerText = `${todayCombinedSeats.length} ghế`;
 
         if (todayCombinedSeats.length === 0) {
           tbody.innerHTML = `
-      <tr>
-        <td colspan="6" class="py-8 text-center text-stone-500 italic">
-          🟢 Hôm nay chưa có ghế nào trong trạng thái giữ chỗ hoặc đã bán.
-        </td>
-      </tr>
-    `;
+            <tr>
+              <td colspan="6" class="py-8 text-center text-stone-500 italic">
+                🟢 Hôm nay chưa có ghế nào trong trạng thái giữ chỗ hoặc đã bán.
+              </td>
+            </tr>
+          `;
           return;
         }
 
-        // 3. SẮP XẾP TUYẾN TÍNH: Từ thời gian hết hạn mới nhất (gần nhất) đến cũ nhất, KHÔNG CHIA NHÓM
-        todayCombinedSeats.sort((a, b) => b.expireTime - a.expireTime);
+        todayCombinedSeats.sort((a, b) => a.expireTime - b.expireTime);
 
-        // 4. TIẾN HÀNH DỰNG GIAO DIỆN HTML
         let htmlContent = '';
         todayCombinedSeats.forEach((seat) => {
           const timeFormatOptions = {
@@ -843,56 +866,56 @@
           );
 
           const typeColor =
-            latestSnapshot.byType?.[seat.type]?.color || '#a8a29e';
+            latestSnapshot.byType[seat.type]?.color || '#a8a29e';
 
           const isStatus5 = seat.status === 5;
           const isStatus2 = seat.status === 2;
-          const isSold = seat.isSoldEvent;
+          const isSold = seat.status === 3 || seat.status === 4;
 
           let rowClass = 'hover:bg-amber-500/5 transition-colors duration-150';
           let statusBadge = '';
           let expireDisplayStr = expireStr;
 
-          // Đổ class css và badge theo đúng trạng thái của từng ghế
-          if (isSold) {
+          if (isStatus5) {
+            statusBadge = `<span class="inline-block px-1.5 py-0.5 text-[8px] font-black rounded bg-orange-500 text-black uppercase tracking-wider animate-pulse">HOLD</span>`;
+          } else if (isStatus2) {
+            statusBadge = `<span class="inline-block px-1.5 py-0.5 text-[8px] font-black rounded bg-yellow-400 text-black uppercase tracking-wider animate-pulse">PAYING</span>`;
+          } else if (isSold) {
             rowClass =
               'bg-emerald-500/5 hover:bg-emerald-500/10 opacity-60 transition-colors duration-150';
             statusBadge = `<span class="inline-block px-1.5 py-0.5 text-[8px] font-black rounded bg-emerald-500 text-black uppercase tracking-wider">SOLD 🎉</span>`;
             expireDisplayStr = 'Thành công';
-          } else if (isStatus5) {
-            statusBadge = `<span class="inline-block px-1.5 py-0.5 text-[8px] font-black rounded bg-orange-500 text-black uppercase tracking-wider animate-pulse">HOLD</span>`;
-          } else if (isStatus2) {
-            statusBadge = `<span class="inline-block px-1.5 py-0.5 text-[8px] font-black rounded bg-yellow-400 text-black uppercase tracking-wider animate-pulse">PAYING</span>`;
           }
 
           htmlContent += `
-      <tr class="${rowClass}">
-        <td class="py-3.5 pl-2 whitespace-nowrap">
-          <span class="inline-block px-2 py-0.5 text-[10px] font-mono font-black rounded text-black shadow-sm" style="background-color: ${typeColor};">
-            ${seat.code || 'N/A'}
-          </span>
-        </td>
-        <td class="py-3.5 whitespace-nowrap">
-          ${statusBadge}
-        </td>
-        <td class="py-3.5 font-mono ${isSold ? 'text-stone-400' : 'text-stone-300'} hidden md:table-cell">
-          Hàng ${seat.row} - Cột ${seat.col}
-        </td>
-        <td class="py-3.5 font-bold ${isSold ? 'text-stone-400' : 'text-stone-200'} truncate">
-          ${seat.type}
-        </td>
-        <td class="py-3.5 font-mono ${isSold ? 'text-stone-500' : 'text-stone-400'} text-left hidden md:table-cell">
-          ${startStr}
-        </td>
-        <td class="py-3.5 pr-2 text-right font-mono ${isSold ? 'text-emerald-400 font-bold' : isStatus5 ? 'text-orange-500' : 'text-yellow-400'} whitespace-nowrap">
-          ${expireDisplayStr}
-        </td>
-      </tr>
-    `;
+            <tr class="${rowClass}">
+              <td class="py-3.5 pl-2 whitespace-nowrap">
+                <span class="inline-block px-2 py-0.5 text-[10px] font-mono font-black rounded text-black shadow-sm" style="background-color: ${typeColor};">
+                  ${seat.code || 'N/A'}
+                </span>
+              </td>
+              <td class="py-3.5 whitespace-nowrap">
+                ${statusBadge}
+              </td>
+              <td class="py-3.5 font-mono ${isSold ? 'text-stone-400' : 'text-stone-300'} hidden md:table-cell">
+                Hàng ${seat.row} - Cột ${seat.col}
+              </td>
+              <td class="py-3.5 font-bold ${isSold ? 'text-stone-400' : 'text-stone-200'} truncate">
+                ${seat.type}
+              </td>
+              <td class="py-3.5 font-mono ${isSold ? 'text-stone-500' : 'text-stone-400'} text-left hidden md:table-cell">
+                ${startStr}
+              </td>
+              <td class="py-3.5 pr-2 text-right font-mono ${isStatus5 ? 'text-orange-500' : isStatus2 ? 'text-yellow-400' : 'text-emerald-400 font-bold'} whitespace-nowrap">
+                ${expireDisplayStr}
+              </td>
+            </tr>
+          `;
         });
 
         tbody.innerHTML = htmlContent;
       }
+
       async function initDashboard() {
         try {
           const res = await fetch('./data.json?t=' + new Date().getTime());
@@ -1153,7 +1176,7 @@
           renderChart(dailyHistoryGlobal);
 
           // Kích hoạt render bảng danh sách ghế đang giữ chỗ (Holding Seats)
-          renderHoldingSeats(db);
+          renderHoldingSeats(latestHourly);
 
           const grid = document.getElementById('seat-grid');
           grid.innerHTML = '';
