@@ -7424,4322 +7424,484 @@
         }
     ],
     "allTimeSoldSeats": [
-        {
-            "id": 45435,
-            "code": "GG31",
-            "row": 32,
-            "col": 5,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:29"
-        },
-        {
-            "id": 45436,
-            "code": "GG29",
-            "row": 32,
-            "col": 6,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:29"
-        },
-        {
-            "id": 45437,
-            "code": "GG27",
-            "row": 32,
-            "col": 7,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:22"
-        },
-        {
-            "id": 45438,
-            "code": "GG25",
-            "row": 32,
-            "col": 8,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:22"
-        },
-        {
-            "id": 45439,
-            "code": "GG23",
-            "row": 32,
-            "col": 9,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:04"
-        },
-        {
-            "id": 45440,
-            "code": "GG21",
-            "row": 32,
-            "col": 10,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:04"
-        },
-        {
-            "id": 45441,
-            "code": "GG19",
-            "row": 32,
-            "col": 11,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:38"
-        },
-        {
-            "id": 45442,
-            "code": "GG17",
-            "row": 32,
-            "col": 12,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:38"
-        },
-        {
-            "id": 45443,
-            "code": "GG15",
-            "row": 32,
-            "col": 13,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:56"
-        },
-        {
-            "id": 45444,
-            "code": "GG13",
-            "row": 32,
-            "col": 14,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:56"
-        },
-        {
-            "id": 45445,
-            "code": "GG11",
-            "row": 32,
-            "col": 15,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:56"
-        },
-        {
-            "id": 45446,
-            "code": "GG9",
-            "row": 32,
-            "col": 16,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:03"
-        },
-        {
-            "id": 45447,
-            "code": "GG7",
-            "row": 32,
-            "col": 17,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:55"
-        },
-        {
-            "id": 45448,
-            "code": "GG5",
-            "row": 32,
-            "col": 18,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:49"
-        },
-        {
-            "id": 45449,
-            "code": "GG3",
-            "row": 32,
-            "col": 19,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:44"
-        },
-        {
-            "id": 45450,
-            "code": "GG1",
-            "row": 32,
-            "col": 20,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:25"
-        },
-        {
-            "id": 45451,
-            "code": "GG2",
-            "row": 32,
-            "col": 24,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:27"
-        },
-        {
-            "id": 45452,
-            "code": "GG4",
-            "row": 32,
-            "col": 25,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:37"
-        },
-        {
-            "id": 45453,
-            "code": "GG6",
-            "row": 32,
-            "col": 26,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:37"
-        },
-        {
-            "id": 45454,
-            "code": "GG8",
-            "row": 32,
-            "col": 27,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:47"
-        },
-        {
-            "id": 45455,
-            "code": "GG10",
-            "row": 32,
-            "col": 28,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:47"
-        },
-        {
-            "id": 45456,
-            "code": "GG12",
-            "row": 32,
-            "col": 29,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:47"
-        },
-        {
-            "id": 45457,
-            "code": "GG14",
-            "row": 32,
-            "col": 30,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:08"
-        },
-        {
-            "id": 45458,
-            "code": "GG16",
-            "row": 32,
-            "col": 31,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:18"
-        },
-        {
-            "id": 45459,
-            "code": "GG18",
-            "row": 32,
-            "col": 32,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:58"
-        },
-        {
-            "id": 45460,
-            "code": "GG20",
-            "row": 32,
-            "col": 33,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:58"
-        },
-        {
-            "id": 45461,
-            "code": "GG22",
-            "row": 32,
-            "col": 34,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:23:44"
-        },
-        {
-            "id": 45462,
-            "code": "GG24",
-            "row": 32,
-            "col": 35,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:23:44"
-        },
-        {
-            "id": 45463,
-            "code": "GG26",
-            "row": 32,
-            "col": 36,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:27"
-        },
-        {
-            "id": 45464,
-            "code": "GG28",
-            "row": 32,
-            "col": 37,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:40"
-        },
-        {
-            "id": 45465,
-            "code": "GG30",
-            "row": 32,
-            "col": 38,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:16:38"
-        },
-        {
-            "id": 45466,
-            "code": "GH31",
-            "row": 33,
-            "col": 5,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:11"
-        },
-        {
-            "id": 45467,
-            "code": "GH29",
-            "row": 33,
-            "col": 6,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:39:50"
-        },
-        {
-            "id": 45468,
-            "code": "GH27",
-            "row": 33,
-            "col": 7,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:37"
-        },
-        {
-            "id": 45469,
-            "code": "GH25",
-            "row": 33,
-            "col": 8,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:00"
-        },
-        {
-            "id": 45470,
-            "code": "GH23",
-            "row": 33,
-            "col": 9,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:55"
-        },
-        {
-            "id": 45471,
-            "code": "GH21",
-            "row": 33,
-            "col": 10,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:55"
-        },
-        {
-            "id": 45472,
-            "code": "GH19",
-            "row": 33,
-            "col": 11,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:16:13"
-        },
-        {
-            "id": 45473,
-            "code": "GH17",
-            "row": 33,
-            "col": 12,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:27"
-        },
-        {
-            "id": 45474,
-            "code": "GH15",
-            "row": 33,
-            "col": 13,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:27"
-        },
-        {
-            "id": 45475,
-            "code": "GH13",
-            "row": 33,
-            "col": 14,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:20:41"
-        },
-        {
-            "id": 45476,
-            "code": "GH11",
-            "row": 33,
-            "col": 15,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:20:32"
-        },
-        {
-            "id": 45477,
-            "code": "GH9",
-            "row": 33,
-            "col": 16,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:18"
-        },
-        {
-            "id": 45478,
-            "code": "GH7",
-            "row": 33,
-            "col": 17,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:26:03"
-        },
-        {
-            "id": 45479,
-            "code": "GH5",
-            "row": 33,
-            "col": 18,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:58"
-        },
-        {
-            "id": 45480,
-            "code": "GH3",
-            "row": 33,
-            "col": 19,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:21:57"
-        },
-        {
-            "id": 45481,
-            "code": "GH1",
-            "row": 33,
-            "col": 20,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:42:25"
-        },
-        {
-            "id": 45482,
-            "code": "GH2",
-            "row": 33,
-            "col": 24,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:26"
-        },
-        {
-            "id": 45483,
-            "code": "GH4",
-            "row": 33,
-            "col": 25,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:26"
-        },
-        {
-            "id": 45484,
-            "code": "GH6",
-            "row": 33,
-            "col": 26,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:34"
-        },
-        {
-            "id": 45485,
-            "code": "GH8",
-            "row": 33,
-            "col": 27,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:36"
-        },
-        {
-            "id": 45486,
-            "code": "GH10",
-            "row": 33,
-            "col": 28,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:26:03"
-        },
-        {
-            "id": 45487,
-            "code": "GH12",
-            "row": 33,
-            "col": 29,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:26:03"
-        },
-        {
-            "id": 45488,
-            "code": "GH14",
-            "row": 33,
-            "col": 30,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:26:03"
-        },
-        {
-            "id": 45489,
-            "code": "GH16",
-            "row": 33,
-            "col": 31,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:16"
-        },
-        {
-            "id": 45490,
-            "code": "GH18",
-            "row": 33,
-            "col": 32,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:26"
-        },
-        {
-            "id": 45491,
-            "code": "GH20",
-            "row": 33,
-            "col": 33,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:26"
-        },
-        {
-            "id": 45492,
-            "code": "GH22",
-            "row": 33,
-            "col": 34,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:26"
-        },
-        {
-            "id": 45493,
-            "code": "GH24",
-            "row": 33,
-            "col": 35,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:35"
-        },
-        {
-            "id": 45494,
-            "code": "GH26",
-            "row": 33,
-            "col": 36,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:35"
-        },
-        {
-            "id": 45495,
-            "code": "GH28",
-            "row": 33,
-            "col": 37,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:32"
-        },
-        {
-            "id": 45496,
-            "code": "GH30",
-            "row": 33,
-            "col": 38,
-            "type": "CHILL (Gift)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:32"
-        },
-        {
-            "id": 45497,
-            "code": "GE31",
-            "row": 31,
-            "col": 5,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-06-11T00:19:06"
-        },
-        {
-            "id": 45498,
-            "code": "GE29",
-            "row": 31,
-            "col": 6,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-06-10T23:13:41"
-        },
-        {
-            "id": 45499,
-            "code": "GE27",
-            "row": 31,
-            "col": 7,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-06-10T23:13:41"
-        },
-        {
-            "id": 45500,
-            "code": "GE25",
-            "row": 31,
-            "col": 8,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-06-01T20:20:37"
-        },
-        {
-            "id": 45501,
-            "code": "GE23",
-            "row": 31,
-            "col": 9,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-06-01T20:20:37"
-        },
-        {
-            "id": 45502,
-            "code": "GE21",
-            "row": 31,
-            "col": 10,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-06-01T20:20:37"
-        },
-        {
-            "id": 45503,
-            "code": "GE19",
-            "row": 31,
-            "col": 11,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-15T09:20:05"
-        },
-        {
-            "id": 45504,
-            "code": "GE17",
-            "row": 31,
-            "col": 12,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-15T09:20:05"
-        },
-        {
-            "id": 45505,
-            "code": "GE15",
-            "row": 31,
-            "col": 13,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-12T09:28:04"
-        },
-        {
-            "id": 45506,
-            "code": "GE13",
-            "row": 31,
-            "col": 14,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-12T09:28:04"
-        },
-        {
-            "id": 45507,
-            "code": "GE11",
-            "row": 31,
-            "col": 15,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T21:10:30"
-        },
-        {
-            "id": 45508,
-            "code": "GE9",
-            "row": 31,
-            "col": 16,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:27:44"
-        },
-        {
-            "id": 45509,
-            "code": "GE7",
-            "row": 31,
-            "col": 17,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:27:44"
-        },
-        {
-            "id": 45510,
-            "code": "GE5",
-            "row": 31,
-            "col": 18,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:16:20"
-        },
-        {
-            "id": 45511,
-            "code": "GE3",
-            "row": 31,
-            "col": 19,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:56"
-        },
-        {
-            "id": 45512,
-            "code": "GE1",
-            "row": 31,
-            "col": 20,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:54"
-        },
-        {
-            "id": 45513,
-            "code": "GE2",
-            "row": 31,
-            "col": 24,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:31:50"
-        },
-        {
-            "id": 45514,
-            "code": "GE4",
-            "row": 31,
-            "col": 25,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:15:31"
-        },
-        {
-            "id": 45515,
-            "code": "GE6",
-            "row": 31,
-            "col": 26,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:20:30"
-        },
-        {
-            "id": 45516,
-            "code": "GE8",
-            "row": 31,
-            "col": 27,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T21:19:01"
-        },
-        {
-            "id": 45517,
-            "code": "GE10",
-            "row": 31,
-            "col": 28,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:15:21"
-        },
-        {
-            "id": 45518,
-            "code": "GE12",
-            "row": 31,
-            "col": 29,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-12T23:57:18"
-        },
-        {
-            "id": 45519,
-            "code": "GE14",
-            "row": 31,
-            "col": 30,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-12T23:57:18"
-        },
-        {
-            "id": 45520,
-            "code": "GE16",
-            "row": 31,
-            "col": 31,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-18T16:16:38"
-        },
-        {
-            "id": 45521,
-            "code": "GE18",
-            "row": 31,
-            "col": 32,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-20T21:20:44"
-        },
-        {
-            "id": 45522,
-            "code": "GE20",
-            "row": 31,
-            "col": 33,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-06-04T20:34:10"
-        },
-        {
-            "id": 45523,
-            "code": "GE22",
-            "row": 31,
-            "col": 34,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-06-11T00:23:56"
-        },
-        {
-            "id": 45524,
-            "code": "GE24",
-            "row": 31,
-            "col": 35,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-06-11T00:10:28"
-        },
-        {
-            "id": 45525,
-            "code": "GE26",
-            "row": 31,
-            "col": 36,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-06-11T00:08:24"
-        },
-        {
-            "id": 45526,
-            "code": "GE28",
-            "row": 31,
-            "col": 37,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-06-11T00:08:24"
-        },
-        {
-            "id": 45527,
-            "code": "GE30",
-            "row": 31,
-            "col": 38,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-12T12:05:46"
-        },
-        {
-            "id": 45528,
-            "code": "GC31",
-            "row": 29,
-            "col": 5,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-06-02T14:35:42"
-        },
-        {
-            "id": 45529,
-            "code": "GC32",
-            "row": 29,
-            "col": 6,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-06-02T14:35:42"
-        },
-        {
-            "id": 45530,
-            "code": "GC33",
-            "row": 29,
-            "col": 7,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-15T16:39:05"
-        },
-        {
-            "id": 45531,
-            "code": "GC34",
-            "row": 29,
-            "col": 8,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": ""
-        },
-        {
-            "id": 45532,
-            "code": "GC35",
-            "row": 29,
-            "col": 9,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:19:01"
-        },
-        {
-            "id": 45533,
-            "code": "GC36",
-            "row": 29,
-            "col": 10,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:49:42"
-        },
-        {
-            "id": 45534,
-            "code": "GC37",
-            "row": 29,
-            "col": 11,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:49:42"
-        },
-        {
-            "id": 45535,
-            "code": "GC38",
-            "row": 29,
-            "col": 12,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:48"
-        },
-        {
-            "id": 45536,
-            "code": "GC39",
-            "row": 29,
-            "col": 13,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:48"
-        },
-        {
-            "id": 45537,
-            "code": "GC40",
-            "row": 29,
-            "col": 14,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:51"
-        },
-        {
-            "id": 45538,
-            "code": "GC41",
-            "row": 29,
-            "col": 15,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:06"
-        },
-        {
-            "id": 45539,
-            "code": "GC42",
-            "row": 29,
-            "col": 16,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:06"
-        },
-        {
-            "id": 45540,
-            "code": "GC43",
-            "row": 29,
-            "col": 17,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T22:05:13"
-        },
-        {
-            "id": 45541,
-            "code": "GC44",
-            "row": 29,
-            "col": 18,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:26:12"
-        },
-        {
-            "id": 45542,
-            "code": "GC45",
-            "row": 29,
-            "col": 19,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:26:12"
-        },
-        {
-            "id": 45543,
-            "code": "GC46",
-            "row": 29,
-            "col": 20,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:27"
-        },
-        {
-            "id": 45544,
-            "code": "GC47",
-            "row": 29,
-            "col": 24,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:26:50"
-        },
-        {
-            "id": 45545,
-            "code": "GC48",
-            "row": 29,
-            "col": 25,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:30"
-        },
-        {
-            "id": 45546,
-            "code": "GC49",
-            "row": 29,
-            "col": 26,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:16:30"
-        },
-        {
-            "id": 45547,
-            "code": "GC50",
-            "row": 29,
-            "col": 27,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:16:30"
-        },
-        {
-            "id": 45548,
-            "code": "GC51",
-            "row": 29,
-            "col": 28,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:33:47"
-        },
-        {
-            "id": 45549,
-            "code": "GC52",
-            "row": 29,
-            "col": 29,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:43"
-        },
-        {
-            "id": 45550,
-            "code": "GC53",
-            "row": 29,
-            "col": 30,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-12T12:55:09"
-        },
-        {
-            "id": 45551,
-            "code": "GC54",
-            "row": 29,
-            "col": 31,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:15:12"
-        },
-        {
-            "id": 45552,
-            "code": "GC55",
-            "row": 29,
-            "col": 32,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:15:57"
-        },
-        {
-            "id": 45553,
-            "code": "GC56",
-            "row": 29,
-            "col": 33,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-13T14:27:42"
-        },
-        {
-            "id": 45554,
-            "code": "GC57",
-            "row": 29,
-            "col": 34,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:19:03"
-        },
-        {
-            "id": 45555,
-            "code": "GC58",
-            "row": 29,
-            "col": 35,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:51:22"
-        },
-        {
-            "id": 45556,
-            "code": "GC59",
-            "row": 29,
-            "col": 36,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-25T21:12:12"
-        },
-        {
-            "id": 45557,
-            "code": "GC60",
-            "row": 29,
-            "col": 37,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-06-11T00:23:08"
-        },
-        {
-            "id": 45558,
-            "code": "GC61",
-            "row": 29,
-            "col": 38,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-21T22:02:48"
-        },
-        {
-            "id": 45559,
-            "code": "GD31",
-            "row": 30,
-            "col": 5,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-06-03T01:01:16"
-        },
-        {
-            "id": 45560,
-            "code": "GD29",
-            "row": 30,
-            "col": 6,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-06-08T19:26:48"
-        },
-        {
-            "id": 45561,
-            "code": "GD27",
-            "row": 30,
-            "col": 7,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-06-08T19:26:48"
-        },
-        {
-            "id": 45562,
-            "code": "GD25",
-            "row": 30,
-            "col": 8,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-06-01T21:02:08"
-        },
-        {
-            "id": 45563,
-            "code": "GD23",
-            "row": 30,
-            "col": 9,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-06-01T21:02:08"
-        },
-        {
-            "id": 45564,
-            "code": "GD21",
-            "row": 30,
-            "col": 10,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-13T23:21:40"
-        },
-        {
-            "id": 45565,
-            "code": "GD19",
-            "row": 30,
-            "col": 11,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-13T23:21:40"
-        },
-        {
-            "id": 45566,
-            "code": "GD17",
-            "row": 30,
-            "col": 12,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T22:13:49"
-        },
-        {
-            "id": 45567,
-            "code": "GD15",
-            "row": 30,
-            "col": 13,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T22:13:49"
-        },
-        {
-            "id": 45568,
-            "code": "GD13",
-            "row": 30,
-            "col": 14,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:26:50"
-        },
-        {
-            "id": 45569,
-            "code": "GD11",
-            "row": 30,
-            "col": 15,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:26:50"
-        },
-        {
-            "id": 45570,
-            "code": "GD9",
-            "row": 30,
-            "col": 16,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:50"
-        },
-        {
-            "id": 45571,
-            "code": "GD7",
-            "row": 30,
-            "col": 17,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:50"
-        },
-        {
-            "id": 45572,
-            "code": "GD5",
-            "row": 30,
-            "col": 18,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:50"
-        },
-        {
-            "id": 45573,
-            "code": "GD3",
-            "row": 30,
-            "col": 19,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:22"
-        },
-        {
-            "id": 45574,
-            "code": "GD1",
-            "row": 30,
-            "col": 20,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:22"
-        },
-        {
-            "id": 45575,
-            "code": "GD2",
-            "row": 30,
-            "col": 24,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:53"
-        },
-        {
-            "id": 45576,
-            "code": "GD4",
-            "row": 30,
-            "col": 25,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:33"
-        },
-        {
-            "id": 45577,
-            "code": "GD6",
-            "row": 30,
-            "col": 26,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:28:22"
-        },
-        {
-            "id": 45578,
-            "code": "GD8",
-            "row": 30,
-            "col": 27,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:41"
-        },
-        {
-            "id": 45579,
-            "code": "GD10",
-            "row": 30,
-            "col": 28,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:41"
-        },
-        {
-            "id": 45580,
-            "code": "GD12",
-            "row": 30,
-            "col": 29,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:18:10"
-        },
-        {
-            "id": 45581,
-            "code": "GD14",
-            "row": 30,
-            "col": 30,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:18:10"
-        },
-        {
-            "id": 45582,
-            "code": "GD16",
-            "row": 30,
-            "col": 31,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-15T12:39:16"
-        },
-        {
-            "id": 45583,
-            "code": "GD18",
-            "row": 30,
-            "col": 32,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:46:20"
-        },
-        {
-            "id": 45584,
-            "code": "GD20",
-            "row": 30,
-            "col": 33,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-29T00:11:06"
-        },
-        {
-            "id": 45585,
-            "code": "GD22",
-            "row": 30,
-            "col": 34,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-05-29T00:11:06"
-        },
-        {
-            "id": 45586,
-            "code": "GD24",
-            "row": 30,
-            "col": 35,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-06-02T14:08:52"
-        },
-        {
-            "id": 45587,
-            "code": "GD26",
-            "row": 30,
-            "col": 36,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-06-02T14:08:52"
-        },
-        {
-            "id": 45588,
-            "code": "GD28",
-            "row": 30,
-            "col": 37,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-06-02T14:08:52"
-        },
-        {
-            "id": 45589,
-            "code": "GD30",
-            "row": 30,
-            "col": 38,
-            "type": "RIVER (Standard)",
-            "status": 3,
-            "expireAt": "2026-06-11T00:10:34"
-        },
-        {
-            "id": 45590,
-            "code": "I27",
-            "row": 15,
-            "col": 2,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-18T23:50:56"
-        },
-        {
-            "id": 45592,
-            "code": "I23",
-            "row": 15,
-            "col": 4,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:33"
-        },
-        {
-            "id": 45593,
-            "code": "I21",
-            "row": 15,
-            "col": 5,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:33"
-        },
-        {
-            "id": 45594,
-            "code": "I19",
-            "row": 15,
-            "col": 6,
-            "type": "FLOW (Pre)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45595,
-            "code": "I17",
-            "row": 15,
-            "col": 7,
-            "type": "FLOW (Pre)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45596,
-            "code": "I15",
-            "row": 15,
-            "col": 8,
-            "type": "FLOW (Pre)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45597,
-            "code": "I13",
-            "row": 15,
-            "col": 9,
-            "type": "FLOW (Pre)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45598,
-            "code": "I16",
-            "row": 15,
-            "col": 34,
-            "type": "FLOW (Pre)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45599,
-            "code": "I18",
-            "row": 15,
-            "col": 35,
-            "type": "FLOW (Pre)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45600,
-            "code": "I20",
-            "row": 15,
-            "col": 36,
-            "type": "FLOW (Pre)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45601,
-            "code": "I22",
-            "row": 15,
-            "col": 37,
-            "type": "FLOW (Pre)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45602,
-            "code": "I24",
-            "row": 15,
-            "col": 38,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:01"
-        },
-        {
-            "id": 45603,
-            "code": "I26",
-            "row": 15,
-            "col": 39,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:17:06"
-        },
-        {
-            "id": 45608,
-            "code": "K25",
-            "row": 16,
-            "col": 4,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:14"
-        },
-        {
-            "id": 45609,
-            "code": "K23",
-            "row": 16,
-            "col": 5,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:12"
-        },
-        {
-            "id": 45610,
-            "code": "K21",
-            "row": 16,
-            "col": 6,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:45"
-        },
-        {
-            "id": 45611,
-            "code": "K19",
-            "row": 16,
-            "col": 7,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:43"
-        },
-        {
-            "id": 45612,
-            "code": "K17",
-            "row": 16,
-            "col": 8,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:46"
-        },
-        {
-            "id": 45613,
-            "code": "K15",
-            "row": 16,
-            "col": 9,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:28:25"
-        },
-        {
-            "id": 45614,
-            "code": "K16",
-            "row": 16,
-            "col": 34,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:29"
-        },
-        {
-            "id": 45615,
-            "code": "K18",
-            "row": 16,
-            "col": 35,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:29"
-        },
-        {
-            "id": 45616,
-            "code": "K20",
-            "row": 16,
-            "col": 36,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:59"
-        },
-        {
-            "id": 45617,
-            "code": "K22",
-            "row": 16,
-            "col": 37,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:59"
-        },
-        {
-            "id": 45618,
-            "code": "K24",
-            "row": 16,
-            "col": 38,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:41"
-        },
-        {
-            "id": 45624,
-            "code": "L23",
-            "row": 17,
-            "col": 5,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:23"
-        },
-        {
-            "id": 45625,
-            "code": "L21",
-            "row": 17,
-            "col": 6,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:23"
-        },
-        {
-            "id": 45626,
-            "code": "L19",
-            "row": 17,
-            "col": 7,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:32"
-        },
-        {
-            "id": 45627,
-            "code": "L17",
-            "row": 17,
-            "col": 8,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:14"
-        },
-        {
-            "id": 45628,
-            "code": "L15",
-            "row": 17,
-            "col": 9,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:38"
-        },
-        {
-            "id": 45629,
-            "code": "L16",
-            "row": 17,
-            "col": 34,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:44"
-        },
-        {
-            "id": 45630,
-            "code": "L18",
-            "row": 17,
-            "col": 35,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:54"
-        },
-        {
-            "id": 45631,
-            "code": "L20",
-            "row": 17,
-            "col": 36,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:54"
-        },
-        {
-            "id": 45632,
-            "code": "L22",
-            "row": 17,
-            "col": 37,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:54"
-        },
-        {
-            "id": 45633,
-            "code": "L24",
-            "row": 17,
-            "col": 38,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:53"
-        },
-        {
-            "id": 45639,
-            "code": "M21",
-            "row": 18,
-            "col": 6,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:06"
-        },
-        {
-            "id": 45640,
-            "code": "M19",
-            "row": 18,
-            "col": 7,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:06"
-        },
-        {
-            "id": 45641,
-            "code": "M17",
-            "row": 18,
-            "col": 8,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:50"
-        },
-        {
-            "id": 45642,
-            "code": "M15",
-            "row": 18,
-            "col": 9,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:50"
-        },
-        {
-            "id": 45643,
-            "code": "M18",
-            "row": 18,
-            "col": 34,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:19"
-        },
-        {
-            "id": 45644,
-            "code": "M20",
-            "row": 18,
-            "col": 35,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:19"
-        },
-        {
-            "id": 45645,
-            "code": "M22",
-            "row": 18,
-            "col": 36,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-06-06T18:09:18"
-        },
-        {
-            "id": 45646,
-            "code": "M24",
-            "row": 18,
-            "col": 37,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-06-10T18:43:09"
-        },
-        {
-            "id": 45647,
-            "code": "M26",
-            "row": 18,
-            "col": 38,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-06-10T18:43:09"
-        },
-        {
-            "id": 45653,
-            "code": "N21",
-            "row": 19,
-            "col": 6,
-            "type": "FLOW (Pre)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45654,
-            "code": "N19",
-            "row": 19,
-            "col": 7,
-            "type": "FLOW (Pre)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45655,
-            "code": "N17",
-            "row": 19,
-            "col": 8,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:14"
-        },
-        {
-            "id": 45656,
-            "code": "N15",
-            "row": 19,
-            "col": 9,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:14"
-        },
-        {
-            "id": 45657,
-            "code": "N18",
-            "row": 19,
-            "col": 34,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:15:19"
-        },
-        {
-            "id": 45658,
-            "code": "N20",
-            "row": 19,
-            "col": 35,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:15:19"
-        },
-        {
-            "id": 45659,
-            "code": "N22",
-            "row": 19,
-            "col": 36,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:16:03"
-        },
-        {
-            "id": 45660,
-            "code": "N24",
-            "row": 19,
-            "col": 37,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:16:03"
-        },
-        {
-            "id": 45667,
-            "code": "O11",
-            "row": 20,
-            "col": 6,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:43"
-        },
-        {
-            "id": 45668,
-            "code": "O9",
-            "row": 20,
-            "col": 7,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:43"
-        },
-        {
-            "id": 45670,
-            "code": "O5",
-            "row": 20,
-            "col": 9,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-29T12:03:31"
-        },
-        {
-            "id": 45671,
-            "code": "O3",
-            "row": 20,
-            "col": 15,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:15:44"
-        },
-        {
-            "id": 45672,
-            "code": "O1",
-            "row": 20,
-            "col": 16,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:26:07"
-        },
-        {
-            "id": 45673,
-            "code": "O6",
-            "row": 20,
-            "col": 34,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:35"
-        },
-        {
-            "id": 45674,
-            "code": "O8",
-            "row": 20,
-            "col": 35,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:35"
-        },
-        {
-            "id": 45675,
-            "code": "O10",
-            "row": 20,
-            "col": 36,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-06-10T11:34:04"
-        },
-        {
-            "id": 45676,
-            "code": "O12",
-            "row": 20,
-            "col": 37,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-06-10T11:34:04"
-        },
-        {
-            "id": 45685,
-            "code": "P5",
-            "row": 21,
-            "col": 9,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:48"
-        },
-        {
-            "id": 45686,
-            "code": "P3",
-            "row": 21,
-            "col": 15,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-12T01:30:14"
-        },
-        {
-            "id": 45687,
-            "code": "P1",
-            "row": 21,
-            "col": 16,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-31T08:25:32"
-        },
-        {
-            "id": 45688,
-            "code": "P2",
-            "row": 21,
-            "col": 34,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-22T16:24:13"
-        },
-        {
-            "id": 45694,
-            "code": "Q5",
-            "row": 22,
-            "col": 7,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-15T15:42:45"
-        },
-        {
-            "id": 45695,
-            "code": "Q3",
-            "row": 22,
-            "col": 8,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-15T15:42:45"
-        },
-        {
-            "id": 45696,
-            "code": "Q1",
-            "row": 22,
-            "col": 9,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-15T15:42:45"
-        },
-        {
-            "id": 45697,
-            "code": "Q2",
-            "row": 22,
-            "col": 34,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:20:22"
-        },
-        {
-            "id": 45706,
-            "code": "GA19",
-            "row": 27,
-            "col": 11,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-06-05T12:33:49"
-        },
-        {
-            "id": 45707,
-            "code": "GA17",
-            "row": 27,
-            "col": 12,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:35:22"
-        },
-        {
-            "id": 45708,
-            "code": "GA15",
-            "row": 27,
-            "col": 13,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:35:22"
-        },
-        {
-            "id": 45709,
-            "code": "GA13",
-            "row": 27,
-            "col": 14,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:22"
-        },
-        {
-            "id": 45710,
-            "code": "GA11",
-            "row": 27,
-            "col": 15,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:22"
-        },
-        {
-            "id": 45711,
-            "code": "GA9",
-            "row": 27,
-            "col": 16,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:09"
-        },
-        {
-            "id": 45712,
-            "code": "GA7",
-            "row": 27,
-            "col": 17,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:49"
-        },
-        {
-            "id": 45713,
-            "code": "GA5",
-            "row": 27,
-            "col": 18,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:46"
-        },
-        {
-            "id": 45714,
-            "code": "GA3",
-            "row": 27,
-            "col": 19,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:22"
-        },
-        {
-            "id": 45715,
-            "code": "GA1",
-            "row": 27,
-            "col": 20,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:22"
-        },
-        {
-            "id": 45716,
-            "code": "GA2",
-            "row": 27,
-            "col": 24,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:31"
-        },
-        {
-            "id": 45717,
-            "code": "GA4",
-            "row": 27,
-            "col": 25,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:31"
-        },
-        {
-            "id": 45718,
-            "code": "GA6",
-            "row": 27,
-            "col": 26,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:44"
-        },
-        {
-            "id": 45719,
-            "code": "GA8",
-            "row": 27,
-            "col": 27,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:04"
-        },
-        {
-            "id": 45720,
-            "code": "GA10",
-            "row": 27,
-            "col": 28,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:07"
-        },
-        {
-            "id": 45721,
-            "code": "GA12",
-            "row": 27,
-            "col": 29,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:12"
-        },
-        {
-            "id": 45722,
-            "code": "GA14",
-            "row": 27,
-            "col": 30,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:40:12"
-        },
-        {
-            "id": 45723,
-            "code": "GA16",
-            "row": 27,
-            "col": 31,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-29T21:01:24"
-        },
-        {
-            "id": 45724,
-            "code": "GA18",
-            "row": 27,
-            "col": 32,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-06-01T23:53:02"
-        },
-        {
-            "id": 45725,
-            "code": "GA20",
-            "row": 27,
-            "col": 33,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-06-01T23:53:02"
-        },
-        {
-            "id": 45736,
-            "code": "GB21",
-            "row": 28,
-            "col": 10,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-06-09T17:34:52"
-        },
-        {
-            "id": 45737,
-            "code": "GB19",
-            "row": 28,
-            "col": 11,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-06-09T17:10:01"
-        },
-        {
-            "id": 45738,
-            "code": "GB17",
-            "row": 28,
-            "col": 12,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-06-09T17:10:01"
-        },
-        {
-            "id": 45739,
-            "code": "GB15",
-            "row": 28,
-            "col": 13,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-06-09T17:10:01"
-        },
-        {
-            "id": 45740,
-            "code": "GB13",
-            "row": 28,
-            "col": 14,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-06-09T17:33:53"
-        },
-        {
-            "id": 45741,
-            "code": "GB11",
-            "row": 28,
-            "col": 15,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": ""
-        },
-        {
-            "id": 45742,
-            "code": "GB9",
-            "row": 28,
-            "col": 16,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:23:09"
-        },
-        {
-            "id": 45743,
-            "code": "GB7",
-            "row": 28,
-            "col": 17,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:23:09"
-        },
-        {
-            "id": 45744,
-            "code": "GB5",
-            "row": 28,
-            "col": 18,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:37:59"
-        },
-        {
-            "id": 45745,
-            "code": "GB3",
-            "row": 28,
-            "col": 19,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:37:59"
-        },
-        {
-            "id": 45746,
-            "code": "GB1",
-            "row": 28,
-            "col": 20,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-26T16:32:59"
-        },
-        {
-            "id": 45747,
-            "code": "GB2",
-            "row": 28,
-            "col": 24,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:50"
-        },
-        {
-            "id": 45748,
-            "code": "GB4",
-            "row": 28,
-            "col": 25,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-12T18:36:34"
-        },
-        {
-            "id": 45749,
-            "code": "GB6",
-            "row": 28,
-            "col": 26,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-12T18:36:34"
-        },
-        {
-            "id": 45750,
-            "code": "GB8",
-            "row": 28,
-            "col": 27,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-15T21:34:52"
-        },
-        {
-            "id": 45751,
-            "code": "GB10",
-            "row": 28,
-            "col": 28,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-05-15T21:34:52"
-        },
-        {
-            "id": 45752,
-            "code": "GB12",
-            "row": 28,
-            "col": 29,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-06-01T20:05:57"
-        },
-        {
-            "id": 45753,
-            "code": "GB14",
-            "row": 28,
-            "col": 30,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-06-11T19:57:27"
-        },
-        {
-            "id": 45754,
-            "code": "GB16",
-            "row": 28,
-            "col": 31,
-            "type": "FLOW (Pre)",
-            "status": 3,
-            "expireAt": "2026-06-12T00:00:47"
-        },
-        {
-            "id": 45764,
-            "code": "A23",
-            "row": 8,
-            "col": 3,
-            "type": "IN (VIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45765,
-            "code": "A21",
-            "row": 8,
-            "col": 4,
-            "type": "IN (VIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45766,
-            "code": "A19",
-            "row": 8,
-            "col": 5,
-            "type": "IN (VIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45767,
-            "code": "A17",
-            "row": 8,
-            "col": 6,
-            "type": "IN (VIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45768,
-            "code": "A15",
-            "row": 8,
-            "col": 7,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:59"
-        },
-        {
-            "id": 45769,
-            "code": "A13",
-            "row": 8,
-            "col": 8,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:32"
-        },
-        {
-            "id": 45770,
-            "code": "A11",
-            "row": 8,
-            "col": 9,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:32"
-        },
-        {
-            "id": 45771,
-            "code": "A14",
-            "row": 8,
-            "col": 34,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:26"
-        },
-        {
-            "id": 45772,
-            "code": "A16",
-            "row": 8,
-            "col": 35,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:41"
-        },
-        {
-            "id": 45773,
-            "code": "A18",
-            "row": 8,
-            "col": 36,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:02"
-        },
-        {
-            "id": 45774,
-            "code": "A20",
-            "row": 8,
-            "col": 37,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:34"
-        },
-        {
-            "id": 45775,
-            "code": "A22",
-            "row": 8,
-            "col": 38,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:34"
-        },
-        {
-            "id": 45776,
-            "code": "A24",
-            "row": 8,
-            "col": 39,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-06-08T00:03:11"
-        },
-        {
-            "id": 45784,
-            "code": "B19",
-            "row": 9,
-            "col": 5,
-            "type": "IN (VIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45785,
-            "code": "B17",
-            "row": 9,
-            "col": 6,
-            "type": "IN (VIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45786,
-            "code": "B15",
-            "row": 9,
-            "col": 7,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T21:58:18"
-        },
-        {
-            "id": 45787,
-            "code": "B13",
-            "row": 9,
-            "col": 8,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:16:13"
-        },
-        {
-            "id": 45788,
-            "code": "B11",
-            "row": 9,
-            "col": 9,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:24"
-        },
-        {
-            "id": 45789,
-            "code": "B14",
-            "row": 9,
-            "col": 34,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:47"
-        },
-        {
-            "id": 45790,
-            "code": "B16",
-            "row": 9,
-            "col": 35,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:19:18"
-        },
-        {
-            "id": 45791,
-            "code": "B18",
-            "row": 9,
-            "col": 36,
-            "type": "IN (VIP)",
-            "status": 4,
-            "expireAt": "2026-06-01T20:19:46"
-        },
-        {
-            "id": 45792,
-            "code": "B20",
-            "row": 9,
-            "col": 37,
-            "type": "IN (VIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45793,
-            "code": "B22",
-            "row": 9,
-            "col": 38,
-            "type": "IN (VIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45794,
-            "code": "B24",
-            "row": 9,
-            "col": 39,
-            "type": "IN (VIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45803,
-            "code": "C19",
-            "row": 10,
-            "col": 6,
-            "type": "IN (VIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45804,
-            "code": "C17",
-            "row": 10,
-            "col": 7,
-            "type": "IN (VIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45805,
-            "code": "C15",
-            "row": 10,
-            "col": 8,
-            "type": "IN (VIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45806,
-            "code": "C13",
-            "row": 10,
-            "col": 9,
-            "type": "IN (VIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45807,
-            "code": "C14",
-            "row": 10,
-            "col": 34,
-            "type": "IN (VIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45808,
-            "code": "C16",
-            "row": 10,
-            "col": 35,
-            "type": "IN (VIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45809,
-            "code": "C18",
-            "row": 10,
-            "col": 36,
-            "type": "IN (VIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45810,
-            "code": "C20",
-            "row": 10,
-            "col": 37,
-            "type": "IN (VIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45811,
-            "code": "C22",
-            "row": 10,
-            "col": 38,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-06-11T12:19:05"
-        },
-        {
-            "id": 45821,
-            "code": "D19",
-            "row": 11,
-            "col": 6,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-06-11T21:26:06"
-        },
-        {
-            "id": 45822,
-            "code": "D17",
-            "row": 11,
-            "col": 7,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-06-07T20:11:35"
-        },
-        {
-            "id": 45823,
-            "code": "D15",
-            "row": 11,
-            "col": 8,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-06-04T17:31:06"
-        },
-        {
-            "id": 45824,
-            "code": "D13",
-            "row": 11,
-            "col": 9,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:46"
-        },
-        {
-            "id": 45825,
-            "code": "D14",
-            "row": 11,
-            "col": 34,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:29"
-        },
-        {
-            "id": 45826,
-            "code": "D16",
-            "row": 11,
-            "col": 35,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-06-09T00:19:34"
-        },
-        {
-            "id": 45840,
-            "code": "E15",
-            "row": 12,
-            "col": 8,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-06-11T21:41:37"
-        },
-        {
-            "id": 45841,
-            "code": "E13",
-            "row": 12,
-            "col": 9,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T21:14:50"
-        },
-        {
-            "id": 45842,
-            "code": "E14",
-            "row": 12,
-            "col": 34,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-06-01T20:23:53"
-        },
-        {
-            "id": 45855,
-            "code": "G19",
-            "row": 13,
-            "col": 7,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:15:06"
-        },
-        {
-            "id": 45856,
-            "code": "G17",
-            "row": 13,
-            "col": 8,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:15:06"
-        },
-        {
-            "id": 45857,
-            "code": "G15",
-            "row": 13,
-            "col": 9,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:15:06"
-        },
-        {
-            "id": 45858,
-            "code": "G14",
-            "row": 13,
-            "col": 34,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": ""
-        },
-        {
-            "id": 45859,
-            "code": "G16",
-            "row": 13,
-            "col": 35,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": ""
-        },
-        {
-            "id": 45874,
-            "code": "H16",
-            "row": 14,
-            "col": 34,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-06-11T20:59:45"
-        },
-        {
-            "id": 45882,
-            "code": "I11",
-            "row": 15,
-            "col": 16,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-20T23:37:51"
-        },
-        {
-            "id": 45883,
-            "code": "I9",
-            "row": 15,
-            "col": 17,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-06-11T15:02:43"
-        },
-        {
-            "id": 45884,
-            "code": "I7",
-            "row": 15,
-            "col": 18,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-06-11T00:12:26"
-        },
-        {
-            "id": 45885,
-            "code": "I5",
-            "row": 15,
-            "col": 19,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:52"
-        },
-        {
-            "id": 45886,
-            "code": "I3",
-            "row": 15,
-            "col": 20,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-13T09:23:39"
-        },
-        {
-            "id": 45887,
-            "code": "I1",
-            "row": 15,
-            "col": 21,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:35:56"
-        },
-        {
-            "id": 45888,
-            "code": "I2",
-            "row": 15,
-            "col": 22,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:29"
-        },
-        {
-            "id": 45889,
-            "code": "I4",
-            "row": 15,
-            "col": 23,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:43"
-        },
-        {
-            "id": 45890,
-            "code": "I6",
-            "row": 15,
-            "col": 24,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-18T08:46:26"
-        },
-        {
-            "id": 45891,
-            "code": "I8",
-            "row": 15,
-            "col": 25,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-18T08:46:26"
-        },
-        {
-            "id": 45892,
-            "code": "I10",
-            "row": 15,
-            "col": 26,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-06-13T20:48:59"
-        },
-        {
-            "id": 45893,
-            "code": "I12",
-            "row": 15,
-            "col": 27,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-06-03T10:29:23"
-        },
-        {
-            "id": 45894,
-            "code": "I14",
-            "row": 15,
-            "col": 28,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-06-11T22:19:21"
-        },
-        {
-            "id": 45895,
-            "code": "K13",
-            "row": 16,
-            "col": 15,
-            "type": "IN (VIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45896,
-            "code": "K11",
-            "row": 16,
-            "col": 16,
-            "type": "IN (VIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45900,
-            "code": "K3",
-            "row": 16,
-            "col": 20,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:08"
-        },
-        {
-            "id": 45901,
-            "code": "K1",
-            "row": 16,
-            "col": 21,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:08"
-        },
-        {
-            "id": 45902,
-            "code": "K2",
-            "row": 16,
-            "col": 22,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:18:20"
-        },
-        {
-            "id": 45903,
-            "code": "K4",
-            "row": 16,
-            "col": 23,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:18:20"
-        },
-        {
-            "id": 45904,
-            "code": "K6",
-            "row": 16,
-            "col": 24,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": ""
-        },
-        {
-            "id": 45905,
-            "code": "K8",
-            "row": 16,
-            "col": 25,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": ""
-        },
-        {
-            "id": 45907,
-            "code": "K12",
-            "row": 16,
-            "col": 27,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-06-11T00:45:58"
-        },
-        {
-            "id": 45908,
-            "code": "K14",
-            "row": 16,
-            "col": 28,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-06-11T00:45:58"
-        },
-        {
-            "id": 45914,
-            "code": "L3",
-            "row": 17,
-            "col": 20,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-06-05T13:15:07"
-        },
-        {
-            "id": 45915,
-            "code": "L1",
-            "row": 17,
-            "col": 21,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-06-05T13:15:07"
-        },
-        {
-            "id": 45916,
-            "code": "L2",
-            "row": 17,
-            "col": 22,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-06-05T13:15:07"
-        },
-        {
-            "id": 45917,
-            "code": "L4",
-            "row": 17,
-            "col": 23,
-            "type": "IN (VIP)",
-            "status": 3,
-            "expireAt": "2026-06-05T13:15:07"
-        },
-        {
-            "id": 45934,
-            "code": "M10",
-            "row": 18,
-            "col": 26,
-            "type": "IN (VIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45935,
-            "code": "M12",
-            "row": 18,
-            "col": 27,
-            "type": "IN (VIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45936,
-            "code": "M14",
-            "row": 18,
-            "col": 28,
-            "type": "IN (VIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45937,
-            "code": "M16",
-            "row": 18,
-            "col": 29,
-            "type": "IN (VIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 45955,
-            "code": "VA13",
-            "row": 1,
-            "col": 7,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-06-03T16:17:04"
-        },
-        {
-            "id": 45956,
-            "code": "VA11",
-            "row": 1,
-            "col": 8,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:29:25"
-        },
-        {
-            "id": 45957,
-            "code": "VA9",
-            "row": 1,
-            "col": 9,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:37"
-        },
-        {
-            "id": 45958,
-            "code": "VA7",
-            "row": 1,
-            "col": 18,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:23"
-        },
-        {
-            "id": 45959,
-            "code": "VA5",
-            "row": 1,
-            "col": 19,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:23"
-        },
-        {
-            "id": 45960,
-            "code": "VA3",
-            "row": 1,
-            "col": 20,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": ""
-        },
-        {
-            "id": 45961,
-            "code": "VA1",
-            "row": 1,
-            "col": 21,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": ""
-        },
-        {
-            "id": 45962,
-            "code": "VA2",
-            "row": 1,
-            "col": 22,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": ""
-        },
-        {
-            "id": 45963,
-            "code": "VA4",
-            "row": 1,
-            "col": 23,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": ""
-        },
-        {
-            "id": 45964,
-            "code": "VA6",
-            "row": 1,
-            "col": 24,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": ""
-        },
-        {
-            "id": 45965,
-            "code": "VA8",
-            "row": 1,
-            "col": 25,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:22"
-        },
-        {
-            "id": 45966,
-            "code": "VA10",
-            "row": 1,
-            "col": 26,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:38"
-        },
-        {
-            "id": 45967,
-            "code": "VA12",
-            "row": 1,
-            "col": 34,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:38"
-        },
-        {
-            "id": 45968,
-            "code": "VA14",
-            "row": 1,
-            "col": 35,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-12T11:20:06"
-        },
-        {
-            "id": 45969,
-            "code": "VA16",
-            "row": 1,
-            "col": 36,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-12T11:20:06"
-        },
-        {
-            "id": 45970,
-            "code": "VA18",
-            "row": 1,
-            "col": 37,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-06-04T20:34:37"
-        },
-        {
-            "id": 45978,
-            "code": "VB13",
-            "row": 2,
-            "col": 7,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:28"
-        },
-        {
-            "id": 45979,
-            "code": "VB11",
-            "row": 2,
-            "col": 8,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-06-03T21:33:17"
-        },
-        {
-            "id": 45980,
-            "code": "VB9",
-            "row": 2,
-            "col": 9,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:59"
-        },
-        {
-            "id": 45981,
-            "code": "VB7",
-            "row": 2,
-            "col": 18,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:29"
-        },
-        {
-            "id": 45982,
-            "code": "VB5",
-            "row": 2,
-            "col": 19,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:45"
-        },
-        {
-            "id": 45983,
-            "code": "VB3",
-            "row": 2,
-            "col": 20,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:45"
-        },
-        {
-            "id": 45984,
-            "code": "VB1",
-            "row": 2,
-            "col": 21,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:28"
-        },
-        {
-            "id": 45985,
-            "code": "VB2",
-            "row": 2,
-            "col": 22,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:22"
-        },
-        {
-            "id": 45986,
-            "code": "VB4",
-            "row": 2,
-            "col": 23,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:34"
-        },
-        {
-            "id": 45987,
-            "code": "VB6",
-            "row": 2,
-            "col": 24,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:29"
-        },
-        {
-            "id": 45988,
-            "code": "VB8",
-            "row": 2,
-            "col": 25,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:29"
-        },
-        {
-            "id": 45989,
-            "code": "VB10",
-            "row": 2,
-            "col": 26,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:29"
-        },
-        {
-            "id": 45990,
-            "code": "VB12",
-            "row": 2,
-            "col": 34,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:46"
-        },
-        {
-            "id": 45991,
-            "code": "VB14",
-            "row": 2,
-            "col": 35,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:17:09"
-        },
-        {
-            "id": 45992,
-            "code": "VB16",
-            "row": 2,
-            "col": 36,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:17:09"
-        },
-        {
-            "id": 46002,
-            "code": "VC13",
-            "row": 3,
-            "col": 8,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-06-11T17:29:57"
-        },
-        {
-            "id": 46003,
-            "code": "VC11",
-            "row": 3,
-            "col": 9,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:58"
-        },
-        {
-            "id": 46004,
-            "code": "VC9",
-            "row": 3,
-            "col": 17,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-12T21:13:37"
-        },
-        {
-            "id": 46005,
-            "code": "VC7",
-            "row": 3,
-            "col": 18,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:28"
-        },
-        {
-            "id": 46006,
-            "code": "VC5",
-            "row": 3,
-            "col": 19,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:52"
-        },
-        {
-            "id": 46007,
-            "code": "VC3",
-            "row": 3,
-            "col": 20,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:26:05"
-        },
-        {
-            "id": 46008,
-            "code": "VC1",
-            "row": 3,
-            "col": 21,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:26"
-        },
-        {
-            "id": 46009,
-            "code": "VC2",
-            "row": 3,
-            "col": 22,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:35"
-        },
-        {
-            "id": 46010,
-            "code": "VC4",
-            "row": 3,
-            "col": 23,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:56"
-        },
-        {
-            "id": 46011,
-            "code": "VC6",
-            "row": 3,
-            "col": 24,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:33"
-        },
-        {
-            "id": 46012,
-            "code": "VC8",
-            "row": 3,
-            "col": 25,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:33"
-        },
-        {
-            "id": 46013,
-            "code": "VC10",
-            "row": 3,
-            "col": 26,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:33"
-        },
-        {
-            "id": 46014,
-            "code": "VC12",
-            "row": 3,
-            "col": 34,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:46"
-        },
-        {
-            "id": 46015,
-            "code": "VC14",
-            "row": 3,
-            "col": 35,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-06-05T15:14:45"
-        },
-        {
-            "id": 46028,
-            "code": "VD11",
-            "row": 4,
-            "col": 9,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:15"
-        },
-        {
-            "id": 46029,
-            "code": "VD9",
-            "row": 4,
-            "col": 17,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:30"
-        },
-        {
-            "id": 46030,
-            "code": "VD7",
-            "row": 4,
-            "col": 18,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:30"
-        },
-        {
-            "id": 46031,
-            "code": "VD5",
-            "row": 4,
-            "col": 19,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:33"
-        },
-        {
-            "id": 46032,
-            "code": "VD3",
-            "row": 4,
-            "col": 20,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:37"
-        },
-        {
-            "id": 46033,
-            "code": "VD1",
-            "row": 4,
-            "col": 21,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:34"
-        },
-        {
-            "id": 46034,
-            "code": "VD2",
-            "row": 4,
-            "col": 22,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:43"
-        },
-        {
-            "id": 46035,
-            "code": "VD4",
-            "row": 4,
-            "col": 23,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:43"
-        },
-        {
-            "id": 46036,
-            "code": "VD6",
-            "row": 4,
-            "col": 24,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:43"
-        },
-        {
-            "id": 46037,
-            "code": "VD8",
-            "row": 4,
-            "col": 25,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T21:34:42"
-        },
-        {
-            "id": 46038,
-            "code": "VD10",
-            "row": 4,
-            "col": 26,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:41:14"
-        },
-        {
-            "id": 46039,
-            "code": "VD12",
-            "row": 4,
-            "col": 34,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:49:56"
-        },
-        {
-            "id": 46040,
-            "code": "VD14",
-            "row": 4,
-            "col": 35,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:49:56"
-        },
-        {
-            "id": 46054,
-            "code": "VE11",
-            "row": 5,
-            "col": 9,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:38"
-        },
-        {
-            "id": 46055,
-            "code": "VE9",
-            "row": 5,
-            "col": 17,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:54"
-        },
-        {
-            "id": 46056,
-            "code": "VE7",
-            "row": 5,
-            "col": 18,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-12T11:55:03"
-        },
-        {
-            "id": 46057,
-            "code": "VE5",
-            "row": 5,
-            "col": 19,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-12T11:55:03"
-        },
-        {
-            "id": 46058,
-            "code": "VE3",
-            "row": 5,
-            "col": 20,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:31:12"
-        },
-        {
-            "id": 46059,
-            "code": "VE1",
-            "row": 5,
-            "col": 21,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:25"
-        },
-        {
-            "id": 46060,
-            "code": "VE2",
-            "row": 5,
-            "col": 22,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:25"
-        },
-        {
-            "id": 46061,
-            "code": "VE4",
-            "row": 5,
-            "col": 23,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:54"
-        },
-        {
-            "id": 46062,
-            "code": "VE6",
-            "row": 5,
-            "col": 24,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:54"
-        },
-        {
-            "id": 46063,
-            "code": "VE8",
-            "row": 5,
-            "col": 25,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:14"
-        },
-        {
-            "id": 46064,
-            "code": "VE10",
-            "row": 5,
-            "col": 26,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-12T23:20:35"
-        },
-        {
-            "id": 46065,
-            "code": "VE12",
-            "row": 5,
-            "col": 34,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T21:05:51"
-        },
-        {
-            "id": 46066,
-            "code": "VE14",
-            "row": 5,
-            "col": 35,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T21:05:51"
-        },
-        {
-            "id": 46067,
-            "code": "VE16",
-            "row": 5,
-            "col": 36,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T21:05:51"
-        },
-        {
-            "id": 46073,
-            "code": "A9",
-            "row": 8,
-            "col": 17,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:44"
-        },
-        {
-            "id": 46074,
-            "code": "A7",
-            "row": 8,
-            "col": 18,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:49"
-        },
-        {
-            "id": 46075,
-            "code": "A5",
-            "row": 8,
-            "col": 19,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:35"
-        },
-        {
-            "id": 46076,
-            "code": "A3",
-            "row": 8,
-            "col": 20,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:34"
-        },
-        {
-            "id": 46077,
-            "code": "A1",
-            "row": 8,
-            "col": 21,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:21"
-        },
-        {
-            "id": 46078,
-            "code": "A2",
-            "row": 8,
-            "col": 22,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:34"
-        },
-        {
-            "id": 46079,
-            "code": "A4",
-            "row": 8,
-            "col": 23,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:34"
-        },
-        {
-            "id": 46080,
-            "code": "A6",
-            "row": 8,
-            "col": 24,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:34"
-        },
-        {
-            "id": 46081,
-            "code": "A8",
-            "row": 8,
-            "col": 25,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:42"
-        },
-        {
-            "id": 46082,
-            "code": "A10",
-            "row": 8,
-            "col": 26,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:29"
-        },
-        {
-            "id": 46083,
-            "code": "A12",
-            "row": 8,
-            "col": 27,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:30"
-        },
-        {
-            "id": 46084,
-            "code": "B9",
-            "row": 9,
-            "col": 17,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:18:30"
-        },
-        {
-            "id": 46085,
-            "code": "B7",
-            "row": 9,
-            "col": 18,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-14T19:46:25"
-        },
-        {
-            "id": 46086,
-            "code": "B5",
-            "row": 9,
-            "col": 19,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:25"
-        },
-        {
-            "id": 46087,
-            "code": "B3",
-            "row": 9,
-            "col": 20,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:45"
-        },
-        {
-            "id": 46088,
-            "code": "B1",
-            "row": 9,
-            "col": 21,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:31"
-        },
-        {
-            "id": 46089,
-            "code": "B2",
-            "row": 9,
-            "col": 22,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:31"
-        },
-        {
-            "id": 46090,
-            "code": "B4",
-            "row": 9,
-            "col": 23,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:09"
-        },
-        {
-            "id": 46091,
-            "code": "B6",
-            "row": 9,
-            "col": 24,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:31:07"
-        },
-        {
-            "id": 46092,
-            "code": "B8",
-            "row": 9,
-            "col": 25,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:52"
-        },
-        {
-            "id": 46093,
-            "code": "B10",
-            "row": 9,
-            "col": 26,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:00"
-        },
-        {
-            "id": 46094,
-            "code": "B12",
-            "row": 9,
-            "col": 27,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:00"
-        },
-        {
-            "id": 46095,
-            "code": "C11",
-            "row": 10,
-            "col": 16,
-            "type": "YOU (SVIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 46096,
-            "code": "C9",
-            "row": 10,
-            "col": 17,
-            "type": "YOU (SVIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 46097,
-            "code": "C7",
-            "row": 10,
-            "col": 18,
-            "type": "YOU (SVIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 46098,
-            "code": "C5",
-            "row": 10,
-            "col": 19,
-            "type": "YOU (SVIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 46099,
-            "code": "C3",
-            "row": 10,
-            "col": 20,
-            "type": "YOU (SVIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 46100,
-            "code": "C1",
-            "row": 10,
-            "col": 21,
-            "type": "YOU (SVIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 46101,
-            "code": "C2",
-            "row": 10,
-            "col": 22,
-            "type": "YOU (SVIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 46102,
-            "code": "C4",
-            "row": 10,
-            "col": 23,
-            "type": "YOU (SVIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 46103,
-            "code": "C6",
-            "row": 10,
-            "col": 24,
-            "type": "YOU (SVIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 46104,
-            "code": "C8",
-            "row": 10,
-            "col": 25,
-            "type": "YOU (SVIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 46105,
-            "code": "C10",
-            "row": 10,
-            "col": 26,
-            "type": "YOU (SVIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 46106,
-            "code": "C12",
-            "row": 10,
-            "col": 27,
-            "type": "YOU (SVIP)",
-            "status": 4,
-            "expireAt": ""
-        },
-        {
-            "id": 46107,
-            "code": "D11",
-            "row": 11,
-            "col": 16,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-06-11T08:36:45"
-        },
-        {
-            "id": 46108,
-            "code": "D9",
-            "row": 11,
-            "col": 17,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-06-11T09:53:48"
-        },
-        {
-            "id": 46109,
-            "code": "D7",
-            "row": 11,
-            "col": 18,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:15:08"
-        },
-        {
-            "id": 46110,
-            "code": "D5",
-            "row": 11,
-            "col": 19,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:37"
-        },
-        {
-            "id": 46111,
-            "code": "D3",
-            "row": 11,
-            "col": 20,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:58"
-        },
-        {
-            "id": 46112,
-            "code": "D1",
-            "row": 11,
-            "col": 21,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:26:04"
-        },
-        {
-            "id": 46113,
-            "code": "D2",
-            "row": 11,
-            "col": 22,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:12:30"
-        },
-        {
-            "id": 46114,
-            "code": "D4",
-            "row": 11,
-            "col": 23,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:15:01"
-        },
-        {
-            "id": 46115,
-            "code": "D6",
-            "row": 11,
-            "col": 24,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:12"
-        },
-        {
-            "id": 46116,
-            "code": "D8",
-            "row": 11,
-            "col": 25,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:12"
-        },
-        {
-            "id": 46117,
-            "code": "D10",
-            "row": 11,
-            "col": 26,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-06-08T22:28:12"
-        },
-        {
-            "id": 46120,
-            "code": "E9",
-            "row": 12,
-            "col": 17,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-06-11T22:33:47"
-        },
-        {
-            "id": 46121,
-            "code": "E7",
-            "row": 12,
-            "col": 18,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-06-11T22:33:47"
-        },
-        {
-            "id": 46122,
-            "code": "E5",
-            "row": 12,
-            "col": 19,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:20:35"
-        },
-        {
-            "id": 46123,
-            "code": "E3",
-            "row": 12,
-            "col": 20,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:38"
-        },
-        {
-            "id": 46124,
-            "code": "E1",
-            "row": 12,
-            "col": 21,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:38"
-        },
-        {
-            "id": 46125,
-            "code": "E2",
-            "row": 12,
-            "col": 22,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:38"
-        },
-        {
-            "id": 46126,
-            "code": "E4",
-            "row": 12,
-            "col": 23,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:14:38"
-        },
-        {
-            "id": 46127,
-            "code": "E6",
-            "row": 12,
-            "col": 24,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:29:10"
-        },
-        {
-            "id": 46128,
-            "code": "E8",
-            "row": 12,
-            "col": 25,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:16:22"
-        },
-        {
-            "id": 46129,
-            "code": "E10",
-            "row": 12,
-            "col": 26,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:16:22"
-        },
-        {
-            "id": 46136,
-            "code": "G3",
-            "row": 13,
-            "col": 21,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T22:06:44"
-        },
-        {
-            "id": 46137,
-            "code": "G1",
-            "row": 13,
-            "col": 22,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:18:21"
-        },
-        {
-            "id": 46138,
-            "code": "G2",
-            "row": 13,
-            "col": 23,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": ""
-        },
-        {
-            "id": 46139,
-            "code": "G4",
-            "row": 13,
-            "col": 24,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": ""
-        },
-        {
-            "id": 46143,
-            "code": "G12",
-            "row": 13,
-            "col": 28,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:13:56"
-        },
-        {
-            "id": 46149,
-            "code": "H1",
-            "row": 14,
-            "col": 21,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-05-11T20:16:36"
-        },
-        {
-            "id": 46150,
-            "code": "H2",
-            "row": 14,
-            "col": 22,
-            "type": "YOU (SVIP)",
-            "status": 3,
-            "expireAt": "2026-06-05T15:38:09"
-        }
+        "GG31",
+        "GG29",
+        "GG27",
+        "GG25",
+        "GG23",
+        "GG21",
+        "GG19",
+        "GG17",
+        "GG15",
+        "GG13",
+        "GG11",
+        "GG9",
+        "GG7",
+        "GG5",
+        "GG3",
+        "GG1",
+        "GG2",
+        "GG4",
+        "GG6",
+        "GG8",
+        "GG10",
+        "GG12",
+        "GG14",
+        "GG16",
+        "GG18",
+        "GG20",
+        "GG22",
+        "GG24",
+        "GG26",
+        "GG28",
+        "GG30",
+        "GH31",
+        "GH29",
+        "GH27",
+        "GH25",
+        "GH23",
+        "GH21",
+        "GH19",
+        "GH17",
+        "GH15",
+        "GH13",
+        "GH11",
+        "GH9",
+        "GH7",
+        "GH5",
+        "GH3",
+        "GH1",
+        "GH2",
+        "GH4",
+        "GH6",
+        "GH8",
+        "GH10",
+        "GH12",
+        "GH14",
+        "GH16",
+        "GH18",
+        "GH20",
+        "GH22",
+        "GH24",
+        "GH26",
+        "GH28",
+        "GH30",
+        "GE31",
+        "GE29",
+        "GE27",
+        "GE25",
+        "GE23",
+        "GE21",
+        "GE19",
+        "GE17",
+        "GE15",
+        "GE13",
+        "GE11",
+        "GE9",
+        "GE7",
+        "GE5",
+        "GE3",
+        "GE1",
+        "GE2",
+        "GE4",
+        "GE6",
+        "GE8",
+        "GE10",
+        "GE12",
+        "GE14",
+        "GE16",
+        "GE18",
+        "GE20",
+        "GE22",
+        "GE24",
+        "GE26",
+        "GE28",
+        "GE30",
+        "GC31",
+        "GC32",
+        "GC33",
+        "GC34",
+        "GC35",
+        "GC36",
+        "GC37",
+        "GC38",
+        "GC39",
+        "GC40",
+        "GC41",
+        "GC42",
+        "GC43",
+        "GC44",
+        "GC45",
+        "GC46",
+        "GC47",
+        "GC48",
+        "GC49",
+        "GC50",
+        "GC51",
+        "GC52",
+        "GC53",
+        "GC54",
+        "GC55",
+        "GC56",
+        "GC57",
+        "GC58",
+        "GC59",
+        "GC60",
+        "GC61",
+        "GD31",
+        "GD29",
+        "GD27",
+        "GD25",
+        "GD23",
+        "GD21",
+        "GD19",
+        "GD17",
+        "GD15",
+        "GD13",
+        "GD11",
+        "GD9",
+        "GD7",
+        "GD5",
+        "GD3",
+        "GD1",
+        "GD2",
+        "GD4",
+        "GD6",
+        "GD8",
+        "GD10",
+        "GD12",
+        "GD14",
+        "GD16",
+        "GD18",
+        "GD20",
+        "GD22",
+        "GD24",
+        "GD26",
+        "GD28",
+        "GD30",
+        "I27",
+        "I23",
+        "I21",
+        "I19",
+        "I17",
+        "I15",
+        "I13",
+        "I16",
+        "I18",
+        "I20",
+        "I22",
+        "I24",
+        "I26",
+        "K25",
+        "K23",
+        "K21",
+        "K19",
+        "K17",
+        "K15",
+        "K16",
+        "K18",
+        "K20",
+        "K22",
+        "K24",
+        "L23",
+        "L21",
+        "L19",
+        "L17",
+        "L15",
+        "L16",
+        "L18",
+        "L20",
+        "L22",
+        "L24",
+        "M21",
+        "M19",
+        "M17",
+        "M15",
+        "M18",
+        "M20",
+        "M22",
+        "M24",
+        "M26",
+        "N21",
+        "N19",
+        "N17",
+        "N15",
+        "N18",
+        "N20",
+        "N22",
+        "N24",
+        "O11",
+        "O9",
+        "O5",
+        "O3",
+        "O1",
+        "O6",
+        "O8",
+        "O10",
+        "O12",
+        "P5",
+        "P3",
+        "P1",
+        "P2",
+        "Q5",
+        "Q3",
+        "Q1",
+        "Q2",
+        "GA19",
+        "GA17",
+        "GA15",
+        "GA13",
+        "GA11",
+        "GA9",
+        "GA7",
+        "GA5",
+        "GA3",
+        "GA1",
+        "GA2",
+        "GA4",
+        "GA6",
+        "GA8",
+        "GA10",
+        "GA12",
+        "GA14",
+        "GA16",
+        "GA18",
+        "GA20",
+        "GB21",
+        "GB19",
+        "GB17",
+        "GB15",
+        "GB13",
+        "GB11",
+        "GB9",
+        "GB7",
+        "GB5",
+        "GB3",
+        "GB1",
+        "GB2",
+        "GB4",
+        "GB6",
+        "GB8",
+        "GB10",
+        "GB12",
+        "GB14",
+        "GB16",
+        "A23",
+        "A21",
+        "A19",
+        "A17",
+        "A15",
+        "A13",
+        "A11",
+        "A14",
+        "A16",
+        "A18",
+        "A20",
+        "A22",
+        "A24",
+        "B19",
+        "B17",
+        "B15",
+        "B13",
+        "B11",
+        "B14",
+        "B16",
+        "B18",
+        "B20",
+        "B22",
+        "B24",
+        "C19",
+        "C17",
+        "C15",
+        "C13",
+        "C14",
+        "C16",
+        "C18",
+        "C20",
+        "C22",
+        "D19",
+        "D17",
+        "D15",
+        "D13",
+        "D14",
+        "D16",
+        "E15",
+        "E13",
+        "E14",
+        "G19",
+        "G17",
+        "G15",
+        "G14",
+        "G16",
+        "H16",
+        "I11",
+        "I9",
+        "I7",
+        "I5",
+        "I3",
+        "I1",
+        "I2",
+        "I4",
+        "I6",
+        "I8",
+        "I10",
+        "I12",
+        "I14",
+        "K13",
+        "K11",
+        "K3",
+        "K1",
+        "K2",
+        "K4",
+        "K6",
+        "K8",
+        "K12",
+        "K14",
+        "L3",
+        "L1",
+        "L2",
+        "L4",
+        "M10",
+        "M12",
+        "M14",
+        "M16",
+        "VA13",
+        "VA11",
+        "VA9",
+        "VA7",
+        "VA5",
+        "VA3",
+        "VA1",
+        "VA2",
+        "VA4",
+        "VA6",
+        "VA8",
+        "VA10",
+        "VA12",
+        "VA14",
+        "VA16",
+        "VA18",
+        "VB13",
+        "VB11",
+        "VB9",
+        "VB7",
+        "VB5",
+        "VB3",
+        "VB1",
+        "VB2",
+        "VB4",
+        "VB6",
+        "VB8",
+        "VB10",
+        "VB12",
+        "VB14",
+        "VB16",
+        "VC13",
+        "VC11",
+        "VC9",
+        "VC7",
+        "VC5",
+        "VC3",
+        "VC1",
+        "VC2",
+        "VC4",
+        "VC6",
+        "VC8",
+        "VC10",
+        "VC12",
+        "VC14",
+        "VD11",
+        "VD9",
+        "VD7",
+        "VD5",
+        "VD3",
+        "VD1",
+        "VD2",
+        "VD4",
+        "VD6",
+        "VD8",
+        "VD10",
+        "VD12",
+        "VD14",
+        "VE11",
+        "VE9",
+        "VE7",
+        "VE5",
+        "VE3",
+        "VE1",
+        "VE2",
+        "VE4",
+        "VE6",
+        "VE8",
+        "VE10",
+        "VE12",
+        "VE14",
+        "VE16",
+        "A9",
+        "A7",
+        "A5",
+        "A3",
+        "A1",
+        "A2",
+        "A4",
+        "A6",
+        "A8",
+        "A10",
+        "A12",
+        "B9",
+        "B7",
+        "B5",
+        "B3",
+        "B1",
+        "B2",
+        "B4",
+        "B6",
+        "B8",
+        "B10",
+        "B12",
+        "C11",
+        "C9",
+        "C7",
+        "C5",
+        "C3",
+        "C1",
+        "C2",
+        "C4",
+        "C6",
+        "C8",
+        "C10",
+        "C12",
+        "D11",
+        "D9",
+        "D7",
+        "D5",
+        "D3",
+        "D1",
+        "D2",
+        "D4",
+        "D6",
+        "D8",
+        "D10",
+        "E9",
+        "E7",
+        "E5",
+        "E3",
+        "E1",
+        "E2",
+        "E4",
+        "E6",
+        "E8",
+        "E10",
+        "G3",
+        "G1",
+        "G2",
+        "G4",
+        "G12",
+        "H1",
+        "H2"
     ],
     "soldSeatsByDate": {
-        "2026-06-13": [
-            {
-                "id": 45892,
-                "code": "I10",
-                "row": 15,
-                "col": 26,
-                "type": "IN (VIP)",
-                "status": 3,
-                "expireAt": "2026-06-13T20:48:59"
-            }
-        ]
+        "2026-06-14": []
     },
-    "todayHoldingSeats": [
-        {
-            "id": 46151,
-            "code": "H4",
-            "row": 14,
-            "col": 23,
-            "type": "YOU (SVIP)",
-            "status": 1,
-            "expireAt": "2026-06-13T07:53:48"
-        },
-        {
-            "id": 45950,
-            "code": "N12",
-            "row": 19,
-            "col": 27,
-            "type": "IN (VIP)",
-            "status": 1,
-            "expireAt": "2026-06-13T10:58:27"
-        },
-        {
-            "id": 45897,
-            "code": "K9",
-            "row": 16,
-            "col": 17,
-            "type": "IN (VIP)",
-            "status": 5,
-            "expireAt": "2026-06-13T23:21:10"
-        }
-    ]
+    "todayHoldingSeats": []
 }
