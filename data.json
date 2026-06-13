@@ -6792,7 +6792,7 @@
             ]
         },
         {
-            "timestamp": "2026-06-13T08:15:46.048Z",
+            "timestamp": "2026-06-13T08:20:39.915Z",
             "totalSold": 472,
             "totalCapacity": 722,
             "byType": {
@@ -6830,8 +6830,8 @@
                     "row": 15,
                     "col": 26,
                     "type": "IN (VIP)",
-                    "status": 1,
-                    "expireAt": "2026-06-13T00:20:58"
+                    "status": 5,
+                    "expireAt": "2026-06-13T15:26:21"
                 },
                 {
                     "id": 46151,
