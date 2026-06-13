@@ -6792,7 +6792,7 @@
             ]
         },
         {
-            "timestamp": "2026-06-13T00:40:38.480Z",
+            "timestamp": "2026-06-13T00:45:37.917Z",
             "totalSold": 472,
             "totalCapacity": 722,
             "byType": {
@@ -6822,7 +6822,7 @@
                     "color": "#297884"
                 }
             },
-            "holdingSeatsCount": 1,
+            "holdingSeatsCount": 2,
             "holdingSeats": [
                 {
                     "id": 45892,
@@ -6832,6 +6832,15 @@
                     "type": "IN (VIP)",
                     "status": 1,
                     "expireAt": "2026-06-13T00:20:58"
+                },
+                {
+                    "id": 46151,
+                    "code": "H4",
+                    "row": 14,
+                    "col": 23,
+                    "type": "YOU (SVIP)",
+                    "status": 5,
+                    "expireAt": "2026-06-13T07:53:48"
                 }
             ],
             "soldTodaySeats": []
