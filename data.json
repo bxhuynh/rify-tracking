@@ -6792,7 +6792,7 @@
             ]
         },
         {
-            "timestamp": "2026-06-13T03:45:48.670Z",
+            "timestamp": "2026-06-13T03:50:41.729Z",
             "totalSold": 472,
             "totalCapacity": 722,
             "byType": {
@@ -6822,7 +6822,7 @@
                     "color": "#297884"
                 }
             },
-            "holdingSeatsCount": 2,
+            "holdingSeatsCount": 3,
             "holdingSeats": [
                 {
                     "id": 45892,
@@ -6841,6 +6841,15 @@
                     "type": "YOU (SVIP)",
                     "status": 1,
                     "expireAt": "2026-06-13T07:53:48"
+                },
+                {
+                    "id": 45950,
+                    "code": "N12",
+                    "row": 19,
+                    "col": 27,
+                    "type": "IN (VIP)",
+                    "status": 5,
+                    "expireAt": "2026-06-13T10:58:27"
                 }
             ],
             "soldTodaySeats": []
