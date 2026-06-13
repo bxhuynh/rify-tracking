@@ -7142,6 +7142,38 @@
                     "color": "#297884"
                 }
             }
+        },
+        {
+            "timestamp": "2026-06-13T16:15:42.363Z",
+            "totalSold": 475,
+            "totalCapacity": 722,
+            "byType": {
+                "CHILL (Gift)": {
+                    "sold": 62,
+                    "total": 62,
+                    "color": "#face43"
+                },
+                "RIVER (Standard)": {
+                    "sold": 93,
+                    "total": 93,
+                    "color": " #113a23"
+                },
+                "FLOW (Pre)": {
+                    "sold": 107,
+                    "total": 172,
+                    "color": "#8baf54"
+                },
+                "IN (VIP)": {
+                    "sold": 79,
+                    "total": 189,
+                    "color": "#d7a691"
+                },
+                "YOU (SVIP)": {
+                    "sold": 134,
+                    "total": 206,
+                    "color": "#297884"
+                }
+            }
         }
     ],
     "allTimeSoldSeats": [
@@ -11560,6 +11592,15 @@
             "type": "YOU (SVIP)",
             "status": 1,
             "expireAt": "2026-05-11T20:22:27"
+        },
+        {
+            "id": 45897,
+            "code": "K9",
+            "row": 16,
+            "col": 17,
+            "type": "IN (VIP)",
+            "status": 5,
+            "expireAt": "2026-06-13T23:21:10"
         }
     ]
 }
