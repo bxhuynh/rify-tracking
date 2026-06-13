@@ -7903,5 +7903,23 @@
     "soldSeatsByDate": {
         "2026-06-14": []
     },
-    "todayHoldingSeats": []
+    "todayHoldingSeats": [
+        {
+            "id": 45669,
+            "row": 20,
+            "col": 8,
+            "ticket_type_id": 248,
+            "event_id": 51,
+            "code": "O7",
+            "status": 5,
+            "expired_date": "2026-06-14T01:08:25",
+            "keeper_id": 15857,
+            "ticket_type_name": "FLOW (Pre)",
+            "ticket_type_name_en": "FLOW (Pre)",
+            "color_code": "#8baf54",
+            "price": 1650000,
+            "max_ticket_per_user": 10,
+            "lastUpdate": "2026-06-13T18:01:11.252Z"
+        }
+    ]
 }
