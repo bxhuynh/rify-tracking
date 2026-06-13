@@ -7368,7 +7368,7 @@
             }
         },
         {
-            "timestamp": "2026-06-13T19:25:35.341Z",
+            "timestamp": "2026-06-13T19:26:55.628Z",
             "totalSold": 475,
             "totalCapacity": 722,
             "byType": {
@@ -7397,30 +7397,7 @@
                     "total": 206,
                     "color": "#297884"
                 }
-            },
-            "holdingSeatsCount": 1,
-            "holdingSeats": [
-                {
-                    "id": 46118,
-                    "code": "D12",
-                    "row": 11,
-                    "col": 27,
-                    "type": "YOU (SVIP)",
-                    "status": 1,
-                    "expireAt": "2026-06-14T00:07:26"
-                }
-            ],
-            "soldTodaySeats": [
-                {
-                    "id": 45892,
-                    "code": "I10",
-                    "row": 15,
-                    "col": 26,
-                    "type": "IN (VIP)",
-                    "status": 3,
-                    "expireAt": "2026-06-13T20:48:59"
-                }
-            ]
+            }
         }
     ],
     "allTimeSoldSeats": [
@@ -7903,5 +7880,7 @@
     "soldSeatsByDate": {
         "2026-06-14": []
     },
-    "todayHoldingSeats": []
+    "holdingSeatsByDate": {
+        "2026-06-14": []
+    }
 }
