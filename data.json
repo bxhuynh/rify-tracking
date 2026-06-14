@@ -7398,6 +7398,38 @@
                     "color": "#297884"
                 }
             }
+        },
+        {
+            "timestamp": "2026-06-14T17:01:13.876Z",
+            "totalSold": 479,
+            "totalCapacity": 722,
+            "byType": {
+                "CHILL (Gift)": {
+                    "sold": 62,
+                    "total": 62,
+                    "color": "#face43"
+                },
+                "RIVER (Standard)": {
+                    "sold": 93,
+                    "total": 93,
+                    "color": " #113a23"
+                },
+                "FLOW (Pre)": {
+                    "sold": 107,
+                    "total": 172,
+                    "color": "#8baf54"
+                },
+                "IN (VIP)": {
+                    "sold": 79,
+                    "total": 189,
+                    "color": "#d7a691"
+                },
+                "YOU (SVIP)": {
+                    "sold": 138,
+                    "total": 206,
+                    "color": "#297884"
+                }
+            }
         }
     ],
     "allTimeSoldSeats": [
@@ -7877,7 +7909,9 @@
         "H1",
         "H2",
         "H4",
-        "H6"
+        "H6",
+        "E11",
+        "G5"
     ],
     "soldSeatsByDate": {
         "2026-06-14": [
@@ -7904,6 +7938,40 @@
                 "ticket_type_id": 250,
                 "event_id": 51,
                 "code": "H6",
+                "status": 3,
+                "expired_date": null,
+                "keeper_id": null,
+                "ticket_type_name": "YOU (SVIP)",
+                "ticket_type_name_en": "YOU (SVIP)",
+                "color_code": "#297884",
+                "price": 2550000,
+                "max_ticket_per_user": 10
+            }
+        ],
+        "2026-06-15": [
+            {
+                "id": 46119,
+                "row": 12,
+                "col": 16,
+                "ticket_type_id": 250,
+                "event_id": 51,
+                "code": "E11",
+                "status": 3,
+                "expired_date": "2026-06-15T00:08:23",
+                "keeper_id": 15862,
+                "ticket_type_name": "YOU (SVIP)",
+                "ticket_type_name_en": "YOU (SVIP)",
+                "color_code": "#297884",
+                "price": 2550000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 46135,
+                "row": 13,
+                "col": 20,
+                "ticket_type_id": 250,
+                "event_id": 51,
+                "code": "G5",
                 "status": 3,
                 "expired_date": null,
                 "keeper_id": null,
@@ -7965,6 +8033,7 @@
                 "price": 2100000,
                 "max_ticket_per_user": 10
             }
-        ]
+        ],
+        "2026-06-15": []
     }
 }
