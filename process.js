@@ -95,7 +95,12 @@ function processEntry() {
           item.status === 5 ||
           (item.status === 1 && expireDateInVN === todayStr)
         ) {
-          holdMap.set(seatKey, { ...holdMap.get(seatKey), ...item });
+          holdMap.set(seatKey, {
+            ...holdMap.get(seatKey),
+            ...item,
+            expired_date:
+              item.expired_date || holdMap.get(seatKey)?.expired_date || null,
+          });
         }
       }
     });
