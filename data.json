@@ -7368,7 +7368,7 @@
             }
         },
         {
-            "timestamp": "2026-06-14T00:20:41.170Z",
+            "timestamp": "2026-06-14T00:25:33.085Z",
             "totalSold": 475,
             "totalCapacity": 722,
             "byType": {
@@ -7881,6 +7881,23 @@
         "2026-06-14": []
     },
     "holdingSeatsByDate": {
-        "2026-06-14": []
+        "2026-06-14": [
+            {
+                "id": 45761,
+                "row": 28,
+                "col": 38,
+                "ticket_type_id": 248,
+                "event_id": 51,
+                "code": "GB30",
+                "status": 5,
+                "expired_date": "2026-06-14T07:34:39",
+                "keeper_id": 15505,
+                "ticket_type_name": "FLOW (Pre)",
+                "ticket_type_name_en": "FLOW (Pre)",
+                "color_code": "#8baf54",
+                "price": 1650000,
+                "max_ticket_per_user": 10
+            }
+        ]
     }
 }
