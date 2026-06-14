@@ -7368,8 +7368,8 @@
             }
         },
         {
-            "timestamp": "2026-06-14T06:01:08.351Z",
-            "totalSold": 475,
+            "timestamp": "2026-06-14T06:05:36.902Z",
+            "totalSold": 477,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -7393,7 +7393,7 @@
                     "color": "#d7a691"
                 },
                 "YOU (SVIP)": {
-                    "sold": 134,
+                    "sold": 136,
                     "total": 206,
                     "color": "#297884"
                 }
@@ -7875,10 +7875,45 @@
         "G4",
         "G12",
         "H1",
-        "H2"
+        "H2",
+        "H4",
+        "H6"
     ],
     "soldSeatsByDate": {
-        "2026-06-14": []
+        "2026-06-14": [
+            {
+                "id": 46151,
+                "row": 14,
+                "col": 23,
+                "ticket_type_id": 250,
+                "event_id": 51,
+                "code": "H4",
+                "status": 3,
+                "expired_date": null,
+                "keeper_id": null,
+                "ticket_type_name": "YOU (SVIP)",
+                "ticket_type_name_en": "YOU (SVIP)",
+                "color_code": "#297884",
+                "price": 2550000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 46152,
+                "row": 14,
+                "col": 24,
+                "ticket_type_id": 250,
+                "event_id": 51,
+                "code": "H6",
+                "status": 3,
+                "expired_date": null,
+                "keeper_id": null,
+                "ticket_type_name": "YOU (SVIP)",
+                "ticket_type_name_en": "YOU (SVIP)",
+                "color_code": "#297884",
+                "price": 2550000,
+                "max_ticket_per_user": 10
+            }
+        ]
     },
     "holdingSeatsByDate": {
         "2026-06-14": [
