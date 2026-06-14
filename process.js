@@ -90,6 +90,7 @@ function processEntry() {
           : null;
 
         if (
+          holdMap.has(seatKey) ||
           item.status === 2 ||
           item.status === 5 ||
           (item.status === 1 && expireDateInVN === todayStr)
