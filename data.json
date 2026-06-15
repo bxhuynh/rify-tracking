@@ -7400,8 +7400,8 @@
             }
         },
         {
-            "timestamp": "2026-06-15T16:40:42.960Z",
-            "totalSold": 480,
+            "timestamp": "2026-06-15T16:45:45.642Z",
+            "totalSold": 482,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -7425,7 +7425,7 @@
                     "color": "#d7a691"
                 },
                 "YOU (SVIP)": {
-                    "sold": 138,
+                    "sold": 140,
                     "total": 206,
                     "color": "#297884"
                 }
@@ -7912,7 +7912,9 @@
         "H6",
         "E11",
         "G5",
-        "L13"
+        "L13",
+        "VA17",
+        "VA15"
     ],
     "soldSeatsByDate": {
         "2026-06-14": [
@@ -7996,6 +7998,38 @@
                 "ticket_type_name_en": "IN (VIP)",
                 "color_code": "#d7a691",
                 "price": 2100000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45953,
+                "row": 1,
+                "col": 5,
+                "ticket_type_id": 250,
+                "event_id": 51,
+                "code": "VA17",
+                "status": 3,
+                "expired_date": "2026-06-15T23:47:54",
+                "keeper_id": 15900,
+                "ticket_type_name": "YOU (SVIP)",
+                "ticket_type_name_en": "YOU (SVIP)",
+                "color_code": "#297884",
+                "price": 2550000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45954,
+                "row": 1,
+                "col": 6,
+                "ticket_type_id": 250,
+                "event_id": 51,
+                "code": "VA15",
+                "status": 3,
+                "expired_date": "2026-06-15T23:47:54",
+                "keeper_id": 15900,
+                "ticket_type_name": "YOU (SVIP)",
+                "ticket_type_name_en": "YOU (SVIP)",
+                "color_code": "#297884",
+                "price": 2550000,
                 "max_ticket_per_user": 10
             }
         ]
@@ -8110,38 +8144,6 @@
                 "status": 1,
                 "expired_date": "2026-06-15T22:44:40",
                 "keeper_id": null,
-                "ticket_type_name": "YOU (SVIP)",
-                "ticket_type_name_en": "YOU (SVIP)",
-                "color_code": "#297884",
-                "price": 2550000,
-                "max_ticket_per_user": 10
-            },
-            {
-                "id": 45953,
-                "row": 1,
-                "col": 5,
-                "ticket_type_id": 250,
-                "event_id": 51,
-                "code": "VA17",
-                "status": 2,
-                "expired_date": "2026-06-15T23:47:54",
-                "keeper_id": 15900,
-                "ticket_type_name": "YOU (SVIP)",
-                "ticket_type_name_en": "YOU (SVIP)",
-                "color_code": "#297884",
-                "price": 2550000,
-                "max_ticket_per_user": 10
-            },
-            {
-                "id": 45954,
-                "row": 1,
-                "col": 6,
-                "ticket_type_id": 250,
-                "event_id": 51,
-                "code": "VA15",
-                "status": 2,
-                "expired_date": "2026-06-15T23:47:54",
-                "keeper_id": 15900,
                 "ticket_type_name": "YOU (SVIP)",
                 "ticket_type_name_en": "YOU (SVIP)",
                 "color_code": "#297884",
