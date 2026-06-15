@@ -7400,7 +7400,7 @@
             }
         },
         {
-            "timestamp": "2026-06-15T15:01:12.747Z",
+            "timestamp": "2026-06-15T15:05:38.206Z",
             "totalSold": 480,
             "totalCapacity": 722,
             "byType": {
@@ -8066,6 +8066,22 @@
                 "ticket_type_name_en": "FLOW (Pre)",
                 "color_code": "#8baf54",
                 "price": 1650000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45854,
+                "row": 13,
+                "col": 6,
+                "ticket_type_id": 249,
+                "event_id": 51,
+                "code": "G21",
+                "status": 5,
+                "expired_date": "2026-06-15T22:15:23",
+                "keeper_id": 15617,
+                "ticket_type_name": "IN (VIP)",
+                "ticket_type_name_en": "IN (VIP)",
+                "color_code": "#d7a691",
+                "price": 2100000,
                 "max_ticket_per_user": 10
             }
         ]
