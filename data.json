@@ -7432,7 +7432,7 @@
             }
         },
         {
-            "timestamp": "2026-06-15T19:31:03.232Z",
+            "timestamp": "2026-06-15T19:35:36.466Z",
             "totalSold": 482,
             "totalCapacity": 722,
             "byType": {
@@ -8184,6 +8184,23 @@
                 "max_ticket_per_user": 10
             }
         ],
-        "2026-06-16": []
+        "2026-06-16": [
+            {
+                "id": 45591,
+                "row": 15,
+                "col": 3,
+                "ticket_type_id": 248,
+                "event_id": 51,
+                "code": "I25",
+                "status": 5,
+                "expired_date": "2026-06-16T02:43:56",
+                "keeper_id": 15901,
+                "ticket_type_name": "FLOW (Pre)",
+                "ticket_type_name_en": "FLOW (Pre)",
+                "color_code": "#8baf54",
+                "price": 1650000,
+                "max_ticket_per_user": 10
+            }
+        ]
     }
 }
