@@ -7400,7 +7400,7 @@
             }
         },
         {
-            "timestamp": "2026-06-15T06:35:41.974Z",
+            "timestamp": "2026-06-15T06:40:49.295Z",
             "totalSold": 479,
             "totalCapacity": 722,
             "byType": {
@@ -8042,9 +8042,9 @@
                 "ticket_type_id": 249,
                 "event_id": 51,
                 "code": "L13",
-                "status": 1,
-                "expired_date": "2026-06-15T13:34:12",
-                "keeper_id": null,
+                "status": 5,
+                "expired_date": "2026-06-15T13:46:40",
+                "keeper_id": 15866,
                 "ticket_type_name": "IN (VIP)",
                 "ticket_type_name_en": "IN (VIP)",
                 "color_code": "#d7a691",
