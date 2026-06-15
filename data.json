@@ -7400,7 +7400,7 @@
             }
         },
         {
-            "timestamp": "2026-06-15T10:55:36.486Z",
+            "timestamp": "2026-06-15T11:01:10.868Z",
             "totalSold": 480,
             "totalCapacity": 722,
             "byType": {
@@ -8051,6 +8051,23 @@
                 "max_ticket_per_user": 10
             }
         ],
-        "2026-06-15": []
+        "2026-06-15": [
+            {
+                "id": 45669,
+                "row": 20,
+                "col": 8,
+                "ticket_type_id": 248,
+                "event_id": 51,
+                "code": "O7",
+                "status": 5,
+                "expired_date": "2026-06-15T18:10:37",
+                "keeper_id": 14256,
+                "ticket_type_name": "FLOW (Pre)",
+                "ticket_type_name_en": "FLOW (Pre)",
+                "color_code": "#8baf54",
+                "price": 1650000,
+                "max_ticket_per_user": 10
+            }
+        ]
     }
 }
