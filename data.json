@@ -7400,8 +7400,8 @@
             }
         },
         {
-            "timestamp": "2026-06-15T08:55:41.154Z",
-            "totalSold": 479,
+            "timestamp": "2026-06-15T09:01:09.905Z",
+            "totalSold": 480,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -7420,7 +7420,7 @@
                     "color": "#8baf54"
                 },
                 "IN (VIP)": {
-                    "sold": 79,
+                    "sold": 80,
                     "total": 189,
                     "color": "#d7a691"
                 },
@@ -7911,7 +7911,8 @@
         "H4",
         "H6",
         "E11",
-        "G5"
+        "G5",
+        "L13"
     ],
     "soldSeatsByDate": {
         "2026-06-14": [
@@ -7980,6 +7981,22 @@
                 "color_code": "#297884",
                 "price": 2550000,
                 "max_ticket_per_user": 10
+            },
+            {
+                "id": 45909,
+                "row": 17,
+                "col": 15,
+                "ticket_type_id": 249,
+                "event_id": 51,
+                "code": "L13",
+                "status": 3,
+                "expired_date": null,
+                "keeper_id": null,
+                "ticket_type_name": "IN (VIP)",
+                "ticket_type_name_en": "IN (VIP)",
+                "color_code": "#d7a691",
+                "price": 2100000,
+                "max_ticket_per_user": 10
             }
         ]
     },
@@ -8034,23 +8051,6 @@
                 "max_ticket_per_user": 10
             }
         ],
-        "2026-06-15": [
-            {
-                "id": 45909,
-                "row": 17,
-                "col": 15,
-                "ticket_type_id": 249,
-                "event_id": 51,
-                "code": "L13",
-                "status": 1,
-                "expired_date": "2026-06-15T13:53:39",
-                "keeper_id": null,
-                "ticket_type_name": "IN (VIP)",
-                "ticket_type_name_en": "IN (VIP)",
-                "color_code": "#d7a691",
-                "price": 2100000,
-                "max_ticket_per_user": 10
-            }
-        ]
+        "2026-06-15": []
     }
 }
