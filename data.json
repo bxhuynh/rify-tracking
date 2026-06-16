@@ -7432,7 +7432,7 @@
             }
         },
         {
-            "timestamp": "2026-06-16T14:05:49.589Z",
+            "timestamp": "2026-06-16T14:10:54.570Z",
             "totalSold": 484,
             "totalCapacity": 722,
             "byType": {
@@ -8307,9 +8307,9 @@
                 "ticket_type_id": 248,
                 "event_id": 51,
                 "code": "K29",
-                "status": 1,
-                "expired_date": "2026-06-16T19:02:17",
-                "keeper_id": null,
+                "status": 5,
+                "expired_date": "2026-06-16T21:19:15",
+                "keeper_id": 15603,
                 "ticket_type_name": "FLOW (Pre)",
                 "ticket_type_name_en": "FLOW (Pre)",
                 "color_code": "#8baf54",
@@ -8467,9 +8467,9 @@
                 "ticket_type_id": 248,
                 "event_id": 51,
                 "code": "I30",
-                "status": 5,
+                "status": 1,
                 "expired_date": "2026-06-16T21:10:34",
-                "keeper_id": 15603,
+                "keeper_id": null,
                 "ticket_type_name": "FLOW (Pre)",
                 "ticket_type_name_en": "FLOW (Pre)",
                 "color_code": "#8baf54",
