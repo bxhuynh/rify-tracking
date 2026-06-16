@@ -7432,7 +7432,7 @@
             }
         },
         {
-            "timestamp": "2026-06-16T04:35:39.479Z",
+            "timestamp": "2026-06-16T04:40:41.118Z",
             "totalSold": 482,
             "totalCapacity": 722,
             "byType": {
@@ -8231,6 +8231,22 @@
                 "ticket_type_name_en": "FLOW (Pre)",
                 "color_code": "#8baf54",
                 "price": 1650000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45993,
+                "row": 2,
+                "col": 37,
+                "ticket_type_id": 250,
+                "event_id": 51,
+                "code": "VB18",
+                "status": 5,
+                "expired_date": "2026-06-16T11:48:54",
+                "keeper_id": 15485,
+                "ticket_type_name": "YOU (SVIP)",
+                "ticket_type_name_en": "YOU (SVIP)",
+                "color_code": "#297884",
+                "price": 2550000,
                 "max_ticket_per_user": 10
             }
         ]
