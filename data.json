@@ -7464,7 +7464,7 @@
             }
         },
         {
-            "timestamp": "2026-06-16T19:55:37.538Z",
+            "timestamp": "2026-06-16T20:01:15.094Z",
             "totalSold": 487,
             "totalCapacity": 722,
             "byType": {
@@ -8633,9 +8633,9 @@
                 "ticket_type_id": 248,
                 "event_id": 51,
                 "code": "GB20",
-                "status": 5,
+                "status": 1,
                 "expired_date": "2026-06-17T02:58:51",
-                "keeper_id": 7761,
+                "keeper_id": null,
                 "ticket_type_name": "FLOW (Pre)",
                 "ticket_type_name_en": "FLOW (Pre)",
                 "color_code": "#8baf54",
