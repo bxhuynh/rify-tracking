@@ -7432,7 +7432,7 @@
             }
         },
         {
-            "timestamp": "2026-06-16T03:10:42.258Z",
+            "timestamp": "2026-06-16T03:15:43.623Z",
             "totalSold": 482,
             "totalCapacity": 722,
             "byType": {
@@ -8208,9 +8208,9 @@
                 "ticket_type_id": 250,
                 "event_id": 51,
                 "code": "G11",
-                "status": 5,
+                "status": 1,
                 "expired_date": "2026-06-16T10:14:01",
-                "keeper_id": 15604,
+                "keeper_id": null,
                 "ticket_type_name": "YOU (SVIP)",
                 "ticket_type_name_en": "YOU (SVIP)",
                 "color_code": "#297884",
