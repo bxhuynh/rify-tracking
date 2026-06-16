@@ -7432,7 +7432,7 @@
             }
         },
         {
-            "timestamp": "2026-06-16T14:31:05.275Z",
+            "timestamp": "2026-06-16T14:35:41.685Z",
             "totalSold": 485,
             "totalCapacity": 722,
             "byType": {
@@ -8484,9 +8484,9 @@
                 "ticket_type_id": 250,
                 "event_id": 51,
                 "code": "G9",
-                "status": 5,
+                "status": 1,
                 "expired_date": "2026-06-16T21:34:14",
-                "keeper_id": 15909,
+                "keeper_id": null,
                 "ticket_type_name": "YOU (SVIP)",
                 "ticket_type_name_en": "YOU (SVIP)",
                 "color_code": "#297884",
@@ -8500,9 +8500,9 @@
                 "ticket_type_id": 250,
                 "event_id": 51,
                 "code": "G7",
-                "status": 5,
+                "status": 1,
                 "expired_date": "2026-06-16T21:34:14",
-                "keeper_id": 15909,
+                "keeper_id": null,
                 "ticket_type_name": "YOU (SVIP)",
                 "ticket_type_name_en": "YOU (SVIP)",
                 "color_code": "#297884",
