@@ -7432,7 +7432,7 @@
             }
         },
         {
-            "timestamp": "2026-06-16T13:01:15.927Z",
+            "timestamp": "2026-06-16T13:05:45.157Z",
             "totalSold": 483,
             "totalCapacity": 722,
             "byType": {
@@ -8274,9 +8274,9 @@
                 "ticket_type_id": 248,
                 "event_id": 51,
                 "code": "GA21",
-                "status": 1,
-                "expired_date": "2026-06-16T19:27:36",
-                "keeper_id": null,
+                "status": 5,
+                "expired_date": "2026-06-16T20:13:17",
+                "keeper_id": 15573,
                 "ticket_type_name": "FLOW (Pre)",
                 "ticket_type_name_en": "FLOW (Pre)",
                 "color_code": "#8baf54",
