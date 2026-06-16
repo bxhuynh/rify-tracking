@@ -7432,7 +7432,7 @@
             }
         },
         {
-            "timestamp": "2026-06-16T04:10:40.268Z",
+            "timestamp": "2026-06-16T04:15:48.804Z",
             "totalSold": 482,
             "totalCapacity": 722,
             "byType": {
@@ -8215,6 +8215,22 @@
                 "ticket_type_name_en": "YOU (SVIP)",
                 "color_code": "#297884",
                 "price": 2550000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45669,
+                "row": 20,
+                "col": 8,
+                "ticket_type_id": 248,
+                "event_id": 51,
+                "code": "O7",
+                "status": 5,
+                "expired_date": "2026-06-16T11:24:01",
+                "keeper_id": 15877,
+                "ticket_type_name": "FLOW (Pre)",
+                "ticket_type_name_en": "FLOW (Pre)",
+                "color_code": "#8baf54",
+                "price": 1650000,
                 "max_ticket_per_user": 10
             }
         ]
