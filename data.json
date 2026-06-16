@@ -7432,8 +7432,8 @@
             }
         },
         {
-            "timestamp": "2026-06-16T13:05:45.157Z",
-            "totalSold": 483,
+            "timestamp": "2026-06-16T13:10:45.317Z",
+            "totalSold": 484,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -7447,7 +7447,7 @@
                     "color": " #113a23"
                 },
                 "FLOW (Pre)": {
-                    "sold": 108,
+                    "sold": 109,
                     "total": 172,
                     "color": "#8baf54"
                 },
@@ -7947,7 +7947,8 @@
         "L13",
         "VA17",
         "VA15",
-        "GB18"
+        "GB18",
+        "GA21"
     ],
     "soldSeatsByDate": {
         "2026-06-14": [
@@ -8077,6 +8078,22 @@
                 "status": 3,
                 "expired_date": "2026-06-16T13:15:35",
                 "keeper_id": 15906,
+                "ticket_type_name": "FLOW (Pre)",
+                "ticket_type_name_en": "FLOW (Pre)",
+                "color_code": "#8baf54",
+                "price": 1650000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45705,
+                "row": 27,
+                "col": 10,
+                "ticket_type_id": 248,
+                "event_id": 51,
+                "code": "GA21",
+                "status": 3,
+                "expired_date": "2026-06-16T20:13:17",
+                "keeper_id": 15573,
                 "ticket_type_name": "FLOW (Pre)",
                 "ticket_type_name_en": "FLOW (Pre)",
                 "color_code": "#8baf54",
@@ -8268,22 +8285,6 @@
                 "max_ticket_per_user": 10
             },
             {
-                "id": 45705,
-                "row": 27,
-                "col": 10,
-                "ticket_type_id": 248,
-                "event_id": 51,
-                "code": "GA21",
-                "status": 5,
-                "expired_date": "2026-06-16T20:13:17",
-                "keeper_id": 15573,
-                "ticket_type_name": "FLOW (Pre)",
-                "ticket_type_name_en": "FLOW (Pre)",
-                "color_code": "#8baf54",
-                "price": 1650000,
-                "max_ticket_per_user": 10
-            },
-            {
                 "id": 45918,
                 "row": 17,
                 "col": 24,
@@ -8418,9 +8419,9 @@
                 "ticket_type_id": 248,
                 "event_id": 51,
                 "code": "GA23",
-                "status": 1,
-                "expired_date": "2026-06-16T19:27:36",
-                "keeper_id": null,
+                "status": 5,
+                "expired_date": "2026-06-16T20:16:27",
+                "keeper_id": 14887,
                 "ticket_type_name": "FLOW (Pre)",
                 "ticket_type_name_en": "FLOW (Pre)",
                 "color_code": "#8baf54",
