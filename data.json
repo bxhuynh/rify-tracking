@@ -7432,7 +7432,7 @@
             }
         },
         {
-            "timestamp": "2026-06-16T04:40:41.118Z",
+            "timestamp": "2026-06-16T04:45:40.138Z",
             "totalSold": 482,
             "totalCapacity": 722,
             "byType": {
@@ -8240,9 +8240,9 @@
                 "ticket_type_id": 250,
                 "event_id": 51,
                 "code": "VB18",
-                "status": 5,
+                "status": 1,
                 "expired_date": "2026-06-16T11:48:54",
-                "keeper_id": 15485,
+                "keeper_id": null,
                 "ticket_type_name": "YOU (SVIP)",
                 "ticket_type_name_en": "YOU (SVIP)",
                 "color_code": "#297884",
