@@ -7464,8 +7464,8 @@
             }
         },
         {
-            "timestamp": "2026-06-17T10:20:45.512Z",
-            "totalSold": 493,
+            "timestamp": "2026-06-17T10:25:34.069Z",
+            "totalSold": 494,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -7479,7 +7479,7 @@
                     "color": " #113a23"
                 },
                 "FLOW (Pre)": {
-                    "sold": 114,
+                    "sold": 115,
                     "total": 172,
                     "color": "#8baf54"
                 },
@@ -7989,7 +7989,8 @@
         "GA22",
         "GA24",
         "VB18",
-        "VC16"
+        "VC16",
+        "O7"
     ],
     "soldSeatsByDate": {
         "2026-06-14": [
@@ -8285,6 +8286,22 @@
                 "ticket_type_name_en": "YOU (SVIP)",
                 "color_code": "#297884",
                 "price": 2550000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45669,
+                "row": 20,
+                "col": 8,
+                "ticket_type_id": 248,
+                "event_id": 51,
+                "code": "O7",
+                "status": 3,
+                "expired_date": "2026-06-17T17:33:10",
+                "keeper_id": 15781,
+                "ticket_type_name": "FLOW (Pre)",
+                "ticket_type_name_en": "FLOW (Pre)",
+                "color_code": "#8baf54",
+                "price": 1650000,
                 "max_ticket_per_user": 10
             }
         ]
