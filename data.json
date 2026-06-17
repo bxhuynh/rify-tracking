@@ -7496,7 +7496,7 @@
             }
         },
         {
-            "timestamp": "2026-06-17T17:31:02.694Z",
+            "timestamp": "2026-06-17T17:35:40.932Z",
             "totalSold": 494,
             "totalCapacity": 722,
             "byType": {
@@ -8924,6 +8924,23 @@
                 "max_ticket_per_user": 10
             }
         ],
-        "2026-06-18": []
+        "2026-06-18": [
+            {
+                "id": 45703,
+                "row": 27,
+                "col": 8,
+                "ticket_type_id": 248,
+                "event_id": 51,
+                "code": "GA25",
+                "status": 5,
+                "expired_date": "2026-06-18T00:41:07",
+                "keeper_id": 11342,
+                "ticket_type_name": "FLOW (Pre)",
+                "ticket_type_name_en": "FLOW (Pre)",
+                "color_code": "#8baf54",
+                "price": 1650000,
+                "max_ticket_per_user": 10
+            }
+        ]
     }
 }
