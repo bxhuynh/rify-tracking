@@ -7464,8 +7464,8 @@
             }
         },
         {
-            "timestamp": "2026-06-17T09:15:45.310Z",
-            "totalSold": 492,
+            "timestamp": "2026-06-17T09:20:54.436Z",
+            "totalSold": 493,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -7489,7 +7489,7 @@
                     "color": "#d7a691"
                 },
                 "YOU (SVIP)": {
-                    "sold": 141,
+                    "sold": 142,
                     "total": 206,
                     "color": "#297884"
                 }
@@ -7988,7 +7988,8 @@
         "GB20",
         "GA22",
         "GA24",
-        "VB18"
+        "VB18",
+        "VC16"
     ],
     "soldSeatsByDate": {
         "2026-06-14": [
@@ -8264,6 +8265,22 @@
                 "status": 3,
                 "expired_date": "2026-06-17T15:42:50",
                 "keeper_id": 15485,
+                "ticket_type_name": "YOU (SVIP)",
+                "ticket_type_name_en": "YOU (SVIP)",
+                "color_code": "#297884",
+                "price": 2550000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 46016,
+                "row": 3,
+                "col": 36,
+                "ticket_type_id": 250,
+                "event_id": 51,
+                "code": "VC16",
+                "status": 3,
+                "expired_date": "2026-06-17T16:26:18",
+                "keeper_id": 15842,
                 "ticket_type_name": "YOU (SVIP)",
                 "ticket_type_name_en": "YOU (SVIP)",
                 "color_code": "#297884",
