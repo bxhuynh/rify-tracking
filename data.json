@@ -7496,8 +7496,8 @@
             }
         },
         {
-            "timestamp": "2026-06-18T04:25:33.924Z",
-            "totalSold": 492,
+            "timestamp": "2026-06-18T04:30:54.329Z",
+            "totalSold": 493,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -7521,7 +7521,7 @@
                     "color": "#d7a691"
                 },
                 "YOU (SVIP)": {
-                    "sold": 146,
+                    "sold": 147,
                     "total": 206,
                     "color": "#297884"
                 }
@@ -8032,7 +8032,8 @@
         "VC22",
         "VC24",
         "D18",
-        "D20"
+        "D20",
+        "VD16"
     ],
     "soldSeatsByDate": {
         "2026-06-14": [
@@ -8506,6 +8507,22 @@
                 "ticket_type_name_en": "IN (VIP)",
                 "color_code": "#d7a691",
                 "price": 2100000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 46041,
+                "row": 4,
+                "col": 36,
+                "ticket_type_id": 250,
+                "event_id": 51,
+                "code": "VD16",
+                "status": 3,
+                "expired_date": "2026-06-18T11:37:53",
+                "keeper_id": 15912,
+                "ticket_type_name": "YOU (SVIP)",
+                "ticket_type_name_en": "YOU (SVIP)",
+                "color_code": "#297884",
+                "price": 2550000,
                 "max_ticket_per_user": 10
             }
         ]
