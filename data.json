@@ -7496,8 +7496,8 @@
             }
         },
         {
-            "timestamp": "2026-06-18T02:45:40.951Z",
-            "totalSold": 494,
+            "timestamp": "2026-06-18T02:50:49.366Z",
+            "totalSold": 490,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -7511,17 +7511,17 @@
                     "color": " #113a23"
                 },
                 "FLOW (Pre)": {
-                    "sold": 115,
+                    "sold": 111,
                     "total": 172,
                     "color": "#8baf54"
                 },
                 "IN (VIP)": {
-                    "sold": 82,
+                    "sold": 78,
                     "total": 189,
                     "color": "#d7a691"
                 },
                 "YOU (SVIP)": {
-                    "sold": 142,
+                    "sold": 146,
                     "total": 206,
                     "color": "#297884"
                 }
@@ -8022,7 +8022,15 @@
         "GA24",
         "VB18",
         "VC16",
-        "O7"
+        "O7",
+        "GA26",
+        "GA28",
+        "GA30",
+        "GB30",
+        "VC18",
+        "VC20",
+        "VC22",
+        "VC24"
     ],
     "soldSeatsByDate": {
         "2026-06-14": [
@@ -8337,7 +8345,136 @@
                 "max_ticket_per_user": 10
             }
         ],
-        "2026-06-18": []
+        "2026-06-18": [
+            {
+                "id": 45728,
+                "row": 27,
+                "col": 36,
+                "ticket_type_id": 248,
+                "event_id": 51,
+                "code": "GA26",
+                "status": 3,
+                "expired_date": "2026-06-18T09:55:00",
+                "keeper_id": 4702,
+                "ticket_type_name": "FLOW (Pre)",
+                "ticket_type_name_en": "FLOW (Pre)",
+                "color_code": "#8baf54",
+                "price": 1650000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45729,
+                "row": 27,
+                "col": 37,
+                "ticket_type_id": 248,
+                "event_id": 51,
+                "code": "GA28",
+                "status": 3,
+                "expired_date": "2026-06-18T09:55:00",
+                "keeper_id": 4702,
+                "ticket_type_name": "FLOW (Pre)",
+                "ticket_type_name_en": "FLOW (Pre)",
+                "color_code": "#8baf54",
+                "price": 1650000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45730,
+                "row": 27,
+                "col": 38,
+                "ticket_type_id": 248,
+                "event_id": 51,
+                "code": "GA30",
+                "status": 3,
+                "expired_date": "2026-06-18T09:55:00",
+                "keeper_id": 4702,
+                "ticket_type_name": "FLOW (Pre)",
+                "ticket_type_name_en": "FLOW (Pre)",
+                "color_code": "#8baf54",
+                "price": 1650000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45761,
+                "row": 28,
+                "col": 38,
+                "ticket_type_id": 248,
+                "event_id": 51,
+                "code": "GB30",
+                "status": 3,
+                "expired_date": "2026-06-18T09:55:00",
+                "keeper_id": 4702,
+                "ticket_type_name": "FLOW (Pre)",
+                "ticket_type_name_en": "FLOW (Pre)",
+                "color_code": "#8baf54",
+                "price": 1650000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 46017,
+                "row": 3,
+                "col": 37,
+                "ticket_type_id": 250,
+                "event_id": 51,
+                "code": "VC18",
+                "status": 3,
+                "expired_date": "2026-06-18T09:59:09",
+                "keeper_id": 267,
+                "ticket_type_name": "YOU (SVIP)",
+                "ticket_type_name_en": "YOU (SVIP)",
+                "color_code": "#297884",
+                "price": 2550000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 46018,
+                "row": 3,
+                "col": 38,
+                "ticket_type_id": 250,
+                "event_id": 51,
+                "code": "VC20",
+                "status": 3,
+                "expired_date": "2026-06-18T09:59:09",
+                "keeper_id": 267,
+                "ticket_type_name": "YOU (SVIP)",
+                "ticket_type_name_en": "YOU (SVIP)",
+                "color_code": "#297884",
+                "price": 2550000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 46019,
+                "row": 3,
+                "col": 39,
+                "ticket_type_id": 250,
+                "event_id": 51,
+                "code": "VC22",
+                "status": 3,
+                "expired_date": "2026-06-18T09:59:09",
+                "keeper_id": 267,
+                "ticket_type_name": "YOU (SVIP)",
+                "ticket_type_name_en": "YOU (SVIP)",
+                "color_code": "#297884",
+                "price": 2550000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 46020,
+                "row": 3,
+                "col": 40,
+                "ticket_type_id": 250,
+                "event_id": 51,
+                "code": "VC24",
+                "status": 3,
+                "expired_date": "2026-06-18T09:59:09",
+                "keeper_id": 267,
+                "ticket_type_name": "YOU (SVIP)",
+                "ticket_type_name_en": "YOU (SVIP)",
+                "color_code": "#297884",
+                "price": 2550000,
+                "max_ticket_per_user": 10
+            }
+        ]
     },
     "holdingSeatsByDate": {
         "2026-06-14": [
@@ -8935,70 +9072,6 @@
                 "status": 1,
                 "expired_date": "2026-06-18T00:41:07",
                 "keeper_id": null,
-                "ticket_type_name": "FLOW (Pre)",
-                "ticket_type_name_en": "FLOW (Pre)",
-                "color_code": "#8baf54",
-                "price": 1650000,
-                "max_ticket_per_user": 10
-            },
-            {
-                "id": 45728,
-                "row": 27,
-                "col": 36,
-                "ticket_type_id": 248,
-                "event_id": 51,
-                "code": "GA26",
-                "status": 2,
-                "expired_date": "2026-06-18T09:55:00",
-                "keeper_id": 4702,
-                "ticket_type_name": "FLOW (Pre)",
-                "ticket_type_name_en": "FLOW (Pre)",
-                "color_code": "#8baf54",
-                "price": 1650000,
-                "max_ticket_per_user": 10
-            },
-            {
-                "id": 45729,
-                "row": 27,
-                "col": 37,
-                "ticket_type_id": 248,
-                "event_id": 51,
-                "code": "GA28",
-                "status": 2,
-                "expired_date": "2026-06-18T09:55:00",
-                "keeper_id": 4702,
-                "ticket_type_name": "FLOW (Pre)",
-                "ticket_type_name_en": "FLOW (Pre)",
-                "color_code": "#8baf54",
-                "price": 1650000,
-                "max_ticket_per_user": 10
-            },
-            {
-                "id": 45730,
-                "row": 27,
-                "col": 38,
-                "ticket_type_id": 248,
-                "event_id": 51,
-                "code": "GA30",
-                "status": 2,
-                "expired_date": "2026-06-18T09:55:00",
-                "keeper_id": 4702,
-                "ticket_type_name": "FLOW (Pre)",
-                "ticket_type_name_en": "FLOW (Pre)",
-                "color_code": "#8baf54",
-                "price": 1650000,
-                "max_ticket_per_user": 10
-            },
-            {
-                "id": 45761,
-                "row": 28,
-                "col": 38,
-                "ticket_type_id": 248,
-                "event_id": 51,
-                "code": "GB30",
-                "status": 2,
-                "expired_date": "2026-06-18T09:55:00",
-                "keeper_id": 4702,
                 "ticket_type_name": "FLOW (Pre)",
                 "ticket_type_name_en": "FLOW (Pre)",
                 "color_code": "#8baf54",
