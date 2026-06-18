@@ -7496,8 +7496,8 @@
             }
         },
         {
-            "timestamp": "2026-06-18T04:30:54.329Z",
-            "totalSold": 493,
+            "timestamp": "2026-06-18T04:35:35.703Z",
+            "totalSold": 497,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -7516,7 +7516,7 @@
                     "color": "#8baf54"
                 },
                 "IN (VIP)": {
-                    "sold": 80,
+                    "sold": 84,
                     "total": 189,
                     "color": "#d7a691"
                 },
@@ -8033,7 +8033,11 @@
         "VC24",
         "D18",
         "D20",
-        "VD16"
+        "VD16",
+        "C24",
+        "C26",
+        "C28",
+        "C30"
     ],
     "soldSeatsByDate": {
         "2026-06-14": [
@@ -8523,6 +8527,70 @@
                 "ticket_type_name_en": "YOU (SVIP)",
                 "color_code": "#297884",
                 "price": 2550000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45812,
+                "row": 10,
+                "col": 39,
+                "ticket_type_id": 249,
+                "event_id": 51,
+                "code": "C24",
+                "status": 3,
+                "expired_date": "2026-06-18T11:43:36",
+                "keeper_id": 267,
+                "ticket_type_name": "IN (VIP)",
+                "ticket_type_name_en": "IN (VIP)",
+                "color_code": "#d7a691",
+                "price": 2100000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45813,
+                "row": 10,
+                "col": 40,
+                "ticket_type_id": 249,
+                "event_id": 51,
+                "code": "C26",
+                "status": 3,
+                "expired_date": "2026-06-18T11:43:36",
+                "keeper_id": 267,
+                "ticket_type_name": "IN (VIP)",
+                "ticket_type_name_en": "IN (VIP)",
+                "color_code": "#d7a691",
+                "price": 2100000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45814,
+                "row": 10,
+                "col": 41,
+                "ticket_type_id": 249,
+                "event_id": 51,
+                "code": "C28",
+                "status": 3,
+                "expired_date": "2026-06-18T11:43:36",
+                "keeper_id": 267,
+                "ticket_type_name": "IN (VIP)",
+                "ticket_type_name_en": "IN (VIP)",
+                "color_code": "#d7a691",
+                "price": 2100000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45815,
+                "row": 10,
+                "col": 42,
+                "ticket_type_id": 249,
+                "event_id": 51,
+                "code": "C30",
+                "status": 3,
+                "expired_date": "2026-06-18T11:43:36",
+                "keeper_id": 267,
+                "ticket_type_name": "IN (VIP)",
+                "ticket_type_name_en": "IN (VIP)",
+                "color_code": "#d7a691",
+                "price": 2100000,
                 "max_ticket_per_user": 10
             }
         ]
