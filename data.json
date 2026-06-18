@@ -7526,6 +7526,38 @@
                     "color": "#297884"
                 }
             }
+        },
+        {
+            "timestamp": "2026-06-18T17:01:05.396Z",
+            "totalSold": 507,
+            "totalCapacity": 722,
+            "byType": {
+                "CHILL (Gift)": {
+                    "sold": 62,
+                    "total": 62,
+                    "color": "#face43"
+                },
+                "RIVER (Standard)": {
+                    "sold": 93,
+                    "total": 93,
+                    "color": " #113a23"
+                },
+                "FLOW (Pre)": {
+                    "sold": 113,
+                    "total": 172,
+                    "color": "#8baf54"
+                },
+                "IN (VIP)": {
+                    "sold": 92,
+                    "total": 189,
+                    "color": "#d7a691"
+                },
+                "YOU (SVIP)": {
+                    "sold": 147,
+                    "total": 206,
+                    "color": "#297884"
+                }
+            }
         }
     ],
     "allTimeSoldSeats": [
@@ -8751,7 +8783,8 @@
                 "price": 1650000,
                 "max_ticket_per_user": 10
             }
-        ]
+        ],
+        "2026-06-19": []
     },
     "holdingSeatsByDate": {
         "2026-06-14": [
@@ -9451,6 +9484,7 @@
                 "price": 2100000,
                 "max_ticket_per_user": 10
             }
-        ]
+        ],
+        "2026-06-19": []
     }
 }
