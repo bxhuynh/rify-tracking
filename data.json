@@ -7496,8 +7496,8 @@
             }
         },
         {
-            "timestamp": "2026-06-18T05:10:48.534Z",
-            "totalSold": 505,
+            "timestamp": "2026-06-18T05:15:50.207Z",
+            "totalSold": 506,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -7511,7 +7511,7 @@
                     "color": " #113a23"
                 },
                 "FLOW (Pre)": {
-                    "sold": 111,
+                    "sold": 112,
                     "total": 172,
                     "color": "#8baf54"
                 },
@@ -8033,7 +8033,8 @@
         "H1",
         "H2",
         "H4",
-        "H6"
+        "H6",
+        "GB22"
     ],
     "soldSeatsByDate": {
         "2026-06-14": [
@@ -8716,6 +8717,22 @@
                 "color_code": "#d7a691",
                 "price": 2100000,
                 "max_ticket_per_user": 10
+            },
+            {
+                "id": 45757,
+                "row": 28,
+                "col": 34,
+                "ticket_type_id": 248,
+                "event_id": 51,
+                "code": "GB22",
+                "status": 3,
+                "expired_date": "2026-06-18T12:22:05",
+                "keeper_id": 15560,
+                "ticket_type_name": "FLOW (Pre)",
+                "ticket_type_name_en": "FLOW (Pre)",
+                "color_code": "#8baf54",
+                "price": 1650000,
+                "max_ticket_per_user": 10
             }
         ]
     },
@@ -9360,9 +9377,9 @@
                 "ticket_type_id": 249,
                 "event_id": 51,
                 "code": "K10",
-                "status": 5,
+                "status": 1,
                 "expired_date": "2026-06-18T12:14:11",
-                "keeper_id": 15913,
+                "keeper_id": null,
                 "ticket_type_name": "IN (VIP)",
                 "ticket_type_name_en": "IN (VIP)",
                 "color_code": "#d7a691",
