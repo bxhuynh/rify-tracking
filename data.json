@@ -7496,8 +7496,8 @@
             }
         },
         {
-            "timestamp": "2026-06-18T03:25:31.507Z",
-            "totalSold": 490,
+            "timestamp": "2026-06-18T03:30:56.244Z",
+            "totalSold": 492,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -7516,7 +7516,7 @@
                     "color": "#8baf54"
                 },
                 "IN (VIP)": {
-                    "sold": 78,
+                    "sold": 80,
                     "total": 189,
                     "color": "#d7a691"
                 },
@@ -8030,7 +8030,9 @@
         "VC18",
         "VC20",
         "VC22",
-        "VC24"
+        "VC24",
+        "D18",
+        "D20"
     ],
     "soldSeatsByDate": {
         "2026-06-14": [
@@ -8472,6 +8474,38 @@
                 "ticket_type_name_en": "YOU (SVIP)",
                 "color_code": "#297884",
                 "price": 2550000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45827,
+                "row": 11,
+                "col": 36,
+                "ticket_type_id": 249,
+                "event_id": 51,
+                "code": "D18",
+                "status": 3,
+                "expired_date": "2026-06-18T10:38:07",
+                "keeper_id": 267,
+                "ticket_type_name": "IN (VIP)",
+                "ticket_type_name_en": "IN (VIP)",
+                "color_code": "#d7a691",
+                "price": 2100000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45828,
+                "row": 11,
+                "col": 37,
+                "ticket_type_id": 249,
+                "event_id": 51,
+                "code": "D20",
+                "status": 3,
+                "expired_date": "2026-06-18T10:38:07",
+                "keeper_id": 267,
+                "ticket_type_name": "IN (VIP)",
+                "ticket_type_name_en": "IN (VIP)",
+                "color_code": "#d7a691",
+                "price": 2100000,
                 "max_ticket_per_user": 10
             }
         ]
