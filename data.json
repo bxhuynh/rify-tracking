@@ -7496,7 +7496,7 @@
             }
         },
         {
-            "timestamp": "2026-06-18T15:25:39.476Z",
+            "timestamp": "2026-06-18T15:31:04.404Z",
             "totalSold": 507,
             "totalCapacity": 722,
             "byType": {
@@ -9442,9 +9442,9 @@
                 "ticket_type_id": 249,
                 "event_id": 51,
                 "code": "E21",
-                "status": 5,
+                "status": 1,
                 "expired_date": "2026-06-18T22:28:28",
-                "keeper_id": 13129,
+                "keeper_id": null,
                 "ticket_type_name": "IN (VIP)",
                 "ticket_type_name_en": "IN (VIP)",
                 "color_code": "#d7a691",
