@@ -7496,7 +7496,7 @@
             }
         },
         {
-            "timestamp": "2026-06-18T06:30:53.891Z",
+            "timestamp": "2026-06-18T06:35:34.518Z",
             "totalSold": 506,
             "totalCapacity": 722,
             "byType": {
@@ -9393,9 +9393,9 @@
                 "ticket_type_id": 249,
                 "event_id": 51,
                 "code": "K5",
-                "status": 1,
-                "expired_date": "2026-06-18T12:43:19",
-                "keeper_id": null,
+                "status": 5,
+                "expired_date": "2026-06-18T13:40:54",
+                "keeper_id": 5527,
                 "ticket_type_name": "IN (VIP)",
                 "ticket_type_name_en": "IN (VIP)",
                 "color_code": "#d7a691",
@@ -9425,9 +9425,9 @@
                 "ticket_type_id": 248,
                 "event_id": 51,
                 "code": "GA23",
-                "status": 5,
+                "status": 1,
                 "expired_date": "2026-06-18T13:31:01",
-                "keeper_id": 6948,
+                "keeper_id": null,
                 "ticket_type_name": "FLOW (Pre)",
                 "ticket_type_name_en": "FLOW (Pre)",
                 "color_code": "#8baf54",
