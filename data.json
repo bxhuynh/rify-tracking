@@ -7496,7 +7496,7 @@
             }
         },
         {
-            "timestamp": "2026-06-18T05:55:34.494Z",
+            "timestamp": "2026-06-18T06:01:06.270Z",
             "totalSold": 506,
             "totalCapacity": 722,
             "byType": {
@@ -9377,9 +9377,9 @@
                 "ticket_type_id": 249,
                 "event_id": 51,
                 "code": "K10",
-                "status": 5,
+                "status": 1,
                 "expired_date": "2026-06-18T13:00:20",
-                "keeper_id": 15913,
+                "keeper_id": null,
                 "ticket_type_name": "IN (VIP)",
                 "ticket_type_name_en": "IN (VIP)",
                 "color_code": "#d7a691",
