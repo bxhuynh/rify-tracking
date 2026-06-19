@@ -7528,7 +7528,7 @@
             }
         },
         {
-            "timestamp": "2026-06-19T15:45:49.053Z",
+            "timestamp": "2026-06-19T15:50:47.081Z",
             "totalSold": 532,
             "totalCapacity": 722,
             "byType": {
@@ -9983,9 +9983,9 @@
                 "ticket_type_id": 250,
                 "event_id": 51,
                 "code": "VA20",
-                "status": 1,
-                "expired_date": "2026-06-19T16:40:06",
-                "keeper_id": null,
+                "status": 5,
+                "expired_date": "2026-06-19T22:58:52",
+                "keeper_id": 15923,
                 "ticket_type_name": "YOU (SVIP)",
                 "ticket_type_name_en": "YOU (SVIP)",
                 "color_code": "#297884",
