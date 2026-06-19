@@ -7528,7 +7528,7 @@
             }
         },
         {
-            "timestamp": "2026-06-19T02:05:39.657Z",
+            "timestamp": "2026-06-19T02:10:44.374Z",
             "totalSold": 507,
             "totalCapacity": 722,
             "byType": {
@@ -9485,6 +9485,23 @@
                 "max_ticket_per_user": 10
             }
         ],
-        "2026-06-19": []
+        "2026-06-19": [
+            {
+                "id": 45758,
+                "row": 28,
+                "col": 35,
+                "ticket_type_id": 248,
+                "event_id": 51,
+                "code": "GB24",
+                "status": 5,
+                "expired_date": "2026-06-19T09:17:12",
+                "keeper_id": 180,
+                "ticket_type_name": "FLOW (Pre)",
+                "ticket_type_name_en": "FLOW (Pre)",
+                "color_code": "#8baf54",
+                "price": 1650000,
+                "max_ticket_per_user": 10
+            }
+        ]
     }
 }
