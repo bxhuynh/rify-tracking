@@ -7528,7 +7528,7 @@
             }
         },
         {
-            "timestamp": "2026-06-19T04:50:45.262Z",
+            "timestamp": "2026-06-19T04:55:33.848Z",
             "totalSold": 507,
             "totalCapacity": 722,
             "byType": {
@@ -9509,9 +9509,9 @@
                 "ticket_type_id": 249,
                 "event_id": 51,
                 "code": "G23",
-                "status": 5,
+                "status": 1,
                 "expired_date": "2026-06-19T11:55:16",
-                "keeper_id": 15617,
+                "keeper_id": null,
                 "ticket_type_name": "IN (VIP)",
                 "ticket_type_name_en": "IN (VIP)",
                 "color_code": "#d7a691",
@@ -9525,9 +9525,9 @@
                 "ticket_type_id": 249,
                 "event_id": 51,
                 "code": "G21",
-                "status": 5,
+                "status": 1,
                 "expired_date": "2026-06-19T11:53:05",
-                "keeper_id": 15617,
+                "keeper_id": null,
                 "ticket_type_name": "IN (VIP)",
                 "ticket_type_name_en": "IN (VIP)",
                 "color_code": "#d7a691",
