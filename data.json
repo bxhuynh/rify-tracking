@@ -7528,7 +7528,7 @@
             }
         },
         {
-            "timestamp": "2026-06-19T10:45:43.982Z",
+            "timestamp": "2026-06-19T10:50:46.350Z",
             "totalSold": 527,
             "totalCapacity": 722,
             "byType": {
@@ -9882,8 +9882,8 @@
                 "ticket_type_id": 250,
                 "event_id": 51,
                 "code": "D12",
-                "status": 5,
-                "expired_date": "2026-06-19T17:47:32",
+                "status": 2,
+                "expired_date": "2026-06-19T17:57:13",
                 "keeper_id": 15920,
                 "ticket_type_name": "YOU (SVIP)",
                 "ticket_type_name_en": "YOU (SVIP)",
