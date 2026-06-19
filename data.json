@@ -7528,7 +7528,7 @@
             }
         },
         {
-            "timestamp": "2026-06-19T14:10:50.540Z",
+            "timestamp": "2026-06-19T14:15:47.628Z",
             "totalSold": 532,
             "totalCapacity": 722,
             "byType": {
@@ -10687,9 +10687,9 @@
                 "ticket_type_id": 249,
                 "event_id": 51,
                 "code": "M2",
-                "status": 5,
+                "status": 1,
                 "expired_date": "2026-06-19T21:14:37",
-                "keeper_id": 15922,
+                "keeper_id": null,
                 "ticket_type_name": "IN (VIP)",
                 "ticket_type_name_en": "IN (VIP)",
                 "color_code": "#d7a691",
