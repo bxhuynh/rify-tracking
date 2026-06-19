@@ -7560,8 +7560,8 @@
             }
         },
         {
-            "timestamp": "2026-06-19T17:31:04.907Z",
-            "totalSold": 533,
+            "timestamp": "2026-06-19T17:35:42.302Z",
+            "totalSold": 534,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -7575,7 +7575,7 @@
                     "color": " #113a23"
                 },
                 "FLOW (Pre)": {
-                    "sold": 118,
+                    "sold": 119,
                     "total": 172,
                     "color": "#8baf54"
                 },
@@ -8125,7 +8125,8 @@
         "E22",
         "E24",
         "E26",
-        "P15"
+        "P15",
+        "I18"
     ],
     "soldSeatsByDate": {
         "2026-06-14": [
@@ -9260,7 +9261,24 @@
                 "max_ticket_per_user": 10
             }
         ],
-        "2026-06-20": []
+        "2026-06-20": [
+            {
+                "id": 45599,
+                "row": 15,
+                "col": 35,
+                "ticket_type_id": 248,
+                "event_id": 51,
+                "code": "I18",
+                "status": 3,
+                "expired_date": "2026-06-20T00:42:29",
+                "keeper_id": 5403,
+                "ticket_type_name": "FLOW (Pre)",
+                "ticket_type_name_en": "FLOW (Pre)",
+                "color_code": "#8baf54",
+                "price": 1650000,
+                "max_ticket_per_user": 10
+            }
+        ]
     },
     "holdingSeatsByDate": {
         "2026-06-14": [
@@ -11402,22 +11420,6 @@
                 "ticket_type_name_en": "YOU (SVIP)",
                 "color_code": "#297884",
                 "price": 2550000,
-                "max_ticket_per_user": 10
-            },
-            {
-                "id": 45599,
-                "row": 15,
-                "col": 35,
-                "ticket_type_id": 248,
-                "event_id": 51,
-                "code": "I18",
-                "status": 2,
-                "expired_date": "2026-06-20T00:28:59",
-                "keeper_id": 5403,
-                "ticket_type_name": "FLOW (Pre)",
-                "ticket_type_name_en": "FLOW (Pre)",
-                "color_code": "#8baf54",
-                "price": 1650000,
                 "max_ticket_per_user": 10
             }
         ]
