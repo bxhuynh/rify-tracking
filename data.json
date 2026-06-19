@@ -7528,7 +7528,7 @@
             }
         },
         {
-            "timestamp": "2026-06-19T11:25:39.300Z",
+            "timestamp": "2026-06-19T11:30:59.319Z",
             "totalSold": 528,
             "totalCapacity": 722,
             "byType": {
@@ -10587,9 +10587,9 @@
                 "ticket_type_id": 248,
                 "event_id": 51,
                 "code": "Q6",
-                "status": 5,
+                "status": 1,
                 "expired_date": "2026-06-19T18:34:24",
-                "keeper_id": 15663,
+                "keeper_id": null,
                 "ticket_type_name": "FLOW (Pre)",
                 "ticket_type_name_en": "FLOW (Pre)",
                 "color_code": "#8baf54",
