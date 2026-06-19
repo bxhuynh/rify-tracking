@@ -7560,7 +7560,7 @@
             }
         },
         {
-            "timestamp": "2026-06-19T18:05:40.128Z",
+            "timestamp": "2026-06-19T18:10:46.555Z",
             "totalSold": 534,
             "totalCapacity": 722,
             "byType": {
@@ -11420,6 +11420,70 @@
                 "ticket_type_name_en": "YOU (SVIP)",
                 "color_code": "#297884",
                 "price": 2550000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45600,
+                "row": 15,
+                "col": 36,
+                "ticket_type_id": 248,
+                "event_id": 51,
+                "code": "I20",
+                "status": 5,
+                "expired_date": "2026-06-20T01:19:19",
+                "keeper_id": 15166,
+                "ticket_type_name": "FLOW (Pre)",
+                "ticket_type_name_en": "FLOW (Pre)",
+                "color_code": "#8baf54",
+                "price": 1650000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45601,
+                "row": 15,
+                "col": 37,
+                "ticket_type_id": 248,
+                "event_id": 51,
+                "code": "I22",
+                "status": 5,
+                "expired_date": "2026-06-20T01:19:19",
+                "keeper_id": 15166,
+                "ticket_type_name": "FLOW (Pre)",
+                "ticket_type_name_en": "FLOW (Pre)",
+                "color_code": "#8baf54",
+                "price": 1650000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45921,
+                "row": 17,
+                "col": 27,
+                "ticket_type_id": 249,
+                "event_id": 51,
+                "code": "L12",
+                "status": 5,
+                "expired_date": "2026-06-20T01:18:24",
+                "keeper_id": 15166,
+                "ticket_type_name": "IN (VIP)",
+                "ticket_type_name_en": "IN (VIP)",
+                "color_code": "#d7a691",
+                "price": 2100000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45922,
+                "row": 17,
+                "col": 28,
+                "ticket_type_id": 249,
+                "event_id": 51,
+                "code": "L14",
+                "status": 5,
+                "expired_date": "2026-06-20T01:18:24",
+                "keeper_id": 15166,
+                "ticket_type_name": "IN (VIP)",
+                "ticket_type_name_en": "IN (VIP)",
+                "color_code": "#d7a691",
+                "price": 2100000,
                 "max_ticket_per_user": 10
             }
         ]
