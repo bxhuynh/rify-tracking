@@ -7528,8 +7528,8 @@
             }
         },
         {
-            "timestamp": "2026-06-19T10:50:46.350Z",
-            "totalSold": 527,
+            "timestamp": "2026-06-19T10:55:37.582Z",
+            "totalSold": 528,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -7553,7 +7553,7 @@
                     "color": "#d7a691"
                 },
                 "YOU (SVIP)": {
-                    "sold": 147,
+                    "sold": 148,
                     "total": 206,
                     "color": "#297884"
                 }
@@ -8087,7 +8087,8 @@
         "B23",
         "B21",
         "D22",
-        "D24"
+        "D24",
+        "D12"
     ],
     "soldSeatsByDate": {
         "2026-06-14": [
@@ -9124,6 +9125,22 @@
                 "color_code": "#d7a691",
                 "price": 2100000,
                 "max_ticket_per_user": 10
+            },
+            {
+                "id": 46118,
+                "row": 11,
+                "col": 27,
+                "ticket_type_id": 250,
+                "event_id": 51,
+                "code": "D12",
+                "status": 3,
+                "expired_date": "2026-06-19T17:57:13",
+                "keeper_id": 15920,
+                "ticket_type_name": "YOU (SVIP)",
+                "ticket_type_name_en": "YOU (SVIP)",
+                "color_code": "#297884",
+                "price": 2550000,
+                "max_ticket_per_user": 10
             }
         ]
     },
@@ -9873,22 +9890,6 @@
                 "ticket_type_name_en": "IN (VIP)",
                 "color_code": "#d7a691",
                 "price": 2100000,
-                "max_ticket_per_user": 10
-            },
-            {
-                "id": 46118,
-                "row": 11,
-                "col": 27,
-                "ticket_type_id": 250,
-                "event_id": 51,
-                "code": "D12",
-                "status": 2,
-                "expired_date": "2026-06-19T17:57:13",
-                "keeper_id": 15920,
-                "ticket_type_name": "YOU (SVIP)",
-                "ticket_type_name_en": "YOU (SVIP)",
-                "color_code": "#297884",
-                "price": 2550000,
                 "max_ticket_per_user": 10
             },
             {
