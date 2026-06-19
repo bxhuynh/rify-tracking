@@ -7528,8 +7528,8 @@
             }
         },
         {
-            "timestamp": "2026-06-19T07:31:04.484Z",
-            "totalSold": 507,
+            "timestamp": "2026-06-19T07:35:37.134Z",
+            "totalSold": 510,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -7543,7 +7543,7 @@
                     "color": " #113a23"
                 },
                 "FLOW (Pre)": {
-                    "sold": 113,
+                    "sold": 116,
                     "total": 172,
                     "color": "#8baf54"
                 },
@@ -8067,7 +8067,10 @@
         "H4",
         "H6",
         "GB22",
-        "I13"
+        "I13",
+        "I19",
+        "I17",
+        "I15"
     ],
     "soldSeatsByDate": {
         "2026-06-14": [
@@ -8784,7 +8787,56 @@
                 "max_ticket_per_user": 10
             }
         ],
-        "2026-06-19": []
+        "2026-06-19": [
+            {
+                "id": 45594,
+                "row": 15,
+                "col": 6,
+                "ticket_type_id": 248,
+                "event_id": 51,
+                "code": "I19",
+                "status": 3,
+                "expired_date": "2026-06-19T14:41:09",
+                "keeper_id": 267,
+                "ticket_type_name": "FLOW (Pre)",
+                "ticket_type_name_en": "FLOW (Pre)",
+                "color_code": "#8baf54",
+                "price": 1650000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45595,
+                "row": 15,
+                "col": 7,
+                "ticket_type_id": 248,
+                "event_id": 51,
+                "code": "I17",
+                "status": 3,
+                "expired_date": "2026-06-19T14:41:09",
+                "keeper_id": 267,
+                "ticket_type_name": "FLOW (Pre)",
+                "ticket_type_name_en": "FLOW (Pre)",
+                "color_code": "#8baf54",
+                "price": 1650000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45596,
+                "row": 15,
+                "col": 8,
+                "ticket_type_id": 248,
+                "event_id": 51,
+                "code": "I15",
+                "status": 3,
+                "expired_date": "2026-06-19T14:41:09",
+                "keeper_id": 267,
+                "ticket_type_name": "FLOW (Pre)",
+                "ticket_type_name_en": "FLOW (Pre)",
+                "color_code": "#8baf54",
+                "price": 1650000,
+                "max_ticket_per_user": 10
+            }
+        ]
     },
     "holdingSeatsByDate": {
         "2026-06-14": [
