@@ -7560,8 +7560,8 @@
             }
         },
         {
-            "timestamp": "2026-06-20T04:40:46.866Z",
-            "totalSold": 535,
+            "timestamp": "2026-06-20T04:45:49.840Z",
+            "totalSold": 543,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -7580,7 +7580,7 @@
                     "color": "#8baf54"
                 },
                 "IN (VIP)": {
-                    "sold": 112,
+                    "sold": 120,
                     "total": 189,
                     "color": "#d7a691"
                 },
@@ -8127,7 +8127,15 @@
         "E26",
         "P15",
         "I18",
-        "VC17"
+        "VC17",
+        "A27",
+        "A25",
+        "G18",
+        "G20",
+        "M3",
+        "M1",
+        "M2",
+        "M4"
     ],
     "soldSeatsByDate": {
         "2026-06-14": [
@@ -9293,6 +9301,134 @@
                 "ticket_type_name_en": "YOU (SVIP)",
                 "color_code": "#297884",
                 "price": 2550000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45762,
+                "row": 8,
+                "col": 1,
+                "ticket_type_id": 249,
+                "event_id": 51,
+                "code": "A27",
+                "status": 3,
+                "expired_date": null,
+                "keeper_id": null,
+                "ticket_type_name": "IN (VIP)",
+                "ticket_type_name_en": "IN (VIP)",
+                "color_code": "#d7a691",
+                "price": 2100000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45763,
+                "row": 8,
+                "col": 2,
+                "ticket_type_id": 249,
+                "event_id": 51,
+                "code": "A25",
+                "status": 3,
+                "expired_date": null,
+                "keeper_id": null,
+                "ticket_type_name": "IN (VIP)",
+                "ticket_type_name_en": "IN (VIP)",
+                "color_code": "#d7a691",
+                "price": 2100000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45860,
+                "row": 13,
+                "col": 36,
+                "ticket_type_id": 249,
+                "event_id": 51,
+                "code": "G18",
+                "status": 3,
+                "expired_date": null,
+                "keeper_id": null,
+                "ticket_type_name": "IN (VIP)",
+                "ticket_type_name_en": "IN (VIP)",
+                "color_code": "#d7a691",
+                "price": 2100000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45861,
+                "row": 13,
+                "col": 37,
+                "ticket_type_id": 249,
+                "event_id": 51,
+                "code": "G20",
+                "status": 3,
+                "expired_date": null,
+                "keeper_id": null,
+                "ticket_type_name": "IN (VIP)",
+                "ticket_type_name_en": "IN (VIP)",
+                "color_code": "#d7a691",
+                "price": 2100000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45928,
+                "row": 18,
+                "col": 20,
+                "ticket_type_id": 249,
+                "event_id": 51,
+                "code": "M3",
+                "status": 4,
+                "expired_date": null,
+                "keeper_id": null,
+                "ticket_type_name": "IN (VIP)",
+                "ticket_type_name_en": "IN (VIP)",
+                "color_code": "#d7a691",
+                "price": 2100000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45929,
+                "row": 18,
+                "col": 21,
+                "ticket_type_id": 249,
+                "event_id": 51,
+                "code": "M1",
+                "status": 4,
+                "expired_date": null,
+                "keeper_id": null,
+                "ticket_type_name": "IN (VIP)",
+                "ticket_type_name_en": "IN (VIP)",
+                "color_code": "#d7a691",
+                "price": 2100000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45930,
+                "row": 18,
+                "col": 22,
+                "ticket_type_id": 249,
+                "event_id": 51,
+                "code": "M2",
+                "status": 4,
+                "expired_date": null,
+                "keeper_id": null,
+                "ticket_type_name": "IN (VIP)",
+                "ticket_type_name_en": "IN (VIP)",
+                "color_code": "#d7a691",
+                "price": 2100000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45931,
+                "row": 18,
+                "col": 23,
+                "ticket_type_id": 249,
+                "event_id": 51,
+                "code": "M4",
+                "status": 4,
+                "expired_date": null,
+                "keeper_id": null,
+                "ticket_type_name": "IN (VIP)",
+                "ticket_type_name_en": "IN (VIP)",
+                "color_code": "#d7a691",
+                "price": 2100000,
                 "max_ticket_per_user": 10
             }
         ]
