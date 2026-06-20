@@ -7560,8 +7560,8 @@
             }
         },
         {
-            "timestamp": "2026-06-20T12:20:50.365Z",
-            "totalSold": 557,
+            "timestamp": "2026-06-20T12:25:39.607Z",
+            "totalSold": 559,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -7575,7 +7575,7 @@
                     "color": " #113a23"
                 },
                 "FLOW (Pre)": {
-                    "sold": 125,
+                    "sold": 127,
                     "total": 172,
                     "color": "#8baf54"
                 },
@@ -8149,7 +8149,9 @@
         "VD15",
         "VD13",
         "L10",
-        "I22"
+        "I22",
+        "K26",
+        "K28"
     ],
     "soldSeatsByDate": {
         "2026-06-14": [
@@ -9663,6 +9665,38 @@
                 "status": 3,
                 "expired_date": "2026-06-20T18:26:57",
                 "keeper_id": 15931,
+                "ticket_type_name": "FLOW (Pre)",
+                "ticket_type_name_en": "FLOW (Pre)",
+                "color_code": "#8baf54",
+                "price": 1650000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45619,
+                "row": 16,
+                "col": 39,
+                "ticket_type_id": 248,
+                "event_id": 51,
+                "code": "K26",
+                "status": 3,
+                "expired_date": "2026-06-20T19:31:08",
+                "keeper_id": 15926,
+                "ticket_type_name": "FLOW (Pre)",
+                "ticket_type_name_en": "FLOW (Pre)",
+                "color_code": "#8baf54",
+                "price": 1650000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45620,
+                "row": 16,
+                "col": 40,
+                "ticket_type_id": 248,
+                "event_id": 51,
+                "code": "K28",
+                "status": 3,
+                "expired_date": "2026-06-20T19:31:08",
+                "keeper_id": 15926,
                 "ticket_type_name": "FLOW (Pre)",
                 "ticket_type_name_en": "FLOW (Pre)",
                 "color_code": "#8baf54",
