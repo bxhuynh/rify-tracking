@@ -7560,7 +7560,7 @@
             }
         },
         {
-            "timestamp": "2026-06-20T05:55:40.401Z",
+            "timestamp": "2026-06-20T06:01:13.942Z",
             "totalSold": 545,
             "totalCapacity": 722,
             "byType": {
@@ -11712,13 +11712,29 @@
                 "ticket_type_id": 248,
                 "event_id": 51,
                 "code": "M23",
-                "status": 1,
-                "expired_date": "2026-06-20T10:01:21",
-                "keeper_id": null,
+                "status": 5,
+                "expired_date": "2026-06-20T13:09:45",
+                "keeper_id": 15694,
                 "ticket_type_name": "FLOW (Pre)",
                 "ticket_type_name_en": "FLOW (Pre)",
                 "color_code": "#8baf54",
                 "price": 1650000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45897,
+                "row": 16,
+                "col": 17,
+                "ticket_type_id": 249,
+                "event_id": 51,
+                "code": "K9",
+                "status": 5,
+                "expired_date": "2026-06-20T13:10:15",
+                "keeper_id": 15882,
+                "ticket_type_name": "IN (VIP)",
+                "ticket_type_name_en": "IN (VIP)",
+                "color_code": "#d7a691",
+                "price": 2100000,
                 "max_ticket_per_user": 10
             }
         ]
