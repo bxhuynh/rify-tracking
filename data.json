@@ -7560,8 +7560,8 @@
             }
         },
         {
-            "timestamp": "2026-06-20T13:05:42.373Z",
-            "totalSold": 559,
+            "timestamp": "2026-06-20T13:10:48.637Z",
+            "totalSold": 560,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -7575,7 +7575,7 @@
                     "color": " #113a23"
                 },
                 "FLOW (Pre)": {
-                    "sold": 127,
+                    "sold": 128,
                     "total": 172,
                     "color": "#8baf54"
                 },
@@ -8151,7 +8151,8 @@
         "L10",
         "I22",
         "K26",
-        "K28"
+        "K28",
+        "I28"
     ],
     "soldSeatsByDate": {
         "2026-06-14": [
@@ -9697,6 +9698,22 @@
                 "status": 3,
                 "expired_date": "2026-06-20T19:31:08",
                 "keeper_id": 15926,
+                "ticket_type_name": "FLOW (Pre)",
+                "ticket_type_name_en": "FLOW (Pre)",
+                "color_code": "#8baf54",
+                "price": 1650000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45604,
+                "row": 15,
+                "col": 40,
+                "ticket_type_id": 248,
+                "event_id": 51,
+                "code": "I28",
+                "status": 3,
+                "expired_date": "2026-06-20T20:06:44",
+                "keeper_id": 15932,
                 "ticket_type_name": "FLOW (Pre)",
                 "ticket_type_name_en": "FLOW (Pre)",
                 "color_code": "#8baf54",
@@ -11909,22 +11926,6 @@
                 "ticket_type_name_en": "IN (VIP)",
                 "color_code": "#d7a691",
                 "price": 2100000,
-                "max_ticket_per_user": 10
-            },
-            {
-                "id": 45604,
-                "row": 15,
-                "col": 40,
-                "ticket_type_id": 248,
-                "event_id": 51,
-                "code": "I28",
-                "status": 2,
-                "expired_date": "2026-06-20T20:06:44",
-                "keeper_id": 15932,
-                "ticket_type_name": "FLOW (Pre)",
-                "ticket_type_name_en": "FLOW (Pre)",
-                "color_code": "#8baf54",
-                "price": 1650000,
                 "max_ticket_per_user": 10
             },
             {
