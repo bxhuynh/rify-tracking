@@ -7560,8 +7560,8 @@
             }
         },
         {
-            "timestamp": "2026-06-20T05:30:56.216Z",
-            "totalSold": 543,
+            "timestamp": "2026-06-20T05:35:39.905Z",
+            "totalSold": 545,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -7580,7 +7580,7 @@
                     "color": "#8baf54"
                 },
                 "IN (VIP)": {
-                    "sold": 120,
+                    "sold": 122,
                     "total": 189,
                     "color": "#d7a691"
                 },
@@ -8135,7 +8135,9 @@
         "M3",
         "M1",
         "M2",
-        "M4"
+        "M4",
+        "K7",
+        "K5"
     ],
     "soldSeatsByDate": {
         "2026-06-14": [
@@ -9424,6 +9426,38 @@
                 "code": "M4",
                 "status": 4,
                 "expired_date": null,
+                "keeper_id": null,
+                "ticket_type_name": "IN (VIP)",
+                "ticket_type_name_en": "IN (VIP)",
+                "color_code": "#d7a691",
+                "price": 2100000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45898,
+                "row": 16,
+                "col": 18,
+                "ticket_type_id": 249,
+                "event_id": 51,
+                "code": "K7",
+                "status": 3,
+                "expired_date": "2026-06-18T12:50:57",
+                "keeper_id": null,
+                "ticket_type_name": "IN (VIP)",
+                "ticket_type_name_en": "IN (VIP)",
+                "color_code": "#d7a691",
+                "price": 2100000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45899,
+                "row": 16,
+                "col": 19,
+                "ticket_type_id": 249,
+                "event_id": 51,
+                "code": "K5",
+                "status": 3,
+                "expired_date": "2026-06-19T15:58:00",
                 "keeper_id": null,
                 "ticket_type_name": "IN (VIP)",
                 "ticket_type_name_en": "IN (VIP)",
