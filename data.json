@@ -7560,8 +7560,8 @@
             }
         },
         {
-            "timestamp": "2026-06-20T02:10:45.392Z",
-            "totalSold": 534,
+            "timestamp": "2026-06-20T02:15:46.147Z",
+            "totalSold": 535,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -7585,7 +7585,7 @@
                     "color": "#d7a691"
                 },
                 "YOU (SVIP)": {
-                    "sold": 148,
+                    "sold": 149,
                     "total": 206,
                     "color": "#297884"
                 }
@@ -8126,7 +8126,8 @@
         "E24",
         "E26",
         "P15",
-        "I18"
+        "I18",
+        "VC17"
     ],
     "soldSeatsByDate": {
         "2026-06-14": [
@@ -9276,6 +9277,22 @@
                 "ticket_type_name_en": "FLOW (Pre)",
                 "color_code": "#8baf54",
                 "price": 1650000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 46000,
+                "row": 3,
+                "col": 6,
+                "ticket_type_id": 250,
+                "event_id": 51,
+                "code": "VC17",
+                "status": 3,
+                "expired_date": "2026-06-20T09:21:08",
+                "keeper_id": 15924,
+                "ticket_type_name": "YOU (SVIP)",
+                "ticket_type_name_en": "YOU (SVIP)",
+                "color_code": "#297884",
+                "price": 2550000,
                 "max_ticket_per_user": 10
             }
         ]
@@ -11493,22 +11510,6 @@
                 "ticket_type_id": 250,
                 "event_id": 51,
                 "code": "VC19",
-                "status": 1,
-                "expired_date": "2026-06-20T08:45:34",
-                "keeper_id": null,
-                "ticket_type_name": "YOU (SVIP)",
-                "ticket_type_name_en": "YOU (SVIP)",
-                "color_code": "#297884",
-                "price": 2550000,
-                "max_ticket_per_user": 10
-            },
-            {
-                "id": 46000,
-                "row": 3,
-                "col": 6,
-                "ticket_type_id": 250,
-                "event_id": 51,
-                "code": "VC17",
                 "status": 1,
                 "expired_date": "2026-06-20T08:45:34",
                 "keeper_id": null,
