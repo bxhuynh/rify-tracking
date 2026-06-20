@@ -7560,8 +7560,8 @@
             }
         },
         {
-            "timestamp": "2026-06-20T06:20:50.128Z",
-            "totalSold": 545,
+            "timestamp": "2026-06-20T06:25:43.725Z",
+            "totalSold": 546,
             "totalCapacity": 722,
             "byType": {
                 "CHILL (Gift)": {
@@ -7585,7 +7585,7 @@
                     "color": "#d7a691"
                 },
                 "YOU (SVIP)": {
-                    "sold": 149,
+                    "sold": 150,
                     "total": 206,
                     "color": "#297884"
                 }
@@ -8137,7 +8137,8 @@
         "M2",
         "M4",
         "K7",
-        "K5"
+        "K5",
+        "VA20"
     ],
     "soldSeatsByDate": {
         "2026-06-14": [
@@ -9463,6 +9464,22 @@
                 "ticket_type_name_en": "IN (VIP)",
                 "color_code": "#d7a691",
                 "price": 2100000,
+                "max_ticket_per_user": 10
+            },
+            {
+                "id": 45971,
+                "row": 1,
+                "col": 38,
+                "ticket_type_id": 250,
+                "event_id": 51,
+                "code": "VA20",
+                "status": 3,
+                "expired_date": "2026-06-20T13:31:49",
+                "keeper_id": 15923,
+                "ticket_type_name": "YOU (SVIP)",
+                "ticket_type_name_en": "YOU (SVIP)",
+                "color_code": "#297884",
+                "price": 2550000,
                 "max_ticket_per_user": 10
             }
         ]
