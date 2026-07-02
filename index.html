@@ -218,6 +218,13 @@
         </button>
       </div>
 
+      <div
+        class="flex flex-col items-center justify-center sm:flex-row items-center gap-4 mb-6 text-xs"
+      >
+        Note: Số liệu những ngày cuối sẽ không chính xác vì phía R hold vé nội
+        bộ
+      </div>
+
       <!-- THANH TIẾN ĐỘ TỔNG THỂ -->
       <div
         class="theme-inner p-6 rounded-3xl border border-dashed shadow-inner mb-6 select-none"
@@ -682,36 +689,31 @@
       }
 
       function initCountdown() {
-        const targetDate = new Date(2026, 5, 20, 19, 30, 0).getTime();
-        const timerElement = document.getElementById('countdown-timer');
-
-        function updateTimer() {
-          const now = new Date().getTime();
-          const distance = targetDate - now;
-
-          if (distance < 0) {
-            clearInterval(countdownInterval);
-            timerElement.innerText = '✨ ĐÊM NHẠC ĐANG DIỄN RA ✨';
-            timerElement.classList.remove('text-amber-500');
-            timerElement.classList.add('text-emerald-500', 'animate-pulse');
-            return;
-          }
-
-          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          const hours = Math.floor(
-            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-          );
-          const minutes = Math.floor(
-            (distance % (1000 * 60 * 60)) / (1000 * 60),
-          );
-          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-          const pad = (num) => String(num).padStart(2, '0');
-          timerElement.innerText = `${days} ngày ${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
-        }
-
-        updateTimer();
-        const countdownInterval = setInterval(updateTimer, 1000);
+        // const targetDate = new Date(2026, 5, 20, 19, 30, 0).getTime();
+        // const timerElement = document.getElementById('countdown-timer');
+        // function updateTimer() {
+        //   const now = new Date().getTime();
+        //   const distance = targetDate - now;
+        //   if (distance < 0) {
+        //     clearInterval(countdownInterval);
+        //     timerElement.innerText = '✨ ĐÊM NHẠC ĐANG DIỄN RA ✨';
+        //     timerElement.classList.remove('text-amber-500');
+        //     timerElement.classList.add('text-emerald-500', 'animate-pulse');
+        //     return;
+        //   }
+        //   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        //   const hours = Math.floor(
+        //     (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        //   );
+        //   const minutes = Math.floor(
+        //     (distance % (1000 * 60 * 60)) / (1000 * 60),
+        //   );
+        //   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        //   const pad = (num) => String(num).padStart(2, '0');
+        //   timerElement.innerText = `${days} ngày ${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+        // }
+        // updateTimer();
+        // const countdownInterval = setInterval(updateTimer, 1000);
       }
 
       function renderChart(dailyHistory) {
